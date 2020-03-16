@@ -1,0 +1,13 @@
+## Interface: 11303
+## Title: SociallyUndeadTools
+## Author: Raptiq
+## Version: 1.0
+## RequiredDeps: ExRT
+
+Link.xml
+Core.lua
+GeneratedLoot.lua
+Loot.lua
+Ui.lua
+Eventhandler.lua
+Main.lua

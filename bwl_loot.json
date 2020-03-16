@@ -1,0 +1,752 @@
+[
+  {
+    "id": 16934,
+    "name": "Warlock T2 Bracers",
+    "role": "Warlock",
+    "dkp": 5
+  },
+  {
+    "id": 16933,
+    "name": "Warlock T2 Belt",
+    "role": "Warlock",
+    "dkp": 60
+  },
+  {
+    "id": 16927,
+    "name": "Warlock T2 Boots",
+    "role": "Warlock",
+    "dkp": 60
+  },
+  {
+    "id": 16928,
+    "name": "Warlock T2 Gloves",
+    "role": "Warlock",
+    "dkp": 5
+  },
+  {
+    "id": 16932,
+    "name": "Warlock T2 Shoulders",
+    "role": "Warlock",
+    "dkp": 30
+  },
+  {
+    "id": 16931,
+    "name": "Warlock T2 Chest",
+    "role": "Warlock",
+    "dkp": 5
+  },
+  {
+    "id": 16918,
+    "name": "Mage T2 Bracers",
+    "role": "Mage",
+    "dkp": 30
+  },
+  {
+    "id": 16818,
+    "name": "Mage T2 Belt",
+    "role": "Mage",
+    "dkp": 30
+  },
+  {
+    "id": 16912,
+    "name": "Mage T2 Boots",
+    "role": "Mage",
+    "dkp": 5
+  },
+  {
+    "id": 16913,
+    "name": "Mage T2 Gloves",
+    "role": "Mage",
+    "dkp": 60
+  },
+  {
+    "id": 16917,
+    "name": "Mage T2 Shoulders",
+    "role": "Mage",
+    "dkp": 5
+  },
+  {
+    "id": 16916,
+    "name": "Mage T2 Chest",
+    "role": "Mage",
+    "dkp": 5
+  },
+  {
+    "id": 16926,
+    "name": "Priest T2 Bracers",
+    "role": "Heal-Priest",
+    "dkp": 60
+  },
+  {
+    "id": 16925,
+    "name": "Priest T2 Belt",
+    "role": "Heal-Priest",
+    "dkp": 60
+  },
+  {
+    "id": 16919,
+    "name": "Priest T2 Boots",
+    "role": "Heal-Priest",
+    "dkp": 60
+  },
+  {
+    "id": 16920,
+    "name": "Priest T2 Gloves",
+    "role": "Heal-Priest",
+    "dkp": 60
+  },
+  {
+    "id": 16924,
+    "name": "Priest T2 Shoulders",
+    "role": "Heal-Priest",
+    "dkp": 70
+  },
+  {
+    "id": 16923,
+    "name": "Priest T2 Chest",
+    "role": "Heal-Priest",
+    "dkp": 70
+  },
+  {
+    "id": 16964,
+    "name": "Warrior T2 Bracers",
+    "role": "Tank-Warrior > Warrior",
+    "dkp": 60
+  },
+  {
+    "id": 16965,
+    "name": "Warrior T2 Belt",
+    "role": "Tank-Warrior > Warrior",
+    "dkp": 60
+  },
+  {
+    "id": 16961,
+    "name": "Warrior T2 Boots",
+    "role": "Tank-Warrior > Warrior",
+    "dkp": 60
+  },
+  {
+    "id": 16960,
+    "name": "Warrior T2 Gloves",
+    "role": "Tank-Warrior > Warrior",
+    "dkp": 60
+  },
+  {
+    "id": 16966,
+    "name": "Warrior T2 Shoulders",
+    "role": "Tank-Warrior > Warrior",
+    "dkp": 70
+  },
+  {
+    "id": 16959,
+    "name": "Warrior T2 Chest",
+    "role": "Tank-Warrior > Warrior",
+    "dkp": 70
+  },
+  {
+    "id": 16911,
+    "name": "Rogue T2 Bracers",
+    "role": "Rogue",
+    "dkp": 60
+  },
+  {
+    "id": 16910,
+    "name": "Rogue T2 Belt",
+    "role": "Rogue",
+    "dkp": 60
+  },
+  {
+    "id": 16906,
+    "name": "Rogue T2 Boots",
+    "role": "Sword-Rogue > Rogue",
+    "dkp": 60
+  },
+  {
+    "id": 16907,
+    "name": "Rogue T2 Gloves",
+    "role": "Sword-Rogue > Rogue",
+    "dkp": 60
+  },
+  {
+    "id": 16832,
+    "name": "Rogue T2 Shoulders",
+    "role": "Sword-Rogue > Rogue",
+    "dkp": 70
+  },
+  {
+    "id": 16905,
+    "name": "Rogue T2 Chest",
+    "role": "Rogue",
+    "dkp": 70
+  },
+  {
+    "id": 16935,
+    "name": "Hunter T2 Bracers",
+    "role": "Hunter",
+    "dkp": 60
+  },
+  {
+    "id": 16941,
+    "name": "Hunter T2 Belt",
+    "role": "Hunter",
+    "dkp": 60
+  },
+  {
+    "id": 16936,
+    "name": "Hunter T2 Boots",
+    "role": "Hunter",
+    "dkp": 60
+  },
+  {
+    "id": 16940,
+    "name": "Hunter T2 Gloves",
+    "role": "Hunter",
+    "dkp": 60
+  },
+  {
+    "id": 16937,
+    "name": "Hunter T2 Shoulders",
+    "role": "Hunter",
+    "dkp": 70
+  },
+  {
+    "id": 16942,
+    "name": "Hunter T2 Chest",
+    "role": "Hunter",
+    "dkp": 70
+  },
+  {
+    "id": 16904,
+    "name": "Druid T2 Bracers",
+    "role": "Heal-Druid > Druid",
+    "dkp": 60
+  },
+  {
+    "id": 16903,
+    "name": "Druid T2 Belt",
+    "role": "Heal-Druid > Druid",
+    "dkp": 60
+  },
+  {
+    "id": 16898,
+    "name": "Druid T2 Boots",
+    "role": "Heal-Druid > Druid",
+    "dkp": 60
+  },
+  {
+    "id": 16899,
+    "name": "Druid T2 Gloves",
+    "role": "Heal-Druid > Druid",
+    "dkp": 60
+  },
+  {
+    "id": 16902,
+    "name": "Druid T2 Shoulders",
+    "role": "Druid",
+    "dkp": 5
+  },
+  {
+    "id": 16897,
+    "name": "Druid T2 Chest",
+    "role": "Heal-Druid > Druid",
+    "dkp": 70
+  },
+  {
+    "id": 16943,
+    "name": "Shaman T2 Bracers",
+    "role": "Resto-Shaman > Shaman",
+    "dkp": 60
+  },
+  {
+    "id": 16944,
+    "name": "Shaman T2 Belt",
+    "role": "Resto-Shaman > Shaman",
+    "dkp": 60
+  },
+  {
+    "id": 16949,
+    "name": "Shaman T2 Boots",
+    "role": "Resto-Shaman > Shaman",
+    "dkp": 60
+  },
+  {
+    "id": 16948,
+    "name": "Shaman T2 Gloves",
+    "role": "Resto-Shaman > Shaman",
+    "dkp": 60
+  },
+  {
+    "id": 16945,
+    "name": "Shaman T2 Shoulders",
+    "role": "Resto-Shaman > Shaman",
+    "dkp": 70
+  },
+  {
+    "id": 16950,
+    "name": "Shaman T2 Chest",
+    "role": "Resto-Shaman > Shaman",
+    "dkp": 70
+  },
+  {
+    "id": 19436,
+    "name": "Cloak of Draconic Might",
+    "role": "Warrior > Enhance-Shaman",
+    "dkp": 65
+  },
+  {
+    "id": 19439,
+    "name": "Interlaced Shadow Jerkin",
+    "role": "Feral > Resistance for Leather wearers",
+    "dkp": 5
+  },
+  {
+    "id": 19437,
+    "name": "Boots of Pure Thought",
+    "role": "Heal-Priest = Heal-Druid > Resto-Shaman",
+    "dkp": 60
+  },
+  {
+    "id": 19438,
+    "name": "Ringo's Blizzard Boots",
+    "role": "Mage",
+    "dkp": 60
+  },
+  {
+    "id": 19434,
+    "name": "Band of Dark Dominion",
+    "role": "Shadow-Priest = Warlock",
+    "dkp": 60
+  },
+  {
+    "id": 19435,
+    "name": "Essence Gatherer",
+    "role": "Heal-Priest",
+    "dkp": 35
+  },
+  {
+    "id": 19362,
+    "name": "Doom's Edge",
+    "role": "Orc-Fury-Warrior > Warrior",
+    "dkp": 120
+  },
+  {
+    "id": 19354,
+    "name": "Draconic Avenger",
+    "role": "Warrior = Enhance-Shaman",
+    "dkp": 5
+  },
+  {
+    "id": 19358,
+    "name": "Draconic Maul",
+    "role": "Warrior = Enhance-Shaman",
+    "dkp": 5
+  },
+  {
+    "id": 19370,
+    "name": "Mantle of the Blackwing Cabal",
+    "role": "Mage = Warlock = Shadow-Priest > Heal-Priest",
+    "dkp": 70
+  },
+  {
+    "id": 19369,
+    "name": "Gloves of Rapid Evolution",
+    "role": "Heal-Priest",
+    "dkp": 5
+  },
+  {
+    "id": 19335,
+    "name": "Spineshatter",
+    "role": "Tank-Warrior > Warrior",
+    "dkp": 120
+  },
+  {
+    "id": 19334,
+    "name": "The Untamed Blade",
+    "role": "Warrior",
+    "dkp": 65
+  },
+  {
+    "id": 19336,
+    "name": "Arcane Infused Gem",
+    "role": "Hunter",
+    "dkp": 5
+  },
+  {
+    "id": 19337,
+    "name": "The Black Book",
+    "role": "Warlock",
+    "dkp": 5
+  },
+  {
+    "id": 19372,
+    "name": "Helm of Endless Rage",
+    "role": "Warrior",
+    "dkp": 30
+  },
+  {
+    "id": 19371,
+    "name": "Pendant of the Fallen Dragon",
+    "role": "Resto-Shaman",
+    "dkp": 70
+  },
+  {
+    "id": 19348,
+    "name": "Red Dragonscale Protector",
+    "role": "Resto-Shaman",
+    "dkp": 90
+  },
+  {
+    "id": 19346,
+    "name": "Dragonfang Blade",
+    "role": "Warrior = Rogue",
+    "dkp": 120
+  },
+  {
+    "id": 19339,
+    "name": "Mind Quickening Gem",
+    "role": "Mage",
+    "dkp": 65
+  },
+  {
+    "id": 19340,
+    "name": "Rune of Metamorphosis",
+    "role": "Druid",
+    "dkp": 5
+  },
+  {
+    "id": 19373,
+    "name": "Black Brood Pauldrons",
+    "role": "Enhance-Shaman > Hunter",
+    "dkp": 70
+  },
+  {
+    "id": 19374,
+    "name": "Bracers of Arcane Accuracy",
+    "role": "Mage = Warlock",
+    "dkp": 60
+  },
+  {
+    "id": 19350,
+    "name": "Heartstriker",
+    "role": "???",
+    "dkp": 90
+  },
+  {
+    "id": 19351,
+    "name": "Maladath",
+    "role": "Rogue = Tank-Warrior = Non-Orc-Fury-Warrior > Fury-Warrior",
+    "dkp": 120
+  },
+  {
+    "id": 19341,
+    "name": "Lifegiving Gem",
+    "role": "Warrior",
+    "dkp": 5
+  },
+  {
+    "id": 19342,
+    "name": "Venomous Totem",
+    "role": "Rogue",
+    "dkp": 5
+  },
+  {
+    "id": 19394,
+    "name": "Drake Talon Pauldrons",
+    "role": "Tank-Warrior > Fury-Warrior",
+    "dkp": 70
+  },
+  {
+    "id": 19398,
+    "name": "Cloak of Firemaw",
+    "role": "Rogue > Fury-Warrior",
+    "dkp": 65
+  },
+  {
+    "id": 19399,
+    "name": "Black Ash Robe",
+    "role": "Any Caster FR Gear",
+    "dkp": 5
+  },
+  {
+    "id": 19400,
+    "name": "Firemaws Clutch",
+    "role": "Shadow-Priest > Warlock = Mage = Ele-Shaman",
+    "dkp": 60
+  },
+  {
+    "id": 19396,
+    "name": "Taut Dragonhide Belt",
+    "role": "Feral-Druid > Rogue",
+    "dkp": 60
+  },
+  {
+    "id": 19401,
+    "name": "Primalist's Linked Legguards",
+    "role": "Ele-Shaman",
+    "dkp": 70
+  },
+  {
+    "id": 19402,
+    "name": "Legguards of the Fallen Crusader",
+    "role": "Fury-Warrior",
+    "dkp": 70
+  },
+  {
+    "id": 19365,
+    "name": "Claw of the Black Drake",
+    "role": "Warrior > Rogue",
+    "dkp": 120
+  },
+  {
+    "id": 19353,
+    "name": "Drake Talon Cleaver",
+    "role": "Enhance-Shaman > Warrior",
+    "dkp": 120
+  },
+  {
+    "id": 19355,
+    "name": "Shadow Wing Focus Staff",
+    "role": "Mage = Warlock",
+    "dkp": 120
+  },
+  {
+    "id": 19397,
+    "name": "Ring of Blackrock",
+    "role": "Warlock = Shaman",
+    "dkp": 60
+  },
+  {
+    "id": 19395,
+    "name": "Rejuvenating Gem",
+    "role": "Heal-Priest = Resto-Shaman = Heal-Druid",
+    "dkp": 65
+  },
+  {
+    "id": 19344,
+    "name": "Natural Alignment Crystal",
+    "role": "Ele-Shaman > Shaman",
+    "dkp": 65
+  },
+  {
+    "id": 19407,
+    "name": "Ebony Flame Gloves",
+    "role": "Shadow-Priest = Warlock",
+    "dkp": 60
+  },
+  {
+    "id": 19405,
+    "name": "Malfurion's Blessed Bulwark",
+    "role": "Feral-Druid > Fury-Warrior",
+    "dkp": 70
+  },
+  {
+    "id": 19368,
+    "name": "Dragonbreath Hand Cannon",
+    "role": "Tank-Warrior > Fury-Warrior",
+    "dkp": 90
+  },
+  {
+    "id": 19403,
+    "name": "Band of Forced Concentration",
+    "role": "Warlock = Mage = Ele-Shaman = Shadow-Priest",
+    "dkp": 60
+  },
+  {
+    "id": 19345,
+    "name": "Aegis of Preservation",
+    "role": "Priest",
+    "dkp": 5
+  },
+  {
+    "id": 19406,
+    "name": "Drake Fang Talisman",
+    "role": "Warrior = Rogue = Hunter",
+    "dkp": 120
+  },
+  {
+    "id": 19433,
+    "name": "Emberweave Leggings",
+    "role": "FR Gear for Hunter/Shaman",
+    "dkp": 5
+  },
+  {
+    "id": 19367,
+    "name": "Dragon's Touch",
+    "role": "Mage = Warlock = Priest",
+    "dkp": 5
+  },
+  {
+    "id": 19357,
+    "name": "Herald of Woe",
+    "role": "Enhance-Shaman",
+    "dkp": 120
+  },
+  {
+    "id": 19432,
+    "name": "Circle of Applied Force",
+    "role": "Fury-Warrior = Enhance-Shaman",
+    "dkp": 60
+  },
+  {
+    "id": 19431,
+    "name": "Styleen's Impending Scarab",
+    "role": "Tank-Warrior > Feral-Druid",
+    "dkp": 65
+  },
+  {
+    "id": 19389,
+    "name": "Taut Dragonhide Shoulderpads",
+    "role": "Feral-Druid > Rogue",
+    "dkp": 70
+  },
+  {
+    "id": 19386,
+    "name": "Elementium Threaded Cloak",
+    "role": "Feral-Druid > Tank-Warrior > Enhance-Shaman Shaman",
+    "dkp": 65
+  },
+  {
+    "id": 19390,
+    "name": "Taut Dragonhide Gloves",
+    "role": "Leather Wearers",
+    "dkp": 5
+  },
+  {
+    "id": 19388,
+    "name": "Angelista's Grasp",
+    "role": "Mage = Warlock = Shadow-Priest",
+    "dkp": 60
+  },
+  {
+    "id": 19393,
+    "name": "Primalist's Linked Waistguard",
+    "role": "Shaman",
+    "dkp": 5
+  },
+  {
+    "id": 19392,
+    "name": "Girdle of the Fallen Crusader",
+    "role": "Warrior",
+    "dkp": 5
+  },
+  {
+    "id": 19385,
+    "name": "Empowered Leggings",
+    "role": "Heal-Priest = Heal-Druid > Resto-Shaman",
+    "dkp": 70
+  },
+  {
+    "id": 19391,
+    "name": "Shimmering Geta",
+    "role": "Resto-Shaman > Heal-Priest > Heal-Druid",
+    "dkp": 60
+  },
+  {
+    "id": 19387,
+    "name": "Chromatic Boots",
+    "role": "Warrior",
+    "dkp": 60
+  },
+  {
+    "id": 19361,
+    "name": "Ashjre'thul Crossbow",
+    "role": "Hunter",
+    "dkp": 120
+  },
+  {
+    "id": 19349,
+    "name": "Elementium Reinforced Bulwark",
+    "role": "Tank-Warrior",
+    "dkp": 90
+  },
+  {
+    "id": 19347,
+    "name": "Claw of Chromaggus",
+    "role": "Resto-Shaman > Warlock = Mage > Heal-Priest",
+    "dkp": 120
+  },
+  {
+    "id": 19352,
+    "name": "Chromatically Tempered Sword",
+    "role": "Non-Orc-Fury-Warrior = Rogue",
+    "dkp": 120
+  },
+  {
+    "id": 19360,
+    "name": "Lok'amir",
+    "role": "Shadow-Priest = Ele > Resto Sham = Heal-Druid > Heal-Priest",
+    "dkp": 120
+  },
+  {
+    "id": 19363,
+    "name": "Crul'shorukh",
+    "role": "Orc-Fury-Warrior > Warrior",
+    "dkp": 120
+  },
+  {
+    "id": 19364,
+    "name": "Ashkandi",
+    "role": "Warrior",
+    "dkp": 65
+  },
+  {
+    "id": 19356,
+    "name": "Staff of Shadow Flame",
+    "role": "Mage = Warlock",
+    "dkp": 120
+  },
+  {
+    "id": 19375,
+    "name": "Mish'undare",
+    "role": "Mage = Warlock = Shadow-Priest > Heal-Druid = Heal-Priest",
+    "dkp": 70
+  },
+  {
+    "id": 19377,
+    "name": "Prestor's Talisman of Connivery",
+    "role": "Rogue = Hunter",
+    "dkp": 70
+  },
+  {
+    "id": 19378,
+    "name": "Cloak of the Brood Lord",
+    "role": "Mage = Warlock = Shadow-Priest = Ele-Shaman > Heal-Priest",
+    "dkp": 65
+  },
+  {
+    "id": 19380,
+    "name": "Therazane's Link",
+    "role": "Enhance-Shaman",
+    "dkp": 60
+  },
+  {
+    "id": 19381,
+    "name": "Boots of the Shadow Flame",
+    "role": "Rogue = Enhance-Shaman > Fury-Warrior",
+    "dkp": 60
+  },
+  {
+    "id": 19376,
+    "name": "Archimtiros Ring of Reckoning",
+    "role": "Rogue = Hunter = Fury-Warrior = Feral-Druid",
+    "dkp": 5
+  },
+  {
+    "id": 19382,
+    "name": "Pure Elementium Band",
+    "role": "Heal-Priest = Resto-Shaman = Heal-Druid",
+    "dkp": 60
+  },
+  {
+    "id": 19379,
+    "name": "Neltharion's Tear",
+    "role": "Mage = Warlock = Ele-Shaman = Shadow-Priest",
+    "dkp": 65
+  },
+  {
+    "id": 19003,
+    "name": "Head of Nefarian",
+    "role": "Enhance = Warrior = Rogue = Feral-Druid = Shadow-Priest = Hunter",
+    "dkp": 60
+  }
+]
