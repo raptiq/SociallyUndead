@@ -2,7 +2,7 @@
 
 Addon for the Socially Undead Classic World of Warcraft guild
 
-An easier to read view of the BWL loot list is available at: https://docs.google.com/spreadsheets/d/14dacCtTgWK3p1RUO2rVLdBDJjmj_RxvgVD42B_Bm3bQ/edit#gid=1609805034
+An easier to read view of the BWL loot list is available at: https://raptiq.github.io/SociallyUndead/
 
 ## Editing Loot
 
@@ -48,4 +48,4 @@ In `mc_loot.json`:
 
 [See this change for an example](https://github.com/raptiq/SociallyUndead/commit/8a3801fbad8a48a1693add0a070b099f8a3ecc37#diff-58d835338c66e76d9c3f1eb7f88cb96d)
 
-Open a pull request once you've made your changes. Once merged the Addon and Spreadsheet loot lists will be updated.
+Open a pull request once you've made your changes. Once merged the Addon and site loot lists will be updated.
