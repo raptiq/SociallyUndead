@@ -6,20 +6,41 @@ An easier to read view of the BWL loot list is available at: https://docs.google
 
 ## Editing Loot
 
-Source of truth for all BWL SU loot priority and DKP are the `X_loot.json` files in the root of this repo.
+Source of truth for all SU loot priority and DKP info are the `X_loot.json` files in the root of this repo.
 
-All loot shares the schema:
+Loot items are either
+
+### Default Item
+
+Will use default values for role/dkp
 
 ```
-  {
-    "id": 12345,
-    "name": "Iron Dagger",
-    "dkp": 666,
-    "role": "Mage > Priest == Warlock"
-  }
+[
+    ...
+    SomeItemID,
+    SomeOtherItemID,
+    ...
+]
 ```
 
-All Molten Core loot by default is the same (5DKP minbid, MS > OS), if you want to change the default look in `./scripts/generate_loot.js`. If you want to override the default for a specific item:
+OR
+
+### Custom Item
+
+```
+[
+    ...
+    {
+        "id": 12345,
+        "name": "Iron Dagger",
+        "dkp": 666,
+        "role": "Mage > Priest == Warlock"
+    },
+    ...
+]
+```
+
+Most Molten Core loot by default is the same (5DKP minbid, MS > OS), if you want to change the default look in `./scripts/generate_loot.js`. If you want to override the default for a specific item:
 In `mc_loot.json`:
 
 1. Find the item id you want to override and delete it
