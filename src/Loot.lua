@@ -9,7 +9,7 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 	local _, itemId, enchantId, jewelId1, jewelId2, jewelId3, jewelId4, suffixId, uniqueId,
 		  linkLevel, specializationID, reforgeId, unknown1, unknown2 = strsplit(":", itemLink)
           
-	if itemType ~= "Armor" and itemType ~= "Weapon" and itemType ~= "Quest" then
+	if itemType ~= "Armor" and itemType ~= "Weapon" and itemType ~= "Quest" and itemType ~= "Miscellaneous" and itemType ~= "Trade Goods" then
 		return
 	end
 
@@ -23,7 +23,7 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
         tooltip:AddLine("Prio: " .. addonData.colorizeTextByRole(itemInfo.role))
         tooltip:AddLine("Min Bid: |cFFA330C9" ..  itemInfo.dkp .. " DKP|r")
             
-        if (itemInfo.note ~= "") then
+        if (itemInfo.note ~= nil and itemInfo.note ~= "") then
             tooltip:AddLine("Notes: " .. itemInfo.note)
         end
     end
