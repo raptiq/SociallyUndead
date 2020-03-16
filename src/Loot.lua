@@ -26,11 +26,6 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
         if (itemInfo.note ~= "") then
             tooltip:AddLine("Notes: " .. itemInfo.note)
         end
-    elseif addonData.isMC == true then
-        tooltip:AddLine(" ")
-        tooltip:AddLine("|cFF00FF00SU Loot Info|r")
-        tooltip:AddLine("Prio: MS > OS")
-        tooltip:AddLine("Min Bid: |cFFA330C9 5 DKP|r")
     end
 end
 
