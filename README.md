@@ -25,6 +25,6 @@ In `mc_loot.json`:
 1. Find the item id you want to override and delete it
 2. Add an object to the list with the above object schema
 
-See this change for example:
+[See this change for an example](https://github.com/raptiq/SociallyUndead/commit/8a3801fbad8a48a1693add0a070b099f8a3ecc37#diff-58d835338c66e76d9c3f1eb7f88cb96d)
 
 Open a pull request once you've made your changes. Once merged the Addon and Spreadsheet loot lists will be updated.
