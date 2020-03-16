@@ -6,7 +6,7 @@
 
 Link.xml
 Core.lua
-GeneratedLoot.lua
+generated/GeneratedLoot.lua
 Loot.lua
 Ui.lua
 Eventhandler.lua
