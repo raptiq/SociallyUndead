@@ -1,7 +1,7 @@
 ## Interface: 11304
 ## Title: SociallyUndeadTools
 ## Author: Raptiq
-## Version: 1.0
+## Version: 0.1.0
 ## RequiredDeps: ExRT
 
 Link.xml
