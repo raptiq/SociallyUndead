@@ -12,7 +12,10 @@ const buildItemLua = item => {
   }",["note"]="${item["note"] || ""}",["role"]="${item["role"]}"},\n`;
 };
 
-const file = fs.createWriteStream("./src/generated/GeneratedLoot.lua", {});
+const file = fs.createWriteStream(
+  "./SociallyUndead/generated/GeneratedLoot.lua",
+  {}
+);
 
 file.on("open", () => {
   file.write("local addonName, addonData = ...\n");
