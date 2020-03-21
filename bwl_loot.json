@@ -338,7 +338,7 @@
   {
     "id": 19358,
     "name": "Draconic Maul",
-    "role": "Warrior = Enhance-Shaman",
+    "role": "Warrior = Enhance-Shaman = Feral-Druid",
     "dkp": 5
   },
   {
@@ -356,8 +356,8 @@
   {
     "id": 19335,
     "name": "Spineshatter",
-    "role": "Tank-Warrior > Warrior",
-    "dkp": 120
+    "role": "Warrior",
+    "dkp": 60
   },
   {
     "id": 19334,
@@ -422,7 +422,7 @@
   {
     "id": 19374,
     "name": "Bracers of Arcane Accuracy",
-    "role": "Mage = Warlock",
+    "role": "Mage = Warlock = Shadow-Priest",
     "dkp": 60
   },
   {
@@ -494,7 +494,7 @@
   {
     "id": 19365,
     "name": "Claw of the Black Drake",
-    "role": "Warrior > Rogue",
+    "role": "Warrior = Rogue",
     "dkp": 120
   },
   {
@@ -560,7 +560,7 @@
   {
     "id": 19406,
     "name": "Drake Fang Talisman",
-    "role": "Warrior = Rogue = Hunter",
+    "role": "Warrior = Rogue = Hunter = Feral-Druid",
     "dkp": 120
   },
   {
