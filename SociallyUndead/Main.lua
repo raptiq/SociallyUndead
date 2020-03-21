@@ -25,24 +25,37 @@ local function checkItem(command)
 end
 
 local function printHelp()
-    print(
+    local commonCommands =
         [[Commands for the Socially Undead addon:
-    /su -> Opens the addon settings
-    /su check water -> Shows the players wich have an (Eternal) Aqual Quintessence
-    /su check sand -> Shows how much Hourglass Sand players have
-    /su check ony -> Shows the players which have the Onyxiascale Cloak equipped
-    /su check <itemId> -> Shows how many items of this id players have in their inventory
-    ]]
-    )
+        /su check water -> Displays which players which have an (Eternal) Aqual Quintessence
+        /su check sand -> Displays Hourglass Sand count for each player
+        /su check ony -> Display whether each player has Onyxia Scale Cloak equipped
+        /su check <itemId> -> Displays how many items with the given id each player has in their inventory
+        ]]
+
+    local officerCommands =
+        [[/su attendance -> Displays which players are in raid and in kargath
+        /su addons -> Displays which players in raid have required addons installed
+        ]]
+
+    if addonData.isOfficer() then
+        print(commonCommands .. officerCommands)
+    else
+        print(commonCommands)
+    end
 end
 
 local function sociallyundead(command)
-    if command == "" then
+    if command == "" or command == "help" then
         printHelp()
+    elseif addonData.startsWith(command, "attendance") then
+        print("This command is still being worked on")
+    elseif addonData.startsWith(command, "addons") then
+        addonData.showPlayerInstallBase()
+    elseif addonData.startsWith(command, "buffs") then
+        addonData.showPlayerInstallBase()
     elseif addonData.startsWith(command, "check") then
-        checkItem(string.sub(command, 7))
-    elseif command == "help" then
-        printHelp()
+        checkItem(string.sub(command, 7)) -- TODO: decouple this jank from command word length
     else
         print("The command " .. command .. " was not recognized.")
         printHelp()

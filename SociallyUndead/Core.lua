@@ -340,16 +340,50 @@ end
 
 addonData.printColor = printColor
 
-local function playerNameRemoveRealm(name)
+
+-- strip server name eg Raptiq-Blauemeux
+local function getPlayerName(name)
     local splits = addonData.stringSplit(name, "-")
     return splits[1]
 end
 
-addonData.playerNameRemoveRealm = playerNameRemoveRealm
+addonData.getPlayerName = getPlayerName
 
 ------------------
 -- Misc stuff
 ------------------
+-- get rank index of given player
+local function getGuildRankIndex(player)
+	local name, rank;
+
+    if IsInGuild() then
+        local guildSize, _, _ = GetNumGuildMembers();
+
+		for i = 1, tonumber(guildSize) do
+            name, _, rank = GetGuildRosterInfo(i)
+			name = getPlayerName(name)
+			if name == player then
+				return rank + 1; -- https://wow.gamepedia.com/API_GetGuildRosterInfo 
+			end
+		end
+    end
+    return false;
+end
+
+-- check player's officer status by seeing if they can speak in officer chat
+local function isOfficer()
+    if IsInGuild() then
+        local curPlayerRank = getGuildRankIndex(UnitName("player"))
+        if curPlayerRank then
+            return C_GuildInfo.GuildControlGetRankFlags(curPlayerRank)[4]
+        end
+    end
+    return false
+end
+
+addonData.isOfficer = isOfficer
+
+
 
 local function callback(duration, callback)
     local newFrame = CreateFrame("Frame")

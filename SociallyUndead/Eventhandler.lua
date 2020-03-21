@@ -176,7 +176,7 @@ function events:CHAT_MSG_ADDON(prefix, text, channel, sender, target)
         return
     end
 
-    sender = addonData.playerNameRemoveRealm(sender)
+    sender = addonData.getPlayerName(sender)
     handler(self, sender, param1, param2)
 end
 
