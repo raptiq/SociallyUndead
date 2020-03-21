@@ -12,7 +12,7 @@ local function checkItem(command)
         addonData.showItemList(quintessenceItemId)
     elseif command == "sand" then
         addonData.showItemList(hourglassItemId)
-	elseif command == "ony" then
+    elseif command == "ony" then
         addonData.showItemList(onycloakItemId, "equipped")
     else
         local itemId = tonumber(command)
@@ -25,14 +25,15 @@ local function checkItem(command)
 end
 
 local function printHelp()
-    print([[Commands for the Berserker addon:
+    print(
+        [[Commands for the Socially Undead addon:
     /su -> Opens the addon settings
-  
     /su check water -> Shows the players wich have an (Eternal) Aqual Quintessence
     /su check sand -> Shows how much Hourglass Sand players have
     /su check ony -> Shows the players which have the Onyxiascale Cloak equipped
     /su check <itemId> -> Shows how many items of this id players have in their inventory
-    ]])
+    ]]
+    )
 end
 
 local function sociallyundead(command)

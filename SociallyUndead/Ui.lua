@@ -9,15 +9,17 @@ local function createFrameWithTable(name, cols, rows)
 
     frame:SetSize(250, 420)
     frame:SetPoint("CENTER")
-    frame:SetBackdrop({
-        bgFile="Interface\\ChatFrame\\ChatFrameBackground",
-        edgeFile="Interface\\ChatFrame\\ChatFrameBackground",
-        tile=true,
-        tileSize=5,
-        edgeSize= 2,
-    })
-    frame:SetBackdropColor(0,0,0,1)
-    frame:SetBackdropBorderColor(0,0,0,1)
+    frame:SetBackdrop(
+        {
+            bgFile = "Interface\\ChatFrame\\ChatFrameBackground",
+            edgeFile = "Interface\\ChatFrame\\ChatFrameBackground",
+            tile = true,
+            tileSize = 5,
+            edgeSize = 2
+        }
+    )
+    frame:SetBackdropColor(0, 0, 0, 1)
+    frame:SetBackdropBorderColor(0, 0, 0, 1)
 
     frame.text = frame:CreateFontString(nil, "ARTWORK")
     frame.text:SetFont("Fonts\\ARIALN.ttf", 14, "OUTLINE")
@@ -28,16 +30,19 @@ local function createFrameWithTable(name, cols, rows)
     b:SetSize(120, 30)
     b:SetText("Close")
     b:SetPoint("BOTTOM", 0, 5)
-    b:SetScript("OnClick", function()
-        frame:Hide()
-    end)
+    b:SetScript(
+        "OnClick",
+        function()
+            frame:Hide()
+        end
+    )
 
-    local ScrollingTable = LibStub("ScrollingTable");
-    local scrollTable = ScrollingTable:CreateST(cols, 16, 20, nil, frame);
+    local ScrollingTable = LibStub("ScrollingTable")
+    local scrollTable = ScrollingTable:CreateST(cols, 16, 20, nil, frame)
 
     scrollTable:SetData(rows)
 
-    return { frame = frame, table = scrollTable }
+    return {frame = frame, table = scrollTable}
 end
 
 local function createPlayerFrame(cols, rows)

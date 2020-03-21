@@ -15,14 +15,14 @@ addonData.targets = {"{rt8}", "{rt7}", "{rt3}", "{rt1}", "{rt5}", "{rt4}", "{rt2
 --------------------------
 
 local function mergeArray(t1, t2)
-    for _,v in ipairs(t2) do
+    for _, v in ipairs(t2) do
         table.insert(t1, v)
     end
 end
 
 local function toSet(tab)
     local result = {}
-    
+
     for index, value in ipairs(tab) do
         result[value] = true
     end
@@ -49,7 +49,7 @@ local function sendChatMessage(text)
             SendChatMessage(text, "RAID")
         end
     end
-    
+
     chatBuffer[#chatBuffer + 1] = addonData.colorizeTextByRole(text)
 end
 
@@ -57,17 +57,17 @@ addonData.sendChatMessage = sendChatMessage
 
 local function setExRTNote(name, text)
     local index = 0
-    for i=1,#VExRT.Note.Black do
+    for i = 1, #VExRT.Note.Black do
         if VExRT.Note.BlackNames[i] == name then
             index = i
             break
         end
     end
-    
+
     if index == 0 then
         index = #VExRT.Note.Black + 1
     end
-    
+
     VExRT.Note.Black[index] = text
     VExRT.Note.BlackNames[index] = name
     VExRT.Note.BlackLastUpdateTime[index] = time()
@@ -76,7 +76,7 @@ end
 addonData.setExRTNote = setExRTNote
 
 local function getExRTNote(name)
-    for i=1,#VExRT.Note.Black do
+    for i = 1, #VExRT.Note.Black do
         if VExRT.Note.BlackNames[i] == name then
             return VExRT.Note.Black[i]
         end
@@ -102,7 +102,7 @@ addonData.flushChatBuffer = flushChatBuffer
 local function shallowCopy(orig)
     local orig_type = type(orig)
     local copy
-    if orig_type == 'table' then
+    if orig_type == "table" then
         copy = {}
         for orig_key, orig_value in pairs(orig) do
             copy[orig_key] = orig_value
@@ -133,8 +133,9 @@ function pairsByKeys(t, f)
         table.insert(a, n)
     end
     table.sort(a, f)
-    local i = 0      -- iterator variable
-    local iter = function ()   -- iterator function
+    local i = 0 -- iterator variable
+    local iter = function()
+        -- iterator function
         i = i + 1
         if a[i] == nil then
             return nil
@@ -149,16 +150,16 @@ addonData.pairsByKeys = pairsByKeys
 
 local function copyAndRemoveNotInRaid(raidMembers, memberlist)
     local copy = {}
-	
+
     if addonData.isDebug then
         copy = addonData.shallowCopy(memberlist)
         return copy
     end
-    
-    for i,member in ipairs(memberlist) do
-        for i,raidMember in ipairs(raidMembers) do
+
+    for i, member in ipairs(memberlist) do
+        for i, raidMember in ipairs(raidMembers) do
             if raidMember.name == member then
-                copy[#copy+1] = member
+                copy[#copy + 1] = member
                 break
             end
         end
@@ -170,9 +171,11 @@ end
 addonData.copyAndRemoveNotInRaid = copyAndRemoveNotInRaid
 
 local function tableCount(tab)
-  local count = 0
-  for _ in pairs(tab) do count = count + 1 end
-  return count
+    local count = 0
+    for _ in pairs(tab) do
+        count = count + 1
+    end
+    return count
 end
 
 addonData.tableCount = tableCount
@@ -183,15 +186,16 @@ addonData.tableCount = tableCount
 
 local function getRaidMembers()
     local raidMembers = {}
-	
-	if not IsInRaid() then
-		return raidMembers
-	end
-	
-    for i=1,40 do
-        local name, rank, subgroup, level, class, fileName, zone, online, isDead, role, isML, combatRole  = GetRaidRosterInfo(i);
+
+    if not IsInRaid() then
+        return raidMembers
+    end
+
+    for i = 1, 40 do
+        local name, rank, subgroup, level, class, fileName, zone, online, isDead, role, isML, combatRole =
+            GetRaidRosterInfo(i)
         if name then
-            raidMembers[#raidMembers+1] = { name = name, class = class }
+            raidMembers[#raidMembers + 1] = {name = name, class = class}
         end
     end
 
@@ -226,8 +230,7 @@ addonData.isBWL = isBWL
 -- Class / role coloring
 ---------------------------
 
-local classColors = 
-{
+local classColors = {
     ["Druid"] = "FF7D0A",
     ["Hunter"] = "A9D271",
     ["Mage"] = "40C7EB",
@@ -235,11 +238,10 @@ local classColors =
     ["Priest"] = "FFFFFF",
     ["Rogue"] = "FFF569",
     ["Warlock"] = "8787ED",
-    ["Warrior"] = "C79C6E",
+    ["Warrior"] = "C79C6E"
 }
 
-local roleToColor = 
-{
+local roleToColor = {
     ["Druid"] = classColors.Druid,
     ["Druids"] = classColors.Druid,
     ["Feral"] = classColors.Druid,
@@ -292,9 +294,8 @@ local roleToColor =
     ["Fury-Warrior"] = classColors.Warrior,
     ["Orc-Fury-Warrior"] = classColors.Warrior,
     ["Non-Orc-Fury-Warrior"] = classColors.Warrior,
-    
     ["Furys"] = classColors.Warrior,
-    ["Furies"] = classColors.Warrior,
+    ["Furies"] = classColors.Warrior
 }
 
 local function colorize(text, color)
@@ -305,7 +306,7 @@ local function colorizeWordByRole(word)
     if roleToColor[word] then
         return colorize(word, roleToColor[word])
     end
-    
+
     return word
 end
 
@@ -352,13 +353,16 @@ addonData.playerNameRemoveRealm = playerNameRemoveRealm
 
 local function callback(duration, callback)
     local newFrame = CreateFrame("Frame")
-    newFrame:SetScript("OnUpdate", function (self, elapsed)
-        duration = duration - elapsed
-        if duration <= 0 then
-            callback()
-            newFrame:SetScript("OnUpdate", nil)
+    newFrame:SetScript(
+        "OnUpdate",
+        function(self, elapsed)
+            duration = duration - elapsed
+            if duration <= 0 then
+                callback()
+                newFrame:SetScript("OnUpdate", nil)
+            end
         end
-    end)
+    )
 end
 
 addonData.callback = callback
@@ -370,7 +374,7 @@ local function stringSplit(inputstr, sep)
 
     local t = {}
 
-    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+    for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
         table.insert(t, str)
     end
 
@@ -380,73 +384,72 @@ end
 addonData.stringSplit = stringSplit
 
 local function startsWith(str, start)
-   return str:sub(1, #start) == start
+    return str:sub(1, #start) == start
 end
 
 addonData.startsWith = startsWith
 
 local function getNpcId(guid)
-	local _, _, _, _, _, npcId = strsplit("-", guid)
-	return tonumber(npcId)
+    local _, _, _, _, _, npcId = strsplit("-", guid)
+    return tonumber(npcId)
 end
 
 addonData.getNpcId = getNpcId
 
-local bossIds =
-{
-	10184, -- Onyxia
-	12118, -- Lucifron
-	12056, -- Geddon
-	12057, -- Garr
-	12259, -- Gehennas
-	11988, -- Golemagg
-	11982, -- Magmadar
-	12018, -- Domo
-	11502, -- Ragnaros
-	12264, -- Shazzrah
-	12098, -- Sulfuron
-	12017, -- Broodlord
-	14020, -- Chromaggus
-	14601, -- Ebonroc
-	11983, -- Firemaw
-	11981, -- Flamegor
-	11583, -- Nefarian
-	12435, -- Razorgore
-	13020, -- Vael
-	15516, -- Sartura
-	15727, -- Cthun
-	15276, -- Veklor
-	15275, -- Veknilash
-	15510, -- Fankriss
-	15511, -- Lord Kri
-	15517, -- Ouro
-	15509, -- Huhuran
-	15543, -- Yauj
-	15263, -- Skeram
-	15544, -- Vem
-	15299, -- Viscidus
-	15956, -- Anub'Rekhan
-	15932, -- Gluth
-	16060, -- Gothik
-	15953, -- Faerlina
-	15931, -- Grobbulus
-	15936, -- Heigan
-	16062, -- Mograine
-	16061, -- Razuvious
-	15990, -- KelThuzad
-	16065, -- Blaumeux
-	16011, -- Loatheb
-	15952, -- Maexxna
-	15954, -- Noth
-	16028, -- Patchwerk
-	15989, -- Sapphiron
-	16063, -- Zeliek
-	15928, -- Thaddius
-	16064 -- Korthazz
+local bossIds = {
+    10184, -- Onyxia
+    12118, -- Lucifron
+    12056, -- Geddon
+    12057, -- Garr
+    12259, -- Gehennas
+    11988, -- Golemagg
+    11982, -- Magmadar
+    12018, -- Domo
+    11502, -- Ragnaros
+    12264, -- Shazzrah
+    12098, -- Sulfuron
+    12017, -- Broodlord
+    14020, -- Chromaggus
+    14601, -- Ebonroc
+    11983, -- Firemaw
+    11981, -- Flamegor
+    11583, -- Nefarian
+    12435, -- Razorgore
+    13020, -- Vael
+    15516, -- Sartura
+    15727, -- Cthun
+    15276, -- Veklor
+    15275, -- Veknilash
+    15510, -- Fankriss
+    15511, -- Lord Kri
+    15517, -- Ouro
+    15509, -- Huhuran
+    15543, -- Yauj
+    15263, -- Skeram
+    15544, -- Vem
+    15299, -- Viscidus
+    15956, -- Anub'Rekhan
+    15932, -- Gluth
+    16060, -- Gothik
+    15953, -- Faerlina
+    15931, -- Grobbulus
+    15936, -- Heigan
+    16062, -- Mograine
+    16061, -- Razuvious
+    15990, -- KelThuzad
+    16065, -- Blaumeux
+    16011, -- Loatheb
+    15952, -- Maexxna
+    15954, -- Noth
+    16028, -- Patchwerk
+    15989, -- Sapphiron
+    16063, -- Zeliek
+    15928, -- Thaddius
+    16064 -- Korthazz
 }
 
 local function isBoss(npcId)
-	return addonData.hasValue(bossIds, npcId)
+    return addonData.hasValue(bossIds, npcId)
 end
 
 addonData.isBoss = isBoss
