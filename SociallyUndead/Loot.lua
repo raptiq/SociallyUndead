@@ -1,4 +1,4 @@
-local addonName, addonData = ...
+local _, core = ...
 
 local function GameTooltip_OnTooltipSetItem(tooltip)
     local itemName, itemLink = tooltip:GetItem()
@@ -32,12 +32,12 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 
     itemId = tonumber(itemId)
 
-    if addonData.lootDb[itemId] then
-        local itemInfo = addonData.lootDb[itemId]
+    if core.lootDb[itemId] then
+        local itemInfo = core.lootDb[itemId]
 
         tooltip:AddLine(" ")
         tooltip:AddLine("|cFF00FF00SU Loot Info|r")
-        tooltip:AddLine("Prio: " .. addonData.colorizeTextByRole(itemInfo.role))
+        tooltip:AddLine("Prio: " .. core.colorizeTextByRole(itemInfo.role))
         tooltip:AddLine("Min Bid: |cFFA330C9" .. itemInfo.dkp .. " DKP|r")
 
         if (itemInfo.note ~= nil and itemInfo.note ~= "") then

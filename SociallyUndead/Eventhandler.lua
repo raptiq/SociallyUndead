@@ -1,4 +1,4 @@
-local addonName, addonData = ...
+local _, core = ...
 
 local commandDelimiter = "\1"
 
@@ -35,7 +35,7 @@ local function sendAddonWhisper(command, message, targetPlayer)
 end
 
 local function splitByDelimiter(message, delimiter)
-    local split = addonData.splitString(message, delimiter)
+    local split = core.splitString(message, delimiter)
     return split[1], split[2]
 end
 
@@ -60,7 +60,7 @@ function addonMessageHandlers:DISCOVER_ADDONS(sender)
 end
 
 function addonMessageHandlers:REPORT_ADDONS(sender, message)
-    local addons = addonData.splitString(message, ",")
+    local addons = core.splitString(message, ",")
 
     local data = {}
 
@@ -118,12 +118,10 @@ function addonMessageHandlers:DISCOVER_ITEM(sender)
             local raidIndex = UnitInRaid(sender)
             local _, rank = GetRaidRosterInfo(raidIndex) -- 1 = promoted, 2 = raid leader
 
-            if rank == 0 then
-                sendAddonWhisper("REPORT_INSPECTION", "BLOCKED", sender)
-            else
-                addonData.printColor(sender .. " inspected you for " .. itemLink)
-                sendAddonWhisper("REPORT_INSPECTION", itemCount, sender)
+            if rank ~= 0 then
+                core.printColor(sender .. " inspected you for " .. itemLink)
             end
+            sendAddonWhisper("REPORT_INSPECTION", itemCount, sender)
         end
     )
 end
@@ -138,13 +136,13 @@ function addonMessageHandlers:CAN_LOOT(sender, text)
     else
         lootlist[text] = 1
 
-        addonData.callback(
+        core.callback(
             1,
             function()
                 local creatureName, createGuid = splitByDelimiter(text, ":")
                 local _, mlPlayerId = GetLootMethod()
                 local playerIsMasterLooter = mlPlayerId == 0
-                local npcId = addonData.getNpcId(creatureGuid)
+                local npcId = core.getNpcId(creatureGuid)
 
                 if lootlist[text] > 1 then
                     lootlistMap[creatureGuid] = {player = "Multiple players", loot = {}}
@@ -163,11 +161,11 @@ function addonMessageHandlers:CAN_LOOT(sender, text)
                         12468 --Death Talon Hatcher
                     }
 
-                    if addonData.hasValue(skinningTargetIds, npcId) then
-                        addonData.printColor(sender .. " can loot" .. creatureName)
+                    if core.hasValue(skinningTargetIds, npcId) then
+                        core.printColor(sender .. " can loot" .. creatureName)
 
                         if playerIsMasterLooter then
-                            addonData.sendWhisperMessage(sender, "[Socially Undead]: Please loot " .. creatureName)
+                            core.sendWhisperMessage(sender, "Please loot " .. creatureName)
                         end
                     end
                 end
@@ -193,7 +191,7 @@ function events:CHAT_MSG_ADDON(prefix, text, channel, sender, target)
         return
     end
 
-    sender = addonData.getPlayerName(sender)
+    sender = core.getPlayerName(sender)
     handler(self, sender, message)
 end
 
@@ -311,14 +309,14 @@ local blackList = {
 function events:UNIT_SPELLCAST_SUCCEEDED(unitTarget, castGuid, spellId)
     local targetGuid = UnitGUID("target")
 
-    if targetGuid and addonData.hasValue(blackList, spellId) then
+    if targetGuid and core.hasValue(blackList, spellId) then
         local healthPercent = UnitHealth("target") / UnitHealthMax("target")
-        local npcId = addonData.getNpcId(targetGuid)
+        local npcId = core.getNpcId(targetGuid)
         local onyxia = 10184
-        if healthPercent > 0.05 and npcId ~= onyxia and addonData.isBoss(npcId) then
-            if not addonData.isAllowed(UnitName("player"), spellId) then
+        if healthPercent > 0.05 and npcId ~= onyxia and core.isBoss(npcId) then
+            if not core.isAllowed(UnitName("player"), spellId) then
                 local spellName = GetSpellInfo(spellId)
-                addonData.sendChatMessage("[Socially Undead]: I used blacklisted spell " .. spellName .. " on a boss")
+                core.sendChatMessage("Used " .. spellName .. " on a boss")
             end
         end
     end
@@ -329,7 +327,7 @@ function events:UNIT_SPELLCAST_SUCCEEDED(unitTarget, castGuid, spellId)
     local dowseRuneSpellId = 21358
 
     if unitTarget == "player" and spellId == dowseRuneSpellId then
-        addonData.sendChatMessage("[Socially Undead]: I have doused a rune!")
+        core.sendChatMessage("I have doused a rune!")
     end
 end
 
@@ -338,12 +336,12 @@ function events:COMBAT_LOG_EVENT_UNFILTERED()
         return
     end
     local _, eventName, _, _, _, _, _, destGuid, destName = CombatLogGetCurrentEventInfo()
-    local isCreature = addonData.startsWith(destGuid, "Creature")
+    local isCreature = core.startsWith(destGuid, "Creature")
     if eventName ~= "UNIT_DIED" or not isCreature then
         return
     end
 
-    addonData.callback(
+    core.callback(
         1,
         function()
             local hasLoot, _ = CanLootUnit(destGuid)
@@ -370,7 +368,7 @@ local function addSimilarItemId(itemId, similarItemId)
     similarIds[#similarIds + 1] = similarItemId
 end
 
-addonData.addSimilarItemId = addSimilarItemId
+core.addSimilarItemId = addSimilarItemId
 
 local function tableFindPlayer(tab, name)
     for index, value in ipairs(tab) do
@@ -406,7 +404,7 @@ local function showAddonInstalls()
 
     sendAddonMessage("DISCOVER_ADDONS")
 
-    addonData.callback(
+    core.callback(
         1,
         function()
             local cols = {
@@ -419,11 +417,11 @@ local function showAddonInstalls()
                 table.insert(emptyAddonCols, {["name"] = name, value = "MISSING"})
             end
 
-            local players = addonData.getRaidMembers()
+            local players = core.getRaidMembers()
             local data = {}
 
             for i, val in pairs(players) do
-                local color = addonData.colorizePlayer(val.name)
+                local color = core.colorizePlayer(val.name)
                 local playerCols = {
                     {value = val.name, color = color}
                 }
@@ -438,19 +436,19 @@ local function showAddonInstalls()
                         end
                     end
                 else
-                    playerCols = addonData.tableMerge(playerCols, emptyAddonCols)
+                    playerCols = core.tableMerge(playerCols, emptyAddonCols)
                 end
 
                 table.insert(data, {cols = playerCols})
             end
 
-            addonData.createPlayerFrame("Player Addons", cols, data)
+            core.createPlayerFrame("Player Addons", cols, data)
             playerAddonData = {}
         end
     )
 end
 
-addonData.showAddonInstalls = showAddonInstalls
+core.showAddonInstalls = showAddonInstalls
 
 local function showItemList(itemId, location)
     if not IsInRaid() then
@@ -459,7 +457,7 @@ local function showItemList(itemId, location)
 
     sendAddonMessage("DISCOVER_ITEM", location or "inventory" .. ":" .. itemId)
 
-    addonData.callback(
+    core.callback(
         1,
         function()
             local cols = {
@@ -467,12 +465,12 @@ local function showItemList(itemId, location)
                 {["name"] = "Quantity", ["width"] = 80, ["align"] = "CENTER"}
             }
 
-            local players = addonData.getRaidMembers()
+            local players = core.getRaidMembers()
             local data = {}
 
             for i, val in pairs(players) do
                 local playerData = tableFindPlayer(itemTrackingTable, val.name)
-                local color = addonData.colorizePlayer(val.name)
+                local color = core.colorizePlayer(val.name)
 
                 if not playerData then
                     playerData = {player = val.name, quantity = "?"}
@@ -493,7 +491,7 @@ local function showItemList(itemId, location)
             item:ContinueOnItemLoad(
                 function()
                     local itemName, itemLink = GetItemInfo(itemId)
-                    addonData.createItemFrame(itemName, cols, data)
+                    core.createItemFrame(itemName, cols, data)
                     itemTrackingTable = {}
                 end
             )
@@ -501,7 +499,7 @@ local function showItemList(itemId, location)
     )
 end
 
-addonData.showItemList = showItemList
+core.showItemList = showItemList
 
 ------------------------
 -- Register to events

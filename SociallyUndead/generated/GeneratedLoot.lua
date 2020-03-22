@@ -1,5 +1,5 @@
-local addonName, addonData = ...
-addonData.lootDb = {
+local _, core = ...
+core.lootDb = {
 	[16934]={["name"]="Warlock T2 Bracers",["dkp"]="5",["note"]="",["role"]="Warlock"},
 	[16933]={["name"]="Warlock T2 Belt",["dkp"]="60",["note"]="",["role"]="Warlock"},
 	[16927]={["name"]="Warlock T2 Boots",["dkp"]="60",["note"]="",["role"]="Warlock"},

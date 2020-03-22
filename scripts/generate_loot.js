@@ -18,8 +18,8 @@ const file = fs.createWriteStream(
 );
 
 file.on("open", () => {
-  file.write("local addonName, addonData = ...\n");
-  file.write("addonData.lootDb = {\n");
+  file.write("local _, core = ...\n");
+  file.write("core.lootDb = {\n");
 
   for (let item of BWL_LOOT) {
     file.write(buildItemLua(item));

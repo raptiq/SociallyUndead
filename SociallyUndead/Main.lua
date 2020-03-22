@@ -1,23 +1,23 @@
-local addonName, addonData = ...
+local _, core = ...
 
 local quintessenceItemId = 17333
 local eternalQuintessenceItemId = 22754
 local hourglassItemId = 19183
 local onycloakItemId = 15138
 
-addonData.addSimilarItemId(quintessenceItemId, eternalQuintessenceItemId)
+core.addSimilarItemId(quintessenceItemId, eternalQuintessenceItemId)
 
 local function checkItem(command)
     if command == "water" then
-        addonData.showItemList(quintessenceItemId)
+        core.showItemList(quintessenceItemId)
     elseif command == "sand" then
-        addonData.showItemList(hourglassItemId)
+        core.showItemList(hourglassItemId)
     elseif command == "ony" then
-        addonData.showItemList(onycloakItemId, "equipped")
+        core.showItemList(onycloakItemId, "equipped")
     else
         local itemId = tonumber(command)
         if itemId then
-            addonData.showItemList(itemId)
+            core.showItemList(itemId)
         else
             print("Invalid itemId " .. command)
         end
@@ -38,7 +38,7 @@ local function printHelp()
         /su addons -> Displays which players in raid have required addons installed
         ]]
 
-    if addonData.isOfficer() then
+    if core.isOfficer() then
         print(commonCommands .. officerCommands)
     else
         print(commonCommands)
@@ -48,13 +48,13 @@ end
 local function sociallyundead(command)
     if command == "" or command == "help" then
         printHelp()
-    elseif addonData.startsWith(command, "attendance") then
+    elseif core.startsWith(command, "attendance") then
         print("This command is still being worked on")
-    elseif addonData.startsWith(command, "addons") then
-        addonData.showAddonInstalls()
-    elseif addonData.startsWith(command, "buffs") then
-        addonData.showAddonInstalls()
-    elseif addonData.startsWith(command, "check") then
+    elseif core.startsWith(command, "addons") then
+        core.showAddonInstalls()
+    elseif core.startsWith(command, "buffs") then
+        core.showAddonInstalls()
+    elseif core.startsWith(command, "check") then
         checkItem(string.sub(command, 7)) -- TODO: decouple this jank from command word length
     else
         print("The command " .. command .. " was not recognized.")

@@ -1,14 +1,14 @@
-local addonName, addonData = ...
+local _, core = ...
 
 ----------------------------------------
 -- options, targetlist and memberlist (order is prio)
 ----------------------------------------
 
-addonData.isDebug = false
+core.isDebug = false
 
-addonData.enableChat = true
+core.enableChat = true
 
-addonData.targets = {"{rt8}", "{rt7}", "{rt3}", "{rt1}", "{rt5}", "{rt4}", "{rt2}", "{rt6}", "Hunters Mark"}
+core.targets = {"{rt8}", "{rt7}", "{rt3}", "{rt1}", "{rt5}", "{rt4}", "{rt2}", "{rt6}", "Hunters Mark"}
 
 --------------------------
 -- Memberlist processing
@@ -39,21 +39,22 @@ local function sendWhisperMessage(receiver, text)
     SendChatMessage(text, "WHISPER", nil, receiver)
 end
 
-addonData.sendWhisperMessage = sendWhisperMessage
+core.sendWhisperMessage = sendWhisperMessage
 
 local function sendChatMessage(text)
-    if addonData.enableChat then
-        if addonData.isDebug then
+    text = "[Socially Undead]: " .. text
+    if core.enableChat then
+        if core.isDebug then
             print(text)
         else
             SendChatMessage(text, "RAID")
         end
     end
 
-    chatBuffer[#chatBuffer + 1] = addonData.colorizeTextByRole(text)
+    chatBuffer[#chatBuffer + 1] = core.colorizeTextByRole(text)
 end
 
-addonData.sendChatMessage = sendChatMessage
+core.sendChatMessage = sendChatMessage
 
 local function setExRTNote(name, text)
     local index = 0
@@ -73,7 +74,7 @@ local function setExRTNote(name, text)
     VExRT.Note.BlackLastUpdateTime[index] = time()
 end
 
-addonData.setExRTNote = setExRTNote
+core.setExRTNote = setExRTNote
 
 local function getExRTNote(name)
     for i = 1, #VExRT.Note.Black do
@@ -85,7 +86,7 @@ local function getExRTNote(name)
     return ""
 end
 
-addonData.getExRTNote = getExRTNote
+core.getExRTNote = getExRTNote
 
 local function flushChatBuffer()
     local str = table.concat(chatBuffer, "\n")
@@ -93,7 +94,7 @@ local function flushChatBuffer()
     return str
 end
 
-addonData.flushChatBuffer = flushChatBuffer
+core.flushChatBuffer = flushChatBuffer
 
 ------------------------------
 -- Collection helpers
@@ -113,7 +114,7 @@ local function shallowCopy(orig)
     return copy
 end
 
-addonData.shallowCopy = shallowCopy
+core.shallowCopy = shallowCopy
 
 local function hasValue(tab, val)
     for index, value in ipairs(tab) do
@@ -125,7 +126,7 @@ local function hasValue(tab, val)
     return false
 end
 
-addonData.hasValue = hasValue
+core.hasValue = hasValue
 
 function pairsByKeys(t, f)
     local a = {}
@@ -146,13 +147,13 @@ function pairsByKeys(t, f)
     return iter
 end
 
-addonData.pairsByKeys = pairsByKeys
+core.pairsByKeys = pairsByKeys
 
 local function copyAndRemoveNotInRaid(raidMembers, memberlist)
     local copy = {}
 
-    if addonData.isDebug then
-        copy = addonData.shallowCopy(memberlist)
+    if core.isDebug then
+        copy = core.shallowCopy(memberlist)
         return copy
     end
 
@@ -168,7 +169,7 @@ local function copyAndRemoveNotInRaid(raidMembers, memberlist)
     return copy
 end
 
-addonData.copyAndRemoveNotInRaid = copyAndRemoveNotInRaid
+core.copyAndRemoveNotInRaid = copyAndRemoveNotInRaid
 
 local function tableCount(tab)
     local count = 0
@@ -178,7 +179,7 @@ local function tableCount(tab)
     return count
 end
 
-addonData.tableCount = tableCount
+core.tableCount = tableCount
 
 local function tableMerge(t1, t2)
     for _, v in ipairs(t2) do
@@ -188,7 +189,7 @@ local function tableMerge(t1, t2)
     return t1
 end
 
-addonData.tableMerge = tableMerge
+core.tableMerge = tableMerge
 
 local function tableMergeWithKeys(t1, t2)
     for k, v in ipairs(t2) do
@@ -198,7 +199,7 @@ local function tableMergeWithKeys(t1, t2)
     return t1
 end
 
-addonData.tableMergeWithKeys = tableMergeWithKeys
+core.tableMergeWithKeys = tableMergeWithKeys
 
 -----------------------
 -- Game info helpers
@@ -222,10 +223,10 @@ local function getRaidMembers()
     return raidMembers
 end
 
-addonData.getRaidMembers = getRaidMembers
+core.getRaidMembers = getRaidMembers
 
 local function isMC()
-    if addonData.isDebug == "MC" then
+    if core.isDebug == "MC" then
         return true
     end
 
@@ -233,10 +234,10 @@ local function isMC()
     return instanceName == "Molten Core"
 end
 
-addonData.isMC = isMC
+core.isMC = isMC
 
 local function isBWL()
-    if addonData.isDebug == "BWL" then
+    if core.isDebug == "BWL" then
         return true
     end
 
@@ -244,7 +245,7 @@ local function isBWL()
     return instanceName == "Blackwing Lair"
 end
 
-addonData.isBWL = isBWL
+core.isBWL = isBWL
 
 ---------------------------
 -- Class / role coloring
@@ -334,7 +335,7 @@ local function colorizeTextByRole(text)
     return string.gsub(text, "%S+", colorizeWordByRole)
 end
 
-addonData.colorizeTextByRole = colorizeTextByRole
+core.colorizeTextByRole = colorizeTextByRole
 
 local function colorizePlayer(player)
     local _, playerClass = UnitClass(player)
@@ -348,7 +349,7 @@ local function colorizePlayer(player)
     }
 end
 
-addonData.colorizePlayer = colorizePlayer
+core.colorizePlayer = colorizePlayer
 
 local function printColor(text, color)
     if not color then
@@ -358,15 +359,15 @@ local function printColor(text, color)
     print("\124cff" .. color .. "[SociallyUndead]: " .. text .. "\124r")
 end
 
-addonData.printColor = printColor
+core.printColor = printColor
 
 -- strip server name eg Raptiq-Blauemeux
 local function getPlayerName(name)
-    local splits = addonData.splitString(name, "-")
+    local splits = core.splitString(name, "-")
     return splits[1]
 end
 
-addonData.getPlayerName = getPlayerName
+core.getPlayerName = getPlayerName
 
 -- get rank index of given player
 local function getGuildRankIndex(player)
@@ -397,7 +398,7 @@ local function isOfficer()
     return false
 end
 
-addonData.isOfficer = isOfficer
+core.isOfficer = isOfficer
 
 ------------------
 -- Misc stuff
@@ -433,7 +434,7 @@ local function callback(duration, callback)
     )
 end
 
-addonData.callback = callback
+core.callback = callback
 
 local function splitString(inputstr, sep)
     if sep == nil then
@@ -449,20 +450,20 @@ local function splitString(inputstr, sep)
     return t
 end
 
-addonData.splitString = splitString
+core.splitString = splitString
 
 local function startsWith(str, start)
     return str:sub(1, #start) == start
 end
 
-addonData.startsWith = startsWith
+core.startsWith = startsWith
 
 local function getNpcId(guid)
     local _, _, _, _, _, npcId = strsplit("-", guid)
     return tonumber(npcId)
 end
 
-addonData.getNpcId = getNpcId
+core.getNpcId = getNpcId
 
 local bossIds = {
     10184, -- Onyxia
@@ -517,7 +518,7 @@ local bossIds = {
 }
 
 local function isBoss(npcId)
-    return addonData.hasValue(bossIds, npcId)
+    return core.hasValue(bossIds, npcId)
 end
 
-addonData.isBoss = isBoss
+core.isBoss = isBoss

@@ -1,4 +1,4 @@
-local addonName, addonData = ...
+local _, core = ...
 
 local playerFrame = nil
 local itemFrame = nil
@@ -56,7 +56,7 @@ local function createPlayerFrame(name, cols, rows)
     end
 end
 
-addonData.createPlayerFrame = createPlayerFrame
+core.createPlayerFrame = createPlayerFrame
 
 local function createItemFrame(name, cols, rows)
     if playerFrame then
@@ -72,4 +72,4 @@ local function createItemFrame(name, cols, rows)
     end
 end
 
-addonData.createItemFrame = createItemFrame
+core.createItemFrame = createItemFrame
