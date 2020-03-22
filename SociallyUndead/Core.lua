@@ -180,6 +180,26 @@ end
 
 addonData.tableCount = tableCount
 
+local function tableMerge(t1, t2)
+    for _, v in ipairs(t2) do
+        table.insert(t1, v)
+    end
+
+    return t1
+end
+
+addonData.tableMerge = tableMerge
+
+local function tableMergeWithKeys(t1, t2)
+    for k, v in ipairs(t2) do
+        t1[k] = v
+    end
+
+    return t1
+end
+
+addonData.tableMergeWithKeys = tableMergeWithKeys
+
 -----------------------
 -- Game info helpers
 -----------------------
@@ -340,34 +360,30 @@ end
 
 addonData.printColor = printColor
 
-
 -- strip server name eg Raptiq-Blauemeux
 local function getPlayerName(name)
-    local splits = addonData.stringSplit(name, "-")
+    local splits = addonData.splitString(name, "-")
     return splits[1]
 end
 
 addonData.getPlayerName = getPlayerName
 
-------------------
--- Misc stuff
-------------------
 -- get rank index of given player
 local function getGuildRankIndex(player)
-	local name, rank;
+    local name, rank
 
     if IsInGuild() then
-        local guildSize, _, _ = GetNumGuildMembers();
+        local guildSize, _, _ = GetNumGuildMembers()
 
-		for i = 1, tonumber(guildSize) do
+        for i = 1, tonumber(guildSize) do
             name, _, rank = GetGuildRosterInfo(i)
-			name = getPlayerName(name)
-			if name == player then
-				return rank + 1; -- https://wow.gamepedia.com/API_GetGuildRosterInfo 
-			end
-		end
+            name = getPlayerName(name)
+            if name == player then
+                return rank + 1 -- https://wow.gamepedia.com/API_GetGuildRosterInfo
+            end
+        end
     end
-    return false;
+    return false
 end
 
 -- check player's officer status by seeing if they can speak in officer chat
@@ -383,7 +399,25 @@ end
 
 addonData.isOfficer = isOfficer
 
+------------------
+-- Misc stuff
+------------------
 
+-- useful for debugging
+function dumpTable(o)
+    if type(o) == "table" then
+        local s = "{ "
+        for k, v in pairs(o) do
+            if type(k) ~= "number" then
+                k = '"' .. k .. '"'
+            end
+            s = s .. "[" .. k .. "] = " .. dumpTable(v) .. ","
+        end
+        return s .. "} "
+    else
+        return tostring(o)
+    end
+end
 
 local function callback(duration, callback)
     local newFrame = CreateFrame("Frame")
@@ -401,7 +435,7 @@ end
 
 addonData.callback = callback
 
-local function stringSplit(inputstr, sep)
+local function splitString(inputstr, sep)
     if sep == nil then
         sep = "%s"
     end
@@ -415,7 +449,7 @@ local function stringSplit(inputstr, sep)
     return t
 end
 
-addonData.stringSplit = stringSplit
+addonData.splitString = splitString
 
 local function startsWith(str, start)
     return str:sub(1, #start) == start

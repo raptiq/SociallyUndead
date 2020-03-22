@@ -7,7 +7,12 @@ local function createFrameWithTable(name, cols, rows)
     local frame = CreateFrame("FRAME")
     frame.name = "SU_" .. name
 
-    frame:SetSize(250, 420)
+    width = 32 -- size of scrollbar
+    for _, val in ipairs(cols) do
+        width = width + val.width
+    end
+
+    frame:SetSize(width, 380)
     frame:SetPoint("CENTER")
     frame:SetBackdrop(
         {
@@ -26,32 +31,25 @@ local function createFrameWithTable(name, cols, rows)
     frame.text:SetPoint("TOP", 0, -5)
     frame.text:SetText(name)
 
-    local b = CreateFrame("Button", "MyButton", frame, "UIPanelButtonTemplate")
-    b:SetSize(120, 30)
-    b:SetText("Close")
-    b:SetPoint("BOTTOM", 0, 5)
-    b:SetScript(
-        "OnClick",
-        function()
-            frame:Hide()
-        end
-    )
+    local closeButton = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
+    closeButton:SetPoint("TOPRIGHT", 5, 5)
 
     local ScrollingTable = LibStub("ScrollingTable")
     local scrollTable = ScrollingTable:CreateST(cols, 16, 20, nil, frame)
 
+    scrollTable.frame:SetPoint("Bottom", frame, "BOTTOM")
     scrollTable:SetData(rows)
 
     return {frame = frame, table = scrollTable}
 end
 
-local function createPlayerFrame(cols, rows)
+local function createPlayerFrame(name, cols, rows)
     if itemFrame then
         itemFrame.frame:Hide()
     end
 
     if not playerFrame then
-        playerFrame = createFrameWithTable("PlayerFrame", cols, rows)
+        playerFrame = createFrameWithTable(name, cols, rows)
     else
         playerFrame.table:SetData(rows)
         playerFrame.frame:Show()

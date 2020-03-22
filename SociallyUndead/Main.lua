@@ -51,9 +51,9 @@ local function sociallyundead(command)
     elseif addonData.startsWith(command, "attendance") then
         print("This command is still being worked on")
     elseif addonData.startsWith(command, "addons") then
-        addonData.showPlayerInstallBase()
+        addonData.showAddonInstalls()
     elseif addonData.startsWith(command, "buffs") then
-        addonData.showPlayerInstallBase()
+        addonData.showAddonInstalls()
     elseif addonData.startsWith(command, "check") then
         checkItem(string.sub(command, 7)) -- TODO: decouple this jank from command word length
     else

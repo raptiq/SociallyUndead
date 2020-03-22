@@ -1,11 +1,10 @@
 local addonName, addonData = ...
 
-local protocolVersion = "1.1"
-local protocolDelimiter = "\1"
+local commandDelimiter = "\1"
 
 local lootlist = {} -- String encoded NAME:GUID
 local lootlistMap = {}
-local playersWithAddon = {}
+local playerAddonData = {}
 local itemTrackingTable = {}
 local similarItemIds = {}
 local addonMessagePrefix = "SU"
@@ -13,55 +12,75 @@ local addonMessagePrefix = "SU"
 local events = {}
 local addonMessageHandlers = {}
 
+local checkableAddons = {"SociallyUndead", "MonolithDKP", "Details_TinyThreat", "DBM-Core"}
+
 -----------------
 -- Protocol
 -----------------
 
-local function buildMessage(protocol, param1, param2)
-    local msg = protocol
-    if param1 then
-        msg = msg .. protocolDelimiter .. param1
-        if param2 then
-            msg = msg .. protocolDelimiter .. param2
-        end
+local function buildMessage(command, message)
+    local msg = command
+    if message then
+        msg = msg .. commandDelimiter .. message
     end
     return msg
 end
 
-local function sendAddonMessage(protocol, param1, param2)
-    C_ChatInfo.SendAddonMessage(addonMessagePrefix, buildMessage(protocol, param1, param2), "RAID")
+local function sendAddonMessage(command, message)
+    C_ChatInfo.SendAddonMessage(addonMessagePrefix, buildMessage(command, message), "RAID")
 end
 
-local function sendAddonWhisper(player, protocol, param1, param2)
-    C_ChatInfo.SendAddonMessage(addonMessagePrefix, buildMessage(protocol, param1, param2), "WHISPER", player)
+local function sendAddonWhisper(command, message, targetPlayer)
+    C_ChatInfo.SendAddonMessage(addonMessagePrefix, buildMessage(command, message), "WHISPER", targetPlayer)
+end
+
+local function splitByDelimiter(message, delimiter)
+    local split = addonData.splitString(message, delimiter)
+    return split[1], split[2]
 end
 
 local function parseMessage(message)
-    local split = addonData.stringSplit(message, protocolDelimiter)
-    return split[1], split[2], split[3]
+    return splitByDelimiter(message, commandDelimiter)
 end
 
 -----------------------------
 -- addonMessageHandlers table
 -----------------------------
 
-function addonMessageHandlers:DISCOVER(sender)
-    sendAddonWhisper(sender, "REPORT_VER", protocolVersion)
+-- str format: addon:version,addon:version
+function addonMessageHandlers:DISCOVER_ADDONS(sender)
+    local message = ""
+
+    for _, addonName in ipairs(checkableAddons) do
+        loaded, _ = IsAddOnLoaded(addonName)
+        message = message .. addonName .. ":" .. tostring(loaded) .. "," -- todo: figure out if we can get addon version #
+    end
+
+    sendAddonWhisper("REPORT_ADDONS", message, sender)
 end
 
-function addonMessageHandlers:REPORT_VER(sender, addonVersion)
-    table.insert(playersWithAddon, {player = sender, version = addonVersion})
+function addonMessageHandlers:REPORT_ADDONS(sender, message)
+    local addons = addonData.splitString(message, ",")
+
+    local data = {}
+
+    for _, addonRow in ipairs(addons) do
+        local addonName, addonVersion = splitByDelimiter(addonRow, ":")
+        table.insert(data, {["addon"] = addonName, version = addonVersion})
+    end
+    playerAddonData[sender] = data
 end
 
-function addonMessageHandlers:LOOT_DETECTED(sender, guid, itemLink)
+function addonMessageHandlers:LOOT_DETECTED(sender, message)
+    local guid, itemLink = splitByDelimiter(message, ":")
     if lootlistMap[guid] then
-        local itemSplit = addonData.stringSplit(itemLink, ":")
-        local itemId = itemSplit[2] -- itemId
+        local _, itemId = splitByDelimiter(itemLink, ":")
 
         local hasItemValue = false
         for index, value in ipairs(lootlistMap[guid].loot) do
-            local splitResult = addonData.stringSplit(value, ":")
-            if splitResult[2] == itemId then
+            local _, itemLinkId = splitByDelimiter(itemLink, ":")
+
+            if itemLinkId == itemId then
                 hasItemValue = true
             end
         end
@@ -74,7 +93,8 @@ function addonMessageHandlers:LOOT_DETECTED(sender, guid, itemLink)
     end
 end
 
-function addonMessageHandlers:DISCOVER_ITEM(sender, location, itemId)
+function addonMessageHandlers:DISCOVER_ITEM(sender)
+    local location, itemId = splitByDelimiter(message, ":")
     itemId = tonumber(itemId)
     local itemCount = 0
     if location == "equipped" then
@@ -99,10 +119,10 @@ function addonMessageHandlers:DISCOVER_ITEM(sender, location, itemId)
             local _, rank = GetRaidRosterInfo(raidIndex) -- 1 = promoted, 2 = raid leader
 
             if rank == 0 then
-                sendAddonWhisper(sender, "REPORT_INSPECTION", "BLOCKED")
+                sendAddonWhisper("REPORT_INSPECTION", "BLOCKED", sender)
             else
                 addonData.printColor(sender .. " inspected you for " .. itemLink)
-                sendAddonWhisper(sender, "REPORT_INSPECTION", itemCount)
+                sendAddonWhisper("REPORT_INSPECTION", itemCount, sender)
             end
         end
     )
@@ -121,11 +141,9 @@ function addonMessageHandlers:CAN_LOOT(sender, text)
         addonData.callback(
             1,
             function()
-                local tableSplitResult = addonData.stringSplit(text, ":")
-                local creatureName = tableSplitResult[1]
+                local creatureName, createGuid = splitByDelimiter(text, ":")
                 local _, mlPlayerId = GetLootMethod()
                 local playerIsMasterLooter = mlPlayerId == 0
-                local creatureGuid = tableSplitResult[2]
                 local npcId = addonData.getNpcId(creatureGuid)
 
                 if lootlist[text] > 1 then
@@ -167,17 +185,16 @@ function events:CHAT_MSG_ADDON(prefix, text, channel, sender, target)
         return
     end
 
-    local protocol, param1, param2 = parseMessage(text)
-    param1 = param1 or "nil"
-    param2 = param2 or "nil"
+    local command, message = parseMessage(text)
+    message = message or "nil"
 
-    local handler = addonMessageHandlers[protocol]
+    local handler = addonMessageHandlers[command]
     if not handler then
         return
     end
 
     sender = addonData.getPlayerName(sender)
-    handler(self, sender, param1, param2)
+    handler(self, sender, message)
 end
 
 function events:PLAYER_LOGIN()
@@ -205,7 +222,7 @@ function events:LOOT_OPENED()
                 local _, _, _, _, rarity = GetLootSlotInfo(i)
 
                 if rarity >= GetLootThreshold() then
-                    sendAddonMessage("LOOT_DETECTED", guid, itemLink)
+                    sendAddonMessage("LOOT_DETECTED", guid .. ":" .. itemLink)
                 end
             end
         end
@@ -365,54 +382,82 @@ local function tableFindPlayer(tab, name)
     return nil
 end
 
-local function showPlayerInstallBase()
+function dump(o)
+    if type(o) == "table" then
+        local s = "{ "
+        for k, v in pairs(o) do
+            if type(k) ~= "number" then
+                k = '"' .. k .. '"'
+            end
+            s = s .. "[" .. k .. "] = " .. dump(v) .. ","
+        end
+        return s .. "} "
+    else
+        return tostring(o)
+    end
+end
+
+local function showAddonInstalls()
     if not IsInRaid() then
         return
     end
 
     local playerName, _ = UnitName("player")
 
-    sendAddonMessage("DISCOVER")
+    sendAddonMessage("DISCOVER_ADDONS")
 
     addonData.callback(
         1,
         function()
             local cols = {
-                {["name"] = "Name", ["width"] = 100},
-                {["name"] = "Version", ["width"] = 75}
+                {["name"] = "Name", ["width"] = 75}
             }
+            local emptyAddonCols = {}
+
+            for _, name in ipairs(checkableAddons) do
+                table.insert(cols, {["name"] = name, ["width"] = 75})
+                table.insert(emptyAddonCols, {["name"] = name, value = "MISSING"})
+            end
 
             local players = addonData.getRaidMembers()
             local data = {}
 
             for i, val in pairs(players) do
                 local color = addonData.colorizePlayer(val.name)
-                local playerCell = {value = val.name, color = color}
-                local versionCell = {value = "MISSING"}
+                local playerCols = {
+                    {value = val.name, color = color}
+                }
 
-                local playerData = tableFindPlayer(playersWithAddon, val.name)
+                local playerData = playerAddonData[val.name]
                 if playerData then
-                    playerCell.value = playerData.player
-                    versionCell.value = playerData.version
+                    for _, addonName in ipairs(checkableAddons) do
+                        for _, aData in ipairs(playerData) do
+                            if aData.addon == addonName then
+                                table.insert(playerCols, {value = tostring(aData.version)})
+                            end
+                        end
+                    end
+                else
+                    playerCols = addonData.tableMerge(playerCols, emptyAddonCols)
                 end
 
-                table.insert(data, {cols = {playerCell, versionCell}})
+                table.insert(data, {cols = playerCols})
             end
 
-            addonData.createPlayerFrame(cols, data)
-            playersWithAddon = {}
+            addonData.createPlayerFrame("Player Addons", cols, data)
+            playerAddonData = {}
         end
     )
 end
 
-addonData.showPlayerInstallBase = showPlayerInstallBase
+addonData.showAddonInstalls = showAddonInstalls
 
 local function showItemList(itemId, location)
     if not IsInRaid() then
         return
     end
 
-    sendAddonMessage("DISCOVER_ITEM", location or "inventory", itemId)
+    sendAddonMessage("DISCOVER_ITEM", location or "inventory" .. ":" .. itemId)
 
     addonData.callback(
         1,
