@@ -1,23 +1,23 @@
-local addonName, addonData = ...
+local _, core = ...
 
 local quintessenceItemId = 17333
 local eternalQuintessenceItemId = 22754
 local hourglassItemId = 19183
 local onycloakItemId = 15138
 
-addonData.addSimilarItemId(quintessenceItemId, eternalQuintessenceItemId)
+core.addSimilarItemId(quintessenceItemId, eternalQuintessenceItemId)
 
 local function checkItem(command)
     if command == "water" then
-        addonData.showItemList(quintessenceItemId)
+        core.showItemList(quintessenceItemId)
     elseif command == "sand" then
-        addonData.showItemList(hourglassItemId)
+        core.showItemList(hourglassItemId)
     elseif command == "ony" then
-        addonData.showItemList(onycloakItemId, "equipped")
+        core.showItemList(onycloakItemId, "equipped")
     else
         local itemId = tonumber(command)
         if itemId then
-            addonData.showItemList(itemId)
+            core.showItemList(itemId)
         else
             print("Invalid itemId " .. command)
         end
@@ -36,9 +36,12 @@ local function printHelp()
     local officerCommands =
         [[/su attendance -> Displays which players are in raid and in kargath
         /su addons -> Displays which players in raid have required addons installed
+        /su durability -> Displays durability for players in raid
+        /su ready -> Displays pre-raid attendance check including location and durability
+        /su buffs -> Displays 
         ]]
 
-    if addonData.isOfficer() then
+    if core.isOfficer() then
         print(commonCommands .. officerCommands)
     else
         print(commonCommands)
@@ -46,15 +49,20 @@ local function printHelp()
 end
 
 local function sociallyundead(command)
+    local isOfficer = core.isOfficer()
     if command == "" or command == "help" then
         printHelp()
-    elseif addonData.startsWith(command, "attendance") then
-        print("This command is still being worked on")
-    elseif addonData.startsWith(command, "addons") then
-        addonData.showPlayerInstallBase()
-    elseif addonData.startsWith(command, "buffs") then
-        addonData.showPlayerInstallBase()
-    elseif addonData.startsWith(command, "check") then
+    elseif core.startsWith(command, "ready") and isOfficer then
+        core.showReady()
+    elseif core.startsWith(command, "export") and isOfficer then
+        core.showExport()
+    elseif core.startsWith(command, "durability") and isOfficer then
+        core.showDurability()
+    elseif core.startsWith(command, "addons") and isOfficer then
+        core.showAddonInstalls()
+    elseif core.startsWith(command, "buffs") and isOfficer then
+        core.showAddonInstalls()
+    elseif core.startsWith(command, "check") then
         checkItem(string.sub(command, 7)) -- TODO: decouple this jank from command word length
     else
         print("The command " .. command .. " was not recognized.")
