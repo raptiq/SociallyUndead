@@ -158,17 +158,10 @@ local function createExportFrame(text)
         sf:SetPoint("TOP", 0, -20)
         sf:SetPoint("BOTTOM", 0, 160)
 
-        -- -- Description
-        -- f.desc = f:CreateFontString(nil, "OVERLAY")
-        -- f.desc:SetPoint("TOPLEFT", sf, "BOTTOMLEFT", 10, -10);
-        -- f.desc:SetText("|CFFAEAEDDExport below one at a time in order. Copy all html and paste into local .html file one after the other. DKP and Loot History often take a few seconds to generate and will lock your screen briefly. As a result they are limited to the most recent 200 entries for each. All tables will be tabbed for convenience.|r");
-        -- f.desc:SetWidth(sf:GetWidth()-30)
-
-        -- EditBox
+        -- EditFrame
         local eb = CreateFrame("EditBox", "ExportEditFrame", ExportScrollFrame)
         eb:SetSize(sf:GetSize())
         eb:SetMultiLine(true)
-        eb:SetAutoFocus(false) -- dont automatically focus
         eb:SetFontObject("ChatFontNormal")
         eb:SetScript(
             "OnEscapePressed",
@@ -210,6 +203,7 @@ local function createExportFrame(text)
     end
     if text then
         ExportEditFrame:SetText(text)
+        ExportEditFrame:HighlightText()
     end
     ExportFrame:Show()
 end
