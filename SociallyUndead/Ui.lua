@@ -98,8 +98,6 @@ local function getExportString(cols, rows)
 
     for _, row in ipairs(rows) do
         for _, rowCol in ipairs(row.cols) do
-            print(rowCol.value)
-
             exportString = exportString .. tostring(rowCol.value) .. ","
         end
         exportString = exportString .. "\n"

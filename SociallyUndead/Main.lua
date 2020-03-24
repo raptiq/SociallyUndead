@@ -34,11 +34,10 @@ local function printHelp()
         ]]
 
     local officerCommands =
-        [[/su attendance -> Displays which players are in raid and in kargath
-        /su addons -> Displays which players in raid have required addons installed
+        [[/su addons -> Displays which players in raid have required addons installed
         /su durability -> Displays durability for players in raid
         /su ready -> Displays pre-raid attendance check including location and durability
-        /su buffs -> Displays 
+        /su buffs -> WIP - Will display all relevant buffs before pull
         ]]
 
     if core.isOfficer() then
