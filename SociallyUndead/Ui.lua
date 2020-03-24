@@ -74,6 +74,9 @@ local function createPlayerFrame(name, cols, rows)
         itemFrame.frame:Hide()
     end
 
+    if playerFrame then
+        playerFrame.frame:Hide()
+    end
     playerFrame = createFrameWithTable(name, cols, rows)
 end
 
@@ -82,6 +85,10 @@ core.createPlayerFrame = createPlayerFrame
 local function createItemFrame(name, cols, rows)
     if playerFrame then
         playerFrame.frame:Hide()
+    end
+
+    if itemFrame then
+        itemFrame.frame:Hide()
     end
 
     itemFrame = createFrameWithTable(name, cols, rows)
