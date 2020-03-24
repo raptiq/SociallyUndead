@@ -448,7 +448,7 @@ local function showAddonInstalls()
 
             for _, name in ipairs(checkableAddons) do
                 table.insert(cols, {["name"] = name, ["width"] = 75})
-                table.insert(emptyAddonCols, {["name"] = name, value = "MISSING"})
+                table.insert(emptyAddonCols, {["name"] = name, value = "?"})
             end
 
             local players = core.getRaidMembers()
