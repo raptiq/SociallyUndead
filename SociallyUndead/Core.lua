@@ -216,7 +216,7 @@ local function getRaidMembers()
         local name, rank, subgroup, level, class, fileName, zone, online, isDead, role, isML, combatRole =
             GetRaidRosterInfo(i)
         if name then
-            raidMembers[#raidMembers + 1] = {name = name, class = class}
+            raidMembers[#raidMembers + 1] = {name = name, class = class, zone = zone}
         end
     end
 
@@ -419,6 +419,14 @@ function dumpTable(o)
         return tostring(o)
     end
 end
+
+core.dumpTable = dumpTable
+
+function round(number, decimals)
+    return (("%%.%df"):format(decimals)):format(number)
+end
+
+core.round = round
 
 local function callback(duration, callback)
     local newFrame = CreateFrame("Frame")
