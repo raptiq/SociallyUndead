@@ -36,6 +36,9 @@ local function printHelp()
     local officerCommands =
         [[/su attendance -> Displays which players are in raid and in kargath
         /su addons -> Displays which players in raid have required addons installed
+        /su durability -> Displays durability for players in raid
+        /su ready -> Displays pre-raid attendance check including location and durability
+        /su buffs -> Displays 
         ]]
 
     if core.isOfficer() then
@@ -46,13 +49,18 @@ local function printHelp()
 end
 
 local function sociallyundead(command)
+    local isOfficer = core.isOfficer()
     if command == "" or command == "help" then
         printHelp()
-    elseif core.startsWith(command, "attendance") then
-        print("This command is still being worked on")
-    elseif core.startsWith(command, "addons") then
+    elseif core.startsWith(command, "ready") and isOfficer then
+        core.showReady()
+    elseif core.startsWith(command, "export") and isOfficer then
+        core.showExport()
+    elseif core.startsWith(command, "durability") and isOfficer then
+        core.showDurability()
+    elseif core.startsWith(command, "addons") and isOfficer then
         core.showAddonInstalls()
-    elseif core.startsWith(command, "buffs") then
+    elseif core.startsWith(command, "buffs") and isOfficer then
         core.showAddonInstalls()
     elseif core.startsWith(command, "check") then
         checkItem(string.sub(command, 7)) -- TODO: decouple this jank from command word length

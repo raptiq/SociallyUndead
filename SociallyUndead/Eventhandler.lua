@@ -5,6 +5,7 @@ local commandDelimiter = "\1"
 local lootlist = {} -- String encoded NAME:GUID
 local lootlistMap = {}
 local playerAddonData = {}
+local playerDurabilities = {}
 local itemTrackingTable = {}
 local similarItemIds = {}
 local addonMessagePrefix = "SU"
@@ -15,7 +16,7 @@ local addonMessageHandlers = {}
 local checkableAddons = {"SociallyUndead", "MonolithDKP", "Details_TinyThreat", "DBM-Core"}
 
 -----------------
--- Protocol
+-- Message Handling
 -----------------
 
 local function buildMessage(command, message)
@@ -93,7 +94,7 @@ function addonMessageHandlers:LOOT_DETECTED(sender, message)
     end
 end
 
-function addonMessageHandlers:DISCOVER_ITEM(sender)
+function addonMessageHandlers:DISCOVER_ITEM(sender, message)
     local location, itemId = splitByDelimiter(message, ":")
     itemId = tonumber(itemId)
     local itemCount = 0
@@ -172,6 +173,54 @@ function addonMessageHandlers:CAN_LOOT(sender, text)
             end
         )
     end
+end
+
+local ITEM_SLOT_IDS = {
+    1,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    15,
+    16,
+    17,
+    18
+}
+
+-- 1 3 5 6 7  8 9 10 15 16 17 18
+function addonMessageHandlers:DISCOVER_DURABILITY(sender)
+    local duraTotal = 0
+    local duraMaxTotal = 0
+    local duraMean = 0
+    for _, slotId in ipairs(ITEM_SLOT_IDS) do
+        local durCur, durMax = GetInventoryItemDurability(slotId)
+
+        if durCur == nil then
+            durCur = 0
+        end
+        if durMax == nil then
+            durMax = 0
+        end
+
+        duraTotal = duraTotal + durCur
+        duraMaxTotal = duraMaxTotal + durMax
+    end
+
+    if duraMaxTotal == 0 then -- no repairable gear equipped
+        duraMaxTotal = 1
+        duraTotal = 1
+    end
+
+    duraMean = core.round(((duraTotal / duraMaxTotal) * 100), 1)
+
+    sendAddonWhisper("REPORT_DURABILITY", duraMean, sender)
+end
+
+function addonMessageHandlers:REPORT_DURABILITY(sender, durability)
+    table.insert(playerDurabilities, {player = sender, durability = durability})
 end
 
 ----------------
@@ -380,21 +429,6 @@ local function tableFindPlayer(tab, name)
     return nil
 end
 
-function dump(o)
-    if type(o) == "table" then
-        local s = "{ "
-        for k, v in pairs(o) do
-            if type(k) ~= "number" then
-                k = '"' .. k .. '"'
-            end
-            s = s .. "[" .. k .. "] = " .. dump(v) .. ","
-        end
-        return s .. "} "
-    else
-        return tostring(o)
-    end
-end
-
 local function showAddonInstalls()
     if not IsInRaid() then
         return
@@ -500,6 +534,118 @@ local function showItemList(itemId, location)
 end
 
 core.showItemList = showItemList
+
+-- get buffs
+-- loop over raiders
+-- get unit auras ids for every player
+-- local name = GetRaidRosterInfo(j)
+-- 		if name and subgroup <= gMax then
+-- 			local isAnyBuff = nil
+-- 			for i=1,40 do
+-- 				local _,_,_,_,_,_,_,_,_,spellId,_,_,_,_,_,stats = UnitAura(name, i,"HELPFUL")
+
+--  name location - ready
+
+local function showExport()
+    core.createExportFrame("test!")
+end
+
+core.showExport = showExport
+
+local function showDurability()
+    if not IsInRaid() then
+        return
+    end
+
+    local players = core.getRaidMembers()
+    sendAddonMessage("DISCOVER_DURABILITY")
+
+    core.callback(
+        1,
+        function()
+            local cols = {
+                {["name"] = "Player", ["width"] = 120, ["align"] = "CENTER"},
+                {["name"] = "Durability", ["width"] = 80, ["align"] = "CENTER"}
+            }
+
+            local data = {}
+
+            for _, player in ipairs(players) do
+                local color = core.colorizePlayer(player.name)
+
+                local playerDurability = tableFindPlayer(playerDurabilities, player.name)
+
+                local playerCols = {
+                    {value = player.name, color = color},
+                    {value = playerDurability and tostring(playerDurability.durability) or "?"}
+                }
+                table.insert(data, {cols = playerCols})
+            end
+
+            core.createPlayerFrame("Raid Durability", cols, data)
+        end
+    )
+end
+
+core.showDurability = showDurability
+
+local validReadyZones = {
+    "Kargath",
+    "Badlands",
+    "Searing Gorge",
+    "Burning Steppes",
+    "Blackrock Mountain",
+    "Blackwing Lair",
+    "Molten Core"
+}
+
+local function isZoneReady(playerZone)
+    return core.hasValue(validReadyZones, playerZone)
+end
+
+local function showReady()
+    if not IsInRaid() then
+        return
+    end
+
+    local players = core.getRaidMembers()
+
+    sendAddonMessage("DISCOVER_DURABILITY")
+    -- sendAddonMessage("DISCOVER_WORLDBUFFS")
+
+    core.callback(
+        1,
+        function()
+            local cols = {
+                {["name"] = "Player", ["width"] = 120, ["align"] = "CENTER"},
+                {["name"] = "Location", ["width"] = 120, ["align"] = "CENTER"},
+                {["name"] = "Durability", ["width"] = 80, ["align"] = "CENTER"},
+                {["name"] = "Ready?", ["width"] = 40, ["align"] = "CENTER"}
+            }
+
+            local data = {}
+
+            for _, player in ipairs(players) do
+                local color = core.colorizePlayer(player.name)
+                local isReady = isZoneReady(player.zone)
+
+                local playerDurability = tableFindPlayer(playerDurabilities, player.name)
+
+                local playerCols = {
+                    {value = player.name, color = color},
+                    {value = player.zone},
+                    {value = playerDurability and tostring(playerDurability.durability) or "?"},
+                    {value = tostring(isReady)}
+                }
+                table.insert(data, {cols = playerCols})
+            end
+
+            core.createPlayerFrame("Raid Readiness", cols, data)
+        end
+    )
+end
+
+core.showReady = showReady
 
 ------------------------
 -- Register to events
