@@ -94,6 +94,7 @@ core.lootDb = {
 	[19403]={["name"]="Band of Forced Concentration",["dkp"]="60",["note"]="",["role"]="Warlock = Mage = Ele-Shaman = Shadow-Priest"},
 	[19345]={["name"]="Aegis of Preservation",["dkp"]="5",["note"]="",["role"]="Priest"},
 	[19406]={["name"]="Drake Fang Talisman",["dkp"]="120",["note"]="",["role"]="Warrior = Rogue = Hunter = Feral-Druid"},
+	[19430]={["name"]="Shroud of Pure Thought",["dkp"]="65",["note"]="",["role"]="Resto-Shaman > Heal-Priest = Resto-Druid"},
 	[19433]={["name"]="Emberweave Leggings",["dkp"]="5",["note"]="",["role"]="FR Gear for Hunter/Shaman"},
 	[19367]={["name"]="Dragon's Touch",["dkp"]="5",["note"]="",["role"]="Mage = Warlock = Priest"},
 	[19357]={["name"]="Herald of Woe",["dkp"]="120",["note"]="",["role"]="Enhance-Shaman"},
