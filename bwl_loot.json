@@ -495,13 +495,13 @@
     "id": 19365,
     "name": "Claw of the Black Drake",
     "role": "Warrior = Rogue",
-    "dkp": 120
+    "dkp": 60
   },
   {
     "id": 19353,
     "name": "Drake Talon Cleaver",
     "role": "Enhance-Shaman > Warrior",
-    "dkp": 120
+    "dkp": 60
   },
   {
     "id": 19355,
