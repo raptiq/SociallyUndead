@@ -4,6 +4,99 @@ if not lib then
 	return; -- Already loaded and no upgrade necessary.
 end
 
+local Mod = nil
+do
+	local function Widget_SetPoint(self,arg1,arg2,arg3,...)
+		if type(arg1) == 'table' or (arg1 == 'x' and not arg2) then
+			if arg1 == 'x' then arg1 = self:GetParent() end
+			self:SetAllPoints(arg1)
+			return self
+		end
+		if arg1 == 'x' then arg1 = self:GetParent() end
+		if arg2 == 'x' then arg2 = self:GetParent() end
+		if type(arg1) == 'number' then
+			arg2,arg3,arg1 = arg1,arg2,'TOPLEFT'
+		end
+		self:SetPoint(arg1,arg2,arg3,...)
+		return self
+	end
+	local function Widget_SetSize(self,...)
+		self:SetSize(...)
+		return self
+	end
+	local function Widget_SetNewPoint(self,...)
+		self:ClearAllPoints()
+		self:Point(...)
+		return self
+	end
+	local function Widget_SetScale(self,...)
+		self:SetScale(...)
+		return self
+	end
+	local function Widget_OnClick(self,func)
+		self:SetScript("OnClick",func)
+		return self
+	end
+	local function Widget_OnShow(self,func,disableFirstRun)
+		if not func then
+			self:SetScript("OnShow",nil)
+			return self
+		end
+		self:SetScript("OnShow",func)
+		if not disableFirstRun then
+			func(self)
+		end
+		return self
+	end
+	local function Widget_Run(self,func,...)
+		func(self,...)
+		return self
+	end
+	function Mod(self,...)
+		self.Point = Widget_SetPoint
+		self.Size = Widget_SetSize
+		self.NewPoint = Widget_SetNewPoint
+		self.Scale = Widget_SetScale
+		self.OnClick = Widget_OnClick
+		self.OnShow = Widget_OnShow
+		self.Run = Widget_Run
+		
+		self.SetNewPoint = Widget_SetNewPoint
+		
+		for i=1,select("#", ...) do
+			if i % 2 == 1 then
+				local funcName,func = select(i, ...)
+				self[funcName] = func
+			end
+		end
+	end
+end
+
+
+local function Widget_Icon(self,texture,cG,cB,cA)
+	if cG then
+		self.texture:SetColorTexture(texture,cG,cB,cA)
+	else
+		self.texture:SetTexture(texture)
+	end
+	return self
+end
+
+local function Icon(parent,textureIcon,size)
+	local self = CreateFrame("Frame",nil,parent)
+	self:SetSize(size,size)
+	self:SetPoint("LEFT", 0, 0)
+	self.texture = self:CreateTexture(nil, "BACKGROUND")
+	self.texture:SetAllPoints()
+
+	self.texture:SetTexture(tonumber(textureIcon) or "Interface\\Icons\\INV_MISC_QUESTIONMARK")
+	-- Mod(self,
+	-- 	'Icon',Widget_Icon
+	-- )
+	
+	return self
+end
+
 do
 	lib.SORT_ASC = 1;
 	lib.SORT_DSC = 2;
@@ -506,48 +599,54 @@ do
 			local celldata = table:GetCell(rowdata, column);
 
 			local cellvalue = celldata;
-			if type(celldata) == "table" then
-				cellvalue = celldata.value;
-			end
-			if type(cellvalue) == "function" then
-				if celldata.args then
-					cellFrame.text:SetText(cellvalue(unpack(celldata.args)));
-				else
-					cellFrame.text:SetText(cellvalue(data, cols, realrow, column, table));
-				end
-			else
-				cellFrame.text:SetText(cellvalue);
-			end
+			if type(celldata) == "table" and celldata.type and celldata.type == "icon" then
+				cellFrame.icon = Icon(cellFrame, celldata.value, 16)
 
-			local color = nil;
-			if type(celldata) == "table" then
-				color = celldata.color;
-			end
-
-			local colorargs = nil;
-			if not color then
-			 	color = cols[column].color;
-			 	if not color then
-			 		color = rowdata.color;
-			 		if not color then
-			 			color = defaultcolor;
-			 		else
-			 			colorargs = rowdata.colorargs;
-			 		end
-			 	else
-			 		colorargs = cols[column].colorargs;
-			 	end
 			else
-				colorargs = celldata.colorargs;
-			end
-			if type(color) == "function" then
-				if colorargs then
-					color = color(unpack(colorargs));
-				else
-					color = color(data, cols, realrow, column, table);
+				if type(celldata) == "table" then
+					cellvalue = celldata.value;
 				end
+
+				if type(cellvalue) == "function" then
+					if celldata.args then
+						cellFrame.text:SetText(cellvalue(unpack(celldata.args)));
+					else
+						cellFrame.text:SetText(cellvalue(data, cols, realrow, column, table));
+					end
+				elseif type(cellvalue) == "string" then
+					cellFrame.text:SetText(cellvalue);
+				end
+
+				local color = nil;
+				if type(celldata) == "table" then
+					color = celldata.color;
+				end
+
+				local colorargs = nil;
+				if not color then
+					color = cols[column].color;
+					if not color then
+						color = rowdata.color;
+						if not color then
+							color = defaultcolor;
+						else
+							colorargs = rowdata.colorargs;
+						end
+					else
+						colorargs = cols[column].colorargs;
+					end
+				else
+					colorargs = celldata.colorargs;
+				end
+				if type(color) == "function" then
+					if colorargs then
+						color = color(unpack(colorargs));
+					else
+						color = color(data, cols, realrow, column, table);
+					end
+				end
+				cellFrame.text:SetTextColor(color.r, color.g, color.b, color.a);
 			end
-			cellFrame.text:SetTextColor(color.r, color.g, color.b, color.a);
 
 			local highlight = nil;
 			if type(celldata) == "table" then
