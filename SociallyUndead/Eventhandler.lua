@@ -74,12 +74,13 @@ end
 
 function addonMessageHandlers:LOOT_DETECTED(sender, message)
     local guid, itemLink = splitByDelimiter(message, ":")
-    if lootlistMap[guid] then
-        local _, itemId = splitByDelimiter(itemLink, ":")
+    if guid and itemLink and lootlistMap[guid] then
+        local itemSplit = addonData.stringSplit(itemLink, ":")
+        local itemId = itemSplit[2] -- itemId
 
         local hasItemValue = false
         for index, value in ipairs(lootlistMap[guid].loot) do
-            local _, itemLinkId = splitByDelimiter(itemLink, ":")
+            local _, itemLinkId = splitByDelimiter(value, ":")
 
             if itemLinkId == itemId then
                 hasItemValue = true
