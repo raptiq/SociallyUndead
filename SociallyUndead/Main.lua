@@ -60,7 +60,7 @@ local function sociallyundead(command)
     elseif core.startsWith(command, "addons") and isOfficer then
         core.showAddonInstalls()
     elseif core.startsWith(command, "buffs") and isOfficer then
-        core.showAddonInstalls()
+        core.showBuffs()
     elseif core.startsWith(command, "check") then
         checkItem(string.sub(command, 7)) -- TODO: decouple this jank from command word length
     else

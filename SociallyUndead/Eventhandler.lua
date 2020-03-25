@@ -140,7 +140,7 @@ function addonMessageHandlers:CAN_LOOT(sender, text)
         core.callback(
             1,
             function()
-                local creatureName, createGuid = splitByDelimiter(text, ":")
+                local creatureName, creatureGuid = splitByDelimiter(text, ":")
                 local _, mlPlayerId = GetLootMethod()
                 local playerIsMasterLooter = mlPlayerId == 0
                 local npcId = core.getNpcId(creatureGuid)
@@ -535,16 +535,62 @@ end
 
 core.showItemList = showItemList
 
--- get buffs
--- loop over raiders
--- get unit auras ids for every player
--- local name = GetRaidRosterInfo(j)
--- 		if name and subgroup <= gMax then
--- 			local isAnyBuff = nil
--- 			for i=1,40 do
--- 				local _,_,_,_,_,_,_,_,_,spellId,_,_,_,_,_,stats = UnitAura(name, i,"HELPFUL")
+local function getBuffs()
+    local buffs = {}
 
---  name location - ready
+    for raidIndex = 1, 40 do
+        local name = GetRaidRosterInfo(raidIndex)
+        if name then
+            local playerBuffs = {}
+            for auraIndex = 1, 16 do
+                local auraName, auraIcon, _, _, _, _, _, _, _, spellId = UnitAura(name, auraIndex, "HELPFUL")
+                if not spellId then
+                    break
+                else
+                    table.insert(playerBuffs, {name = auraName, icon = auraIcon, spellId = spellId})
+                end
+            end
+            buffs[name] = playerBuffs
+        end
+    end
+    return buffs
+end
+
+local function showBuffs()
+    buffs = getBuffs()
+
+    local cols = {
+        {["name"] = "Player", ["width"] = 120, ["align"] = "CENTER"}
+    }
+
+    buffData = {}
+    local maxBuffCount = 1
+    for name, playerBuffs in pairs(buffs) do
+        local playerCols = {
+            {value = name}
+        }
+
+        maxPlayerBuffCount = 0
+        for _, buff in pairs(playerBuffs) do
+            maxPlayerBuffCount = maxBuffCount + 1
+            _, _, iconId = GetSpellInfo(buff.spellId)
+            table.insert(playerCols, {value = tostring(iconId), type = "icon"})
+        end
+
+        table.insert(buffData, {cols = playerCols})
+        if maxPlayerBuffCount > maxBuffCount then
+            maxBuffCount = maxPlayerBuffCount
+        end
+    end
+
+    for i = 1, maxBuffCount, 1 do
+        table.insert(cols, {["name"] = tostring(i), ["width"] = 32, ["align"] = "CENTER"})
+    end
+
+    core.createPlayerFrame("Raid Buffs", cols, buffData)
+end
+
+core.showBuffs = showBuffs
 
 local function showExport()
     core.createExportFrame("test!")
