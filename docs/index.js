@@ -1,11 +1,8 @@
-// EXTRACT VALUE FOR HTML HEADER.
-// ('Book ID', 'Book Name', 'Category' and 'Price')
-
 const buildTableFromJSON = (elementId, data) => {
   let col = [];
   for (let i = 0; i < data.length; i++) {
     for (let key in data[i]) {
-      if (col.indexOf(key) === -1) {
+      if (key !== "id" && col.indexOf(key) === -1) {
         col.push(key);
       }
     }
@@ -16,7 +13,8 @@ const buildTableFromJSON = (elementId, data) => {
   let tr = table.insertRow(-1);
 
   for (let i = 0; i < col.length; i++) {
-    let th = document.createElement("th", { align: "center" });
+    const th = document.createElement("th");
+    th.className = "loot-col-header";
     th.innerHTML = col[i];
     tr.appendChild(th);
   }
@@ -24,14 +22,18 @@ const buildTableFromJSON = (elementId, data) => {
   for (let i = 0; i < data.length; i++) {
     tr = table.insertRow(-1);
 
+    const itemId = data[i].id;
+    const link = `https://classic.wowhead.com/item=${itemId}`;
+
     for (let j = 0; j < col.length; j++) {
-      let tabCell = tr.insertCell(-1);
-      tabCell.innerHTML = data[i][col[j]];
+      const tabCell = tr.insertCell(-1);
+      tabCell.innerHTML = `<a class="loot-table-link" href="${link}">${
+        data[i][col[j]]
+      }</a>`;
     }
   }
 
-  let divContainer = document.getElementById(elementId);
-  divContainer.innerHTML = "";
+  const divContainer = document.getElementById(elementId);
   divContainer.appendChild(table);
 };
 
@@ -41,8 +43,6 @@ const buildBWLLootTable = async () => {
   );
 
   const data = await response.json();
-
-  console.log(data);
 
   buildTableFromJSON("bwl-loot", data);
 };

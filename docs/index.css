@@ -2,3 +2,16 @@ tr,
 th {
   text-align: center;
 }
+
+.loot-col-header {
+  text-transform: uppercase;
+}
+
+.loot-table-link {
+  display: block;
+}
+
+tr > th:first-child,
+tr > td:first-child {
+  text-align: left;
+}
