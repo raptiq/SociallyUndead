@@ -71,7 +71,7 @@ core.lootDb = {
 	[19340]={["name"]="Rune of Metamorphosis",["dkp"]="5",["note"]="",["role"]="Druid"},
 	[19373]={["name"]="Black Brood Pauldrons",["dkp"]="70",["note"]="",["role"]="Enhance-Shaman > Hunter"},
 	[19374]={["name"]="Bracers of Arcane Accuracy",["dkp"]="60",["note"]="",["role"]="Mage = Warlock = Shadow-Priest"},
-	[19350]={["name"]="Heartstriker",["dkp"]="90",["note"]="",["role"]="???"},
+	[19350]={["name"]="Heartstriker",["dkp"]="90",["note"]="",["role"]="Warrior = Rogue"},
 	[19351]={["name"]="Maladath",["dkp"]="120",["note"]="",["role"]="Rogue = Tank-Warrior = Non-Orc-Fury-Warrior > Fury-Warrior"},
 	[19341]={["name"]="Lifegiving Gem",["dkp"]="5",["note"]="",["role"]="Warrior"},
 	[19342]={["name"]="Venomous Totem",["dkp"]="5",["note"]="",["role"]="Rogue"},
