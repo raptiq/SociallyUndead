@@ -4,6 +4,7 @@ local quintessenceItemId = 17333
 local eternalQuintessenceItemId = 22754
 local hourglassItemId = 19183
 local onycloakItemId = 15138
+local onycloakItemId = 16309
 
 core.addSimilarItemId(quintessenceItemId, eternalQuintessenceItemId)
 
@@ -12,8 +13,10 @@ local function checkItem(command)
         core.showItemList(quintessenceItemId)
     elseif command == "sand" then
         core.showItemList(hourglassItemId)
-    elseif command == "ony" then
-        core.showItemList(onycloakItemId, "equipped")
+    elseif command == "onyneck" then
+        core.showItemList(onyCloakItemId, "equipped")
+    elseif command == "onycloak" then
+        core.showItemList(onyNeckItemId)
     else
         local itemId = tonumber(command)
         if itemId then
@@ -29,7 +32,8 @@ local function printHelp()
         [[Commands for the Socially Undead addon:
         /su check water -> Displays which players which have an (Eternal) Aqual Quintessence
         /su check sand -> Displays Hourglass Sand count for each player
-        /su check ony -> Display whether each player has Onyxia Scale Cloak equipped
+        /su check onycloak -> Display whether each player has Onyxia Scale Cloak equipped
+        /su check onyneck -> Display whether each player has Drakefire Amulet in their inventory
         /su check <itemId> -> Displays how many items with the given id each player has in their inventory
         ]]
 
