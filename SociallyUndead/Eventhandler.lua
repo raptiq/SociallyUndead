@@ -1,6 +1,7 @@
 local _, core = ...
 
 local commandDelimiter = "\1"
+local messageDelimiter = "\2"
 
 local lootlist = {} -- String encoded NAME:GUID
 local lootlistMap = {}
@@ -37,7 +38,7 @@ end
 
 local function splitByDelimiter(message, delimiter)
     local split = core.splitString(message, delimiter)
-    return split[1], split[2]
+    return unpack(split)
 end
 
 local function parseMessage(message)
@@ -73,10 +74,9 @@ function addonMessageHandlers:REPORT_ADDONS(sender, message)
 end
 
 function addonMessageHandlers:LOOT_DETECTED(sender, message)
-    local guid, itemLink = splitByDelimiter(message, ":")
+    local guid, itemLink = splitByDelimiter(message, messageDelimiter)
     if guid and itemLink and lootlistMap[guid] then
-        local itemSplit = addonData.stringSplit(itemLink, ":")
-        local itemId = itemSplit[2] -- itemId
+        local _, itemId = splitByDelimiter(itemLink, ":")
 
         local hasItemValue = false
         for index, value in ipairs(lootlistMap[guid].loot) do
@@ -96,7 +96,7 @@ function addonMessageHandlers:LOOT_DETECTED(sender, message)
 end
 
 function addonMessageHandlers:DISCOVER_ITEM(sender, message)
-    local location, itemId = splitByDelimiter(message, ":")
+    local location, itemId = splitByDelimiter(message, messageDelimiter)
     itemId = tonumber(itemId)
     local itemCount = 0
     if location == "equipped" then
@@ -270,7 +270,7 @@ function events:LOOT_OPENED()
                 local _, _, _, _, rarity = GetLootSlotInfo(i)
 
                 if rarity >= GetLootThreshold() then
-                    sendAddonMessage("LOOT_DETECTED", guid .. ":" .. itemLink)
+                    sendAddonMessage("LOOT_DETECTED", guid .. messageDelimiter .. itemLink)
                 end
             end
         end
@@ -397,7 +397,7 @@ function events:COMBAT_LOG_EVENT_UNFILTERED()
             local hasLoot, _ = CanLootUnit(destGuid)
 
             if hasLoot and IsInRaid() then
-                sendAddonMessage("CAN_LOOT", destName .. ":" .. destGuid)
+                sendAddonMessage("CAN_LOOT", destName .. messageDelimiter .. destGuid)
                 return
             end
         end
@@ -490,7 +490,7 @@ local function showItemList(itemId, location)
         return
     end
 
-    sendAddonMessage("DISCOVER_ITEM", (location or "inventory") .. ":" .. itemId)
+    sendAddonMessage("DISCOVER_ITEM", (location or "inventory") .. messageDelimiter .. itemId)
 
     core.callback(
         1,
