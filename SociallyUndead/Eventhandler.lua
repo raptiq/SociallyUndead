@@ -490,7 +490,7 @@ local function showItemList(itemId, location)
         return
     end
 
-    sendAddonMessage("DISCOVER_ITEM", location or "inventory" .. ":" .. itemId)
+    sendAddonMessage("DISCOVER_ITEM", (location or "inventory") .. ":" .. itemId)
 
     core.callback(
         1,
