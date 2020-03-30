@@ -3,8 +3,8 @@ local _, core = ...
 local quintessenceItemId = 17333
 local eternalQuintessenceItemId = 22754
 local hourglassItemId = 19183
-local onycloakItemId = 15138
-local onycloakItemId = 16309
+local onyCloakItemId = 15138
+local onyNeckItemId = 16309
 
 core.addSimilarItemId(quintessenceItemId, eternalQuintessenceItemId)
 
@@ -13,9 +13,9 @@ local function checkItem(command)
         core.showItemList(quintessenceItemId)
     elseif command == "sand" then
         core.showItemList(hourglassItemId)
-    elseif command == "onyneck" then
-        core.showItemList(onyCloakItemId, "equipped")
     elseif command == "onycloak" then
+        core.showItemList(onyCloakItemId, "equipped")
+    elseif command == "onyneck" then
         core.showItemList(onyNeckItemId)
     else
         local itemId = tonumber(command)
