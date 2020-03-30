@@ -141,7 +141,7 @@ function addonMessageHandlers:CAN_LOOT(sender, text)
         core.callback(
             1,
             function()
-                local creatureName, creatureGuid = splitByDelimiter(text, ":")
+                local creatureName, creatureGuid = splitByDelimiter(text, messageDelimiter)
                 local _, mlPlayerId = GetLootMethod()
                 local playerIsMasterLooter = mlPlayerId == 0
                 local npcId = core.getNpcId(creatureGuid)
