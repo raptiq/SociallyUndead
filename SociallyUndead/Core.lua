@@ -473,6 +473,12 @@ end
 
 core.getNpcId = getNpcId
 
+local function isEmpty(maybeEmpty)
+    return foo == nil or foo == ""
+end
+
+core.isEmpty = isEmpty
+
 local bossIds = {
     10184, -- Onyxia
     12118, -- Lucifron

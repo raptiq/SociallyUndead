@@ -143,6 +143,9 @@ function addonMessageHandlers:CAN_LOOT(sender, text)
             function()
                 local creatureName, creatureGuid = splitByDelimiter(text, messageDelimiter)
                 local _, mlPlayerId = GetLootMethod()
+                if core.isEmpty(mlPlayerId) or core.isEmpty(creatureGuid) then
+                    return
+                end
                 local playerIsMasterLooter = mlPlayerId == 0
                 local npcId = core.getNpcId(creatureGuid)
 
@@ -359,7 +362,7 @@ local blackList = {
 function events:UNIT_SPELLCAST_SUCCEEDED(unitTarget, castGuid, spellId)
     local targetGuid = UnitGUID("target")
 
-    if targetGuid and core.hasValue(blackList, spellId) then
+    if not core.isEmpty(targetGuid) and core.hasValue(blackList, spellId) then
         local healthPercent = UnitHealth("target") / UnitHealthMax("target")
         local npcId = core.getNpcId(targetGuid)
         local onyxia = 10184
