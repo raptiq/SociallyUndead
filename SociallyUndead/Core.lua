@@ -474,7 +474,7 @@ end
 core.getNpcId = getNpcId
 
 local function isEmpty(maybeEmpty)
-    return foo == nil or foo == ""
+    return maybeEmpty == nil or maybeEmpty == ""
 end
 
 core.isEmpty = isEmpty
