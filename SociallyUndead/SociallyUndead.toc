@@ -1,7 +1,7 @@
 ## Interface: 11304
 ## Title: SociallyUndeadTools
 ## Author: Raptiq
-## Version: 1.0.1
+## Version: 1.0.2
 
 Link.xml
 Core.lua
