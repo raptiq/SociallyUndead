@@ -28,26 +28,30 @@ local function checkItem(command)
 end
 
 local function printHelp()
-    local commonCommands =
-        [[Commands for the Socially Undead addon:
-        /su check water -> Displays which players which have an (Eternal) Aqual Quintessence
-        /su check sand -> Displays Hourglass Sand count for each player
-        /su check onycloak -> Display whether each player has Onyxia Scale Cloak equipped
-        /su check onyneck -> Display whether each player has Drakefire Amulet in their inventory
-        /su check <itemId> -> Displays how many items with the given id each player has in their inventory
-        ]]
+    local commonCommands = {
+        "Commands for the Socially Undead addon:",
+        "/su check water -> Displays which players which have an (Eternal) Aqual Quintessence",
+        "/su check sand -> Displays Hourglass Sand count for each player",
+        "/su check onycloak -> Display whether each player has Onyxia Scale Cloak equipped",
+        "/su check onyneck -> Display whether each player has Drakefire Amulet in their inventory",
+        "/su check <itemId> -> Displays how many items with the given id each player has in their inventory",
+    }
 
-    local officerCommands =
-        [[/su addons -> Displays which players in raid have required addons installed
-        /su durability -> Displays durability for players in raid
-        /su ready -> Displays pre-raid attendance check including location and durability
-        /su buffs -> WIP - Will display all relevant buffs before pull
-        ]]
+    local officerCommands = {
+        "/su addons -> Displays which players in raid have required addons installed",
+        "/su durability -> Displays durability for players in raid",
+        "/su ready -> Displays pre-raid attendance check including location and durability",
+        "/su buffs -> WIP - Will display all relevant buffs before pull",
+	}
 
     if core.isOfficer() then
-        print(commonCommands .. officerCommands)
-    else
-        print(commonCommands)
+        for i = 1, #officerCommands do
+            print(officerCommands[i])
+        end
+    end
+
+    for i = 1, #commonCommands do
+        print(commonCommands[i])
     end
 end
 
