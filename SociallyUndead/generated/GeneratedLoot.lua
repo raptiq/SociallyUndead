@@ -48,7 +48,7 @@ core.lootDb = {
 	[16948]={["name"]="Shaman T2 Gloves",["dkp"]="60",["note"]="",["role"]="Resto-Shaman > Shaman"},
 	[16945]={["name"]="Shaman T2 Shoulders",["dkp"]="70",["note"]="",["role"]="Resto-Shaman > Shaman"},
 	[16950]={["name"]="Shaman T2 Chest",["dkp"]="70",["note"]="",["role"]="Resto-Shaman > Shaman"},
-	[19436]={["name"]="Cloak of Draconic Might",["dkp"]="65",["note"]="",["role"]="Warrior > Enhance-Shaman"},
+	[19436]={["name"]="Cloak of Draconic Might",["dkp"]="65",["note"]="",["role"]="Warrior = Enhance-Shaman"},
 	[19439]={["name"]="Interlaced Shadow Jerkin",["dkp"]="5",["note"]="",["role"]="Feral > Resistance for Leather wearers"},
 	[19437]={["name"]="Boots of Pure Thought",["dkp"]="60",["note"]="",["role"]="Heal-Priest = Heal-Druid > Resto-Shaman"},
 	[19438]={["name"]="Ringo's Blizzard Boots",["dkp"]="60",["note"]="",["role"]="Mage"},
