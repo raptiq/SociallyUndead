@@ -156,14 +156,7 @@ function addonMessageHandlers:CAN_LOOT(sender, text)
 
                     local skinningTargetIds = {
                         11671, -- Core hound
-                        11673, -- Ancient Core Hound
-                        12461, --Death Talon Overseer
-                        12460, --Death Talon Wyrmguard
-                        12467, --Death Talon Captain
-                        12465, --Death Talon Wyrmkin
-                        12463, --Death Talon Flamescale
-                        12464, --Death Talon Seether
-                        12468 --Death Talon Hatcher
+                        11673 -- Ancient Core Hound
                     }
 
                     if core.hasValue(skinningTargetIds, npcId) then
