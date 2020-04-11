@@ -1,15 +1,20 @@
 const fs = require("fs");
 const BWL_LOOT = require("../bwl_loot.json");
 const MC_LOOT = require("../mc_loot.json");
+const ZG_LOOT = require("../zg_loot.json");
 
-const buildDefaultMCLua = id => {
+const buildDefaultMCLua = (id) => {
   return `\t[${id}]={["dkp"]="5",["role"]="MS > OS"},\n`;
 };
 
-const buildItemLua = item => {
-  return `\t[${item["id"]}]={["name"]="${item["name"]}",["dkp"]="${
-    item["dkp"]
-  }",["note"]="${item["note"] || ""}",["role"]="${item["role"]}"},\n`;
+const getRole = (item) => {
+  return item["role"] || (item["dkp"] === "NA" ? "" : "MS > OS");
+};
+
+const buildItemLua = (item) => {
+  return `\t[${item["id"]}]={["name"]="${item["name"] || ""}",["dkp"]="${
+    item["dkp"] || 5
+  }",["role"]="${getRole(item)}",["note"]="${item["note"] || ""}"},\n`;
 };
 
 const file = fs.createWriteStream(
@@ -26,11 +31,11 @@ file.on("open", () => {
   }
 
   for (let item of MC_LOOT) {
-    if (typeof item === "object") {
-      file.write(buildItemLua(item));
-    } else {
-      file.write(buildDefaultMCLua(item));
-    }
+    file.write(buildItemLua(item));
+  }
+
+  for (let item of ZG_LOOT) {
+    file.write(buildItemLua(item));
   }
 
   file.write("}\n");

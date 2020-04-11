@@ -1,0 +1,220 @@
+[
+  { "id": 19718, "name": "Primal Hakkari Stanchion" },
+  { "id": 19722, "name": "Primal Hakkari Tabard" },
+  { "id": 19723, "name": "Primal Hakkari Kossack" },
+  { "id": 19721, "name": "Primal Hakkari Shawl" },
+  { "id": 19716, "name": "Primal Hakkari Bindings" },
+  { "id": 19719, "name": "Primal Hakkari Girdle" },
+  { "id": 19720, "name": "Primal Hakkari Sash" },
+  { "id": 19724, "name": "Primal Hakkari Aegis" },
+  { "id": 19717, "name": "Primal Hakkari Armsplint" },
+  {
+    "id": 22721,
+    "name": "Band of Servitude",
+    "role": "Warlock = Mage = Shadow-Priest"
+  },
+  {
+    "id": 22716,
+    "name": "Belt of Untapped Power",
+    "role": "Warlock = Mage = Shadow-Priest"
+  },
+  {
+    "id": 22718,
+    "name": "Blooddrenched Mask",
+    "role": "Feral-Druid > Hunter = Rogue"
+  },
+  {
+    "id": 22711,
+    "name": "Cloak of the Hakkari Worshipers",
+    "role": "Warlock = Mage = Shadow-Priest"
+  },
+  { "id": 22715, "name": "Gloves of the Tormented" },
+  { "id": 22712, "name": "Might of the Tribe" },
+  { "id": 22714, "name": "Sacrificial Gauntlets" },
+  {
+    "id": 22722,
+    "name": "Seal of the Gurubashi Berserker",
+    "role": "Hunter = Rogue = Warrior"
+  },
+  { "id": 22720, "name": "Zulian Headdress" },
+  { "id": 22713, "name": "Zulian Scepter of Rites" },
+  { "id": 19928, "name": "Animist's Spaulders", "role": "Druid = Shaman" },
+  { "id": 19918, "name": "Jeklik's Crusher" },
+  { "id": 19923, "name": "Jeklik's Opaline Talisman" },
+  { "id": 20265, "name": "Peacekeeper Boots" },
+  { "id": 19920, "name": "Primalist's Band" },
+  { "id": 20262, "name": "Seafury Boots" },
+  { "id": 19915, "name": "Zulian Defender" },
+  {
+    "id": 19906,
+    "name": "Blooddrenched Footpads",
+    "role": "Rogue = Feral-Druid = Hunter"
+  },
+  { "id": 19903, "name": "Fang of Venoxis", "role": "Tank-Warrior = Caster" },
+  { "id": 19904, "name": "Runed Bloodstained Hauberk" },
+  {
+    "id": 19905,
+    "name": "Zanzil's Band",
+    "role": "Warlock = Mage = Shadow-Priest"
+  },
+  { "id": 19900, "name": "Zulian Stone Axe", "role": "Hunter" },
+  {
+    "id": 19907,
+    "name": "Zulian Tigerhide Cloak",
+    "role": "Warrior = Rogue = Hunter = Enhance-Shaman = Feral-Druid"
+  },
+  {
+    "id": 19925,
+    "name": "Band of Jin",
+    "role": "Warrior = Rogue = Hunter = Enhance-Shaman = Feral-Druid"
+  },
+  { "id": 19919, "name": "Bloodstained Greaves" },
+  { "id": 20032, "name": "Flowing Ritual Robes" },
+  { "id": 19930, "name": "Mar'li's Eye" },
+  {
+    "id": 19927,
+    "name": "Mar'li's Touch",
+    "role": "Warlock = Mage = Shadow-Priest"
+  },
+  { "id": 19871, "name": "Talisman of Protection" },
+  { "id": 19877, "name": "Animist's Leggings" },
+  { "id": 19869, "name": "Blooddrenched Grips" },
+  { "id": 19867, "name": "Bloodlord's Defender" },
+  { "id": 19878, "name": "Bloodsoaked Pauldrons" },
+  { "id": 19895, "name": "Bloodtinged Kilt" },
+  { "id": 19870, "name": "Hakkari Loa Cloak" },
+  { "id": 19874, "name": "Halberd of Smiting" },
+  { "id": 20038, "name": "Mandokir's Sting", "role": "Warrior = Rogue" },
+  { "id": 19873, "name": "Overlord's Crimson Band" },
+  { "id": 19863, "name": "Primalist's Seal" },
+  { "id": 19866, "name": "Warblade of the Hakkari", "role": "Warrior = Rogue" },
+  { "id": 19893, "name": "Zanzil's Seal" },
+  { "id": 19962, "name": "Gri'lek's Carver" },
+  { "id": 19961, "name": "Gri'lek's Grinder" },
+  { "id": 19963, "name": "Pitchfork of Madness" },
+  { "id": 19964, "name": "Renataki's Soul Conduit" },
+  { "id": 19993, "name": "Hoodoo Hunting Bow" },
+  { "id": 19965, "name": "Wushoolay's Poker" },
+  { "id": 19968, "name": "Fiery Retributer" },
+  { "id": 19967, "name": "Thoughtblighter" },
+  { "id": 19945, "name": "Foror's Eyepatch" },
+  { "id": 19947, "name": "Nat Pagle's Broken Reel", "role": "Tank > Caster" },
+  { "id": 19944, "name": "Nat Pagle's Fish Terminator" },
+  { "id": 19946, "name": "Tigule's Harpoon" },
+  { "id": 22739, "name": "Tome of Polymorph: Turtle" },
+  {
+    "id": 19897,
+    "name": "Betrayer's Boots",
+    "role": "Shadow-Priest > Mage = Warlock"
+  },
+  { "id": 20266, "name": "Peacekeeper Leggings" },
+  { "id": 19899, "name": "Ritualistic Legguards" },
+  { "id": 20260, "name": "Seafury Leggings" },
+  { "id": 19898, "name": "Seal of Jin" },
+  { "id": 19896, "name": "Thekal's Grasp" },
+  { "id": 19901, "name": "Zulian Slicer" },
+  { "id": 19910, "name": "Arlokk's Grasp" },
+  { "id": 19922, "name": "Arlokk's Hoodoo Stick" },
+  { "id": 19913, "name": "Bloodsoaked Greaves" },
+  { "id": 19912, "name": "Overlord's Onyx Band" },
+  { "id": 19909, "name": "Will of Arlokk", "role": "Mage > Healer" },
+  { "id": 19914, "name": "Panther Hide Sack", "dkp": "NA", "note": "/roll" },
+  { "id": 19892, "name": "Animist's Boots" },
+  { "id": 19889, "name": "Blooddrenched Leggings", "role": "Feral-Druid" },
+  { "id": 19894, "name": "Bloodsoaked Gauntlets" },
+  { "id": 19875, "name": "Bloodstained Coif" },
+  { "id": 19887, "name": "Bloodstained Legplates" },
+  {
+    "id": 19929,
+    "name": "Bloodtinged Gloves",
+    "role": "Warlock = Mage > Shadow-Priest"
+  },
+  {
+    "id": 19891,
+    "name": "Jin'do's Bag of Whammies",
+    "role": "Warlock = Mage > Shadow-Priest"
+  },
+  {
+    "id": 19885,
+    "name": "Jin'do's Evil Eye",
+    "role": "Resto-Shaman = Resto-Druid = Heal-Priest"
+  },
+  {
+    "id": 19890,
+    "name": "Jin'do's Hexxer",
+    "role": "Resto-Shaman = Resto-Druid"
+  },
+  { "id": 19884, "name": "Jin'do's Judgement" },
+  { "id": 19888, "name": "Overlord's Embrace" },
+  { "id": 19886, "name": "The Hexxer's Cover", "role": "Shadow-Priest" },
+  { "id": 19862, "name": "Aegis of the Blood God", "role": "Tank-Warrior" },
+  { "id": 19852, "name": "Ancient Hakkari Manslayer" },
+  { "id": 19864, "name": "Bloodcaller", "role": "Warlock = Mage" },
+  { "id": 19855, "name": "Bloodsoaked Legplates" },
+  {
+    "id": 19857,
+    "name": "Cloak of Consumption",
+    "role": "Warlock = Mage > Shadow-Priest"
+  },
+  {
+    "id": 19859,
+    "name": "Fang of the Faceless",
+    "role": "Hunter = Rogue = Warrior"
+  },
+  {
+    "id": 19853,
+    "name": "Gurubashi Dwarf Destroyer",
+    "role": "Warrior = Rogue"
+  },
+  {
+    "id": 19802,
+    "name": "Heart of Hakkar",
+    "role": "Tank = Caster DPS > Healer > Physical DPS"
+  },
+  { "id": 20264, "name": "Peacekeeper Gauntlets" },
+  { "id": 20257, "name": "Seafury Gauntlets" },
+  { "id": 19876, "name": "Soul Corrupter's Necklace" },
+  {
+    "id": 19856,
+    "name": "The Eye of Hakkar",
+    "role": "Warrior = Enhance-Shaman > Rogue = Hunter"
+  },
+  {
+    "id": 19861,
+    "name": "Touch of Chaos",
+    "role": "Warlock > Mage = Shadow-Priest"
+  },
+  {
+    "id": 19865,
+    "name": "Warblade of the Hakkari",
+    "role": "Hunter > Rogue = Warrior"
+  },
+  {
+    "id": 19854,
+    "name": "Zin'rokh, Destroyer of Worlds",
+    "role": "Hunter > Warrior"
+  },
+  { "id": 20263, "name": "Gurubashi Helm", "note": "gbank" },
+  { "id": 19908, "name": "Sceptre of Smiting" },
+  { "id": 20261, "name": "Shadow Panther Hide Belt", "note": "gbank" },
+  { "id": 20259, "name": "Shadow Panther Hide Gloves", "note": "gbank" },
+  { "id": 20258, "name": "Zulian Ceremonial Staff", "note": "gbank" },
+  {
+    "id": 19921,
+    "name": "Zulian Hacker",
+    "role": "Warrior",
+    "note": "305+ axe skill"
+  },
+  {
+    "id": 19902,
+    "name": "Swift Zulian Tiger",
+    "dkp": "NA",
+    "note": "raider rank /roll"
+  },
+  {
+    "id": 19872,
+    "name": "Swfit Razzashi Raptor",
+    "dkp": "NA",
+    "note": "raider rank /roll"
+  }
+]
