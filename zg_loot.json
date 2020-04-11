@@ -15,8 +15,7 @@
   },
   {
     "id": 22716,
-    "name": "Belt of Untapped Power",
-    "role": "Warlock = Mage = Shadow-Priest"
+    "name": "Belt of Untapped Power"
   },
   {
     "id": 22718,
@@ -25,8 +24,7 @@
   },
   {
     "id": 22711,
-    "name": "Cloak of the Hakkari Worshipers",
-    "role": "Warlock = Mage = Shadow-Priest"
+    "name": "Cloak of the Hakkari Worshipers"
   },
   { "id": 22715, "name": "Gloves of the Tormented" },
   { "id": 22712, "name": "Might of the Tribe" },
