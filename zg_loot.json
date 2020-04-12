@@ -110,7 +110,7 @@
   { "id": 20260, "name": "Seafury Leggings" },
   { "id": 19898, "name": "Seal of Jin" },
   { "id": 19896, "name": "Thekal's Grasp" },
-  { "id": 19901, "name": "Zulian Slicer" },
+  { "id": 19901, "name": "Zulian Slicer", "role": "Skinner" },
   { "id": 19910, "name": "Arlokk's Grasp" },
   { "id": 19922, "name": "Arlokk's Hoodoo Stick" },
   { "id": 19913, "name": "Bloodsoaked Greaves" },
@@ -192,11 +192,23 @@
     "name": "Zin'rokh, Destroyer of Worlds",
     "role": "Hunter > Warrior"
   },
-  { "id": 20263, "name": "Gurubashi Helm", "note": "gbank" },
+  { "id": 20263, "name": "Gurubashi Helm", "role": "MS > guild-bank" },
   { "id": 19908, "name": "Sceptre of Smiting" },
-  { "id": 20261, "name": "Shadow Panther Hide Belt", "note": "gbank" },
-  { "id": 20259, "name": "Shadow Panther Hide Gloves", "note": "gbank" },
-  { "id": 20258, "name": "Zulian Ceremonial Staff", "note": "gbank" },
+  {
+    "id": 20261,
+    "name": "Shadow Panther Hide Belt",
+    "role": "MS > guild-bank"
+  },
+  {
+    "id": 20259,
+    "name": "Shadow Panther Hide Gloves",
+    "role": "MS > guild-bank"
+  },
+  {
+    "id": 20258,
+    "name": "Zulian Ceremonial Staff",
+    "role": "MS > guild-bank"
+  },
   {
     "id": 19921,
     "name": "Zulian Hacker",
@@ -214,5 +226,11 @@
     "name": "Swfit Razzashi Raptor",
     "dkp": "NA",
     "note": "raider rank /roll"
+  },
+  {
+    "id": 19727,
+    "name": "Blood Scythe",
+    "dkp": "NA",
+    "role": "Herbalist"
   }
 ]
