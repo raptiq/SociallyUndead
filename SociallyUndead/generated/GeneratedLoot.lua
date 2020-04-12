@@ -327,7 +327,7 @@ core.lootDb = {
 	[20266]={["name"]="Peacekeeper Leggings",["dkp"]="5",["role"]="MS > OS",["note"]=""},
 	[19899]={["name"]="Ritualistic Legguards",["dkp"]="5",["role"]="MS > OS",["note"]=""},
 	[20260]={["name"]="Seafury Leggings",["dkp"]="5",["role"]="MS > OS",["note"]=""},
-	[19898]={["name"]="Seal of Jin",["dkp"]="5",["role"]="MS > OS",["note"]=""},
+	[19898]={["name"]="Seal of Jin",["dkp"]="5",["role"]="Warrior = Rogue = Hunter = Enhance-Shaman = Feral-Druid",["note"]=""},
 	[19896]={["name"]="Thekal's Grasp",["dkp"]="5",["role"]="MS > OS",["note"]=""},
 	[19901]={["name"]="Zulian Slicer",["dkp"]="5",["role"]="Skinner",["note"]=""},
 	[19910]={["name"]="Arlokk's Grasp",["dkp"]="5",["role"]="MS > OS",["note"]=""},
@@ -369,7 +369,7 @@ core.lootDb = {
 	[20259]={["name"]="Shadow Panther Hide Gloves",["dkp"]="5",["role"]="MS > guild-bank",["note"]=""},
 	[20258]={["name"]="Zulian Ceremonial Staff",["dkp"]="5",["role"]="MS > guild-bank",["note"]=""},
 	[19921]={["name"]="Zulian Hacker",["dkp"]="5",["role"]="Warrior",["note"]="305+ axe skill"},
-	[19902]={["name"]="Swift Zulian Tiger",["dkp"]="NA",["role"]="",["note"]="raider rank /roll"},
-	[19872]={["name"]="Swfit Razzashi Raptor",["dkp"]="NA",["role"]="",["note"]="raider rank /roll"},
+	[19902]={["name"]="Swift Zulian Tiger",["dkp"]="NA",["role"]="raider rank /roll",["note"]=""},
+	[19872]={["name"]="Swfit Razzashi Raptor",["dkp"]="NA",["role"]="raider rank /roll",["note"]=""},
 	[19727]={["name"]="Blood Scythe",["dkp"]="NA",["role"]="Herbalist",["note"]=""},
 }

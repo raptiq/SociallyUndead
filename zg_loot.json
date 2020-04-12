@@ -108,7 +108,11 @@
   { "id": 20266, "name": "Peacekeeper Leggings" },
   { "id": 19899, "name": "Ritualistic Legguards" },
   { "id": 20260, "name": "Seafury Leggings" },
-  { "id": 19898, "name": "Seal of Jin" },
+  {
+    "id": 19898,
+    "name": "Seal of Jin",
+    "role": "Warrior = Rogue = Hunter = Enhance-Shaman = Feral-Druid"
+  },
   { "id": 19896, "name": "Thekal's Grasp" },
   { "id": 19901, "name": "Zulian Slicer", "role": "Skinner" },
   { "id": 19910, "name": "Arlokk's Grasp" },
