@@ -37,9 +37,12 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 
         tooltip:AddLine(" ")
         tooltip:AddLine("|cFF00FF00SU Loot Info|r")
-        tooltip:AddLine("Prio: " .. core.colorizeTextByRole(itemInfo.role))
-        tooltip:AddLine("Min Bid: |cFFA330C9" .. itemInfo.dkp .. " DKP|r")
-
+        if itemInfo.role ~= nil and itemInfo.role ~= "" then
+            tooltip:AddLine("Prio: " .. core.colorizeTextByRole(itemInfo.role))
+        end
+        if itemInfo.dkp ~= nil and itemInfo.dkp ~= "" and itemInfo.dkp ~= "NA" then
+            tooltip:AddLine("Min Bid: |cFFA330C9" .. itemInfo.dkp .. " DKP|r")
+        end
         if (itemInfo.note ~= nil and itemInfo.note ~= "") then
             tooltip:AddLine("Notes: " .. itemInfo.note)
         end
