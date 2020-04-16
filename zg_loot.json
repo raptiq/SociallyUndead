@@ -32,7 +32,7 @@
   {
     "id": 22722,
     "name": "Seal of the Gurubashi Berserker",
-    "role": "Hunter = Rogue = Warrior"
+    "role": "MS > OS"
   },
   { "id": 22720, "name": "Zulian Headdress" },
   { "id": 22713, "name": "Zulian Scepter of Rites" },
@@ -184,7 +184,7 @@
   {
     "id": 19861,
     "name": "Touch of Chaos",
-    "role": "Warlock > Mage = Shadow-Priest"
+    "role": "Warlock = Shadow-Priest > Mage"
   },
   {
     "id": 19865,
