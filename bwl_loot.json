@@ -344,7 +344,7 @@
   {
     "id": 19370,
     "name": "Mantle of the Blackwing Cabal",
-    "role": "Mage = Warlock = Shadow-Priest > Heal-Priest",
+    "role": "Mage = Warlock = Shadow-Priest > Ele-Shaman = Heal-Priest",
     "dkp": 70
   },
   {
@@ -386,7 +386,7 @@
   {
     "id": 19371,
     "name": "Pendant of the Fallen Dragon",
-    "role": "Resto-Shaman",
+    "role": "Resto-Shaman > Ele-Shaman",
     "dkp": 70
   },
   {
@@ -422,7 +422,7 @@
   {
     "id": 19374,
     "name": "Bracers of Arcane Accuracy",
-    "role": "Mage = Warlock = Shadow-Priest",
+    "role": "Mage = Warlock = Shadow-Priest = Ele-Shaman",
     "dkp": 60
   },
   {
@@ -704,7 +704,7 @@
   {
     "id": 19375,
     "name": "Mish'undare",
-    "role": "Mage = Warlock = Shadow-Priest > Heal-Druid = Heal-Priest",
+    "role": "Mage = Warlock = Shadow-Priest = Ele-Shaman > Heal-Druid = Heal-Priest",
     "dkp": 70
   },
   {
@@ -752,7 +752,7 @@
   {
     "id": 19003,
     "name": "Head of Nefarian",
-    "role": "Enhance = Warrior = Rogue = Feral-Druid = Shadow-Priest = Hunter",
+    "role": "Enhance-Shaman = Warrior = Rogue = Feral-Druid = Shadow-Priest = Hunter > Ele-Shaman = Mage = Warlock",
     "dkp": 60
   }
 ]
