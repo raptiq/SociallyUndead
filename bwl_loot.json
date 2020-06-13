@@ -111,13 +111,13 @@
     "id": 16964,
     "name": "Warrior T2 Bracers",
     "role": "Tank-Warrior > Warrior",
-    "dkp": 60
+    "dkp": 30
   },
   {
     "id": 16965,
     "name": "Warrior T2 Belt",
     "role": "Tank-Warrior > Warrior",
-    "dkp": 60
+    "dkp": 30
   },
   {
     "id": 16961,
@@ -356,7 +356,7 @@
   {
     "id": 19335,
     "name": "Spineshatter",
-    "role": "Warrior",
+    "role": "Tank-Warrior",
     "dkp": 60
   },
   {
@@ -440,7 +440,7 @@
   {
     "id": 19341,
     "name": "Lifegiving Gem",
-    "role": "Warrior",
+    "role": "Tank-Warrior",
     "dkp": 5
   },
   {
@@ -543,7 +543,7 @@
     "id": 19368,
     "name": "Dragonbreath Hand Cannon",
     "role": "Tank-Warrior > Fury-Warrior",
-    "dkp": 90
+    "dkp": 60
   },
   {
     "id": 19403,
@@ -572,7 +572,7 @@
   {
     "id": 19433,
     "name": "Emberweave Leggings",
-    "role": "FR Gear for Hunter/Shaman",
+    "role": "FR Gear",
     "dkp": 5
   },
   {
@@ -585,7 +585,7 @@
     "id": 19357,
     "name": "Herald of Woe",
     "role": "Enhance-Shaman",
-    "dkp": 120
+    "dkp": 60
   },
   {
     "id": 19432,
@@ -603,7 +603,7 @@
     "id": 19389,
     "name": "Taut Dragonhide Shoulderpads",
     "role": "Feral-Druid > Rogue",
-    "dkp": 70
+    "dkp": 35
   },
   {
     "id": 19386,
