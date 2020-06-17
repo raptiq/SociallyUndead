@@ -109,9 +109,9 @@
   },
   {
     "id": 16964,
-    "name": "Warrior T2 Bracers",
+    "name": "Warrior T2 Gloves",
     "role": "Tank-Warrior > Warrior",
-    "dkp": 30
+    "dkp": 60
   },
   {
     "id": 16965,
@@ -121,27 +121,27 @@
   },
   {
     "id": 16961,
-    "name": "Warrior T2 Boots",
+    "name": "Warrior T2 Shoulders",
     "role": "Tank-Warrior > Warrior",
     "dkp": 60
   },
   {
     "id": 16960,
-    "name": "Warrior T2 Gloves",
+    "name": "Warrior T2 Belt",
     "role": "Tank-Warrior > Warrior",
     "dkp": 60
   },
   {
     "id": 16966,
-    "name": "Warrior T2 Shoulders",
+    "name": "Warrior T2 Chest",
     "role": "Tank-Warrior > Warrior",
     "dkp": 70
   },
   {
     "id": 16959,
-    "name": "Warrior T2 Chest",
+    "name": "Warrior T2 Bracers",
     "role": "Tank-Warrior > Warrior",
-    "dkp": 70
+    "dkp": 30
   },
   {
     "id": 16911,
