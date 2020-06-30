@@ -34,7 +34,7 @@ local function printHelp()
         "/su check sand -> Displays Hourglass Sand count for each player",
         "/su check onycloak -> Display whether each player has Onyxia Scale Cloak equipped",
         "/su check onyneck -> Display whether each player has Drakefire Amulet in their inventory",
-        "/su check <itemId> -> Displays how many items with the given id each player has in their inventory",
+        "/su check <itemId> -> Displays how many items with the given id each player has in their inventory"
     }
 
     local officerCommands = {
@@ -42,7 +42,8 @@ local function printHelp()
         "/su durability -> Displays durability for players in raid",
         "/su ready -> Displays pre-raid attendance check including location and durability",
         "/su buffs -> WIP - Will display all relevant buffs before pull",
-	}
+        "/su worldbuffs -> Displays all worldbuffs and total additional dkp"
+    }
 
     if core.isOfficer() then
         for i = 1, #officerCommands do
@@ -69,6 +70,8 @@ local function sociallyundead(command)
         core.showAddonInstalls()
     elseif core.startsWith(command, "buffs") and isOfficer then
         core.showBuffs()
+    elseif core.startsWith(command, "worldbuffs") and isOfficer then
+        core.showWorldBuffs()
     elseif core.startsWith(command, "check") then
         checkItem(string.sub(command, 7)) -- TODO: decouple this jank from command word length
     else

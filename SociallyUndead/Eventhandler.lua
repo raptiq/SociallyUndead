@@ -569,7 +569,7 @@ local function showBuffs()
 
         maxPlayerBuffCount = 0
         for _, buff in pairs(playerBuffs) do
-            maxPlayerBuffCount = maxBuffCount + 1
+            maxPlayerBuffCount = maxPlayerBuffCount + 1
             _, _, iconId = GetSpellInfo(buff.spellId)
             table.insert(playerCols, {value = tostring(iconId), type = "icon"})
         end
@@ -588,6 +588,62 @@ local function showBuffs()
 end
 
 core.showBuffs = showBuffs
+
+local valuedWorldBuffs = {
+    "Songflower Serenade",
+    "Rallying Cry of the Dragonslayer",
+    "Mol'dar's Moxie",
+    "Warchief's Blessing",
+    "Spirit of Zandalar"
+}
+
+local DKP_PER_WORLDBUFF = 2
+
+local function showWorldBuffs()
+    if not IsInRaid() then
+        return
+    end
+
+    buffs = getBuffs()
+
+    local cols = {
+        {["name"] = "Player", ["width"] = 120, ["align"] = "CENTER"},
+        {["name"] = "Total", ["width"] = 32, ["align"] = "CENTER"}
+    }
+
+    buffData = {}
+    local maxBuffCount = 1
+    for name, playerBuffs in pairs(buffs) do
+        local playerCols = {
+            {value = name},
+            {value = "0"}
+        }
+
+        maxPlayerBuffCount = 0
+        for _, buff in pairs(playerBuffs) do
+            if core.hasValue(valuedWorldBuffs, buff.name) then
+                maxPlayerBuffCount = maxPlayerBuffCount + 1
+                _, _, iconId = GetSpellInfo(buff.spellId)
+                table.insert(playerCols, {value = tostring(iconId), type = "icon"})
+            end
+        end
+
+        playerCols[2] = {value = tostring(DKP_PER_WORLDBUFF * maxPlayerBuffCount)}
+
+        table.insert(buffData, {cols = playerCols})
+        if maxPlayerBuffCount > maxBuffCount then
+            maxBuffCount = maxPlayerBuffCount
+        end
+    end
+
+    for i = 1, maxBuffCount, 1 do
+        table.insert(cols, {["name"] = tostring(i), ["width"] = 32, ["align"] = "CENTER"})
+    end
+
+    core.createPlayerFrame("Raid Buffs", cols, buffData)
+end
+
+core.showWorldBuffs = showWorldBuffs
 
 local function showExport()
     core.createExportFrame("test!")
