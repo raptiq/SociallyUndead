@@ -121,7 +121,7 @@ core.lootDb = {
 	[19377]={["name"]="Prestor's Talisman of Connivery",["dkp"]="70",["role"]="Rogue = Hunter",["note"]=""},
 	[19378]={["name"]="Cloak of the Brood Lord",["dkp"]="65",["role"]="Mage = Warlock = Shadow-Priest = Ele-Shaman > Heal-Priest",["note"]=""},
 	[19380]={["name"]="Therazane's Link",["dkp"]="60",["role"]="Enhance-Shaman",["note"]=""},
-	[19381]={["name"]="Boots of the Shadow Flame",["dkp"]="60",["role"]="Rogue = Enhance-Shaman > Fury-Warrior",["note"]=""},
+	[19381]={["name"]="Boots of the Shadow Flame",["dkp"]="60",["role"]="Feral-Druid = Rogue = Enhance-Shaman > Fury-Warrior",["note"]=""},
 	[19376]={["name"]="Archimtiros Ring of Reckoning",["dkp"]="5",["role"]="Rogue = Hunter = Fury-Warrior = Feral-Druid",["note"]=""},
 	[19382]={["name"]="Pure Elementium Band",["dkp"]="60",["role"]="Heal-Priest = Resto-Shaman = Heal-Druid",["note"]=""},
 	[19379]={["name"]="Neltharion's Tear",["dkp"]="65",["role"]="Mage = Warlock = Ele-Shaman = Shadow-Priest",["note"]=""},
