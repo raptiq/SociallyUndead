@@ -52,24 +52,7 @@ Expected process:
 
 Source of truth for all SU loot priority and DKP info are the `X_loot.json` files in the root of this repo.
 
-Loot items are either
-
-### Default Item
-
-Will use default values for role/dkp
-
-```
-[
-    ...
-    SomeItemID,
-    SomeOtherItemID,
-    ...
-]
-```
-
-OR
-
-### Custom Item
+Each of these files contain a list of JSON objects
 
 ```
 [
@@ -84,12 +67,22 @@ OR
 ]
 ```
 
-Most Molten Core loot by default is the same (5DKP minbid, MS > OS), if you want to change the default look in `./scripts/generate_loot.js`. If you want to override the default for a specific item:
-In `mc_loot.json`:
+Only the `id` field is required, if dkp or role are not set they will be set to the default (5DKP and MS > OS)
 
-1. Find the item id you want to override and delete it
-2. Add an object to the list with the above object schema
+If you want to change those default look in `./scripts/generate_loot.js`
 
-[See this change for an example](https://github.com/raptiq/SociallyUndead/commit/8a3801fbad8a48a1693add0a070b099f8a3ecc37#diff-58d835338c66e76d9c3f1eb7f88cb96d)
+Once you've made all the changes to the json files, you'll need to run a generate script to update the .lua files.
 
-Open a pull request once you've made your changes. Once merged the Addon and site loot lists will be updated.
+Make sure Node.js is installed then execute `npm run generate-loot`
+
+Open a pull request once you've made your changes.
+
+# Releasing the Addon
+
+Once your change has been merged in it's time to release it!
+
+1. Compress the SociallyUndead/SociallyUndead folder into a .zip
+2. Upload to Curseforge
+   - Select "Release"
+   - Enter changelog
+   - Select the latest WoW Classic version

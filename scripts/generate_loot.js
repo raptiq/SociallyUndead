@@ -3,10 +3,6 @@ const BWL_LOOT = require("../bwl_loot.json");
 const MC_LOOT = require("../mc_loot.json");
 const ZG_LOOT = require("../zg_loot.json");
 
-const buildDefaultMCLua = (id) => {
-  return `\t[${id}]={["dkp"]="5",["role"]="MS > OS"},\n`;
-};
-
 const getRole = (item) => {
   return item["role"] || (item["dkp"] === "NA" ? "" : "MS > OS");
 };
