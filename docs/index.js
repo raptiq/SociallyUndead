@@ -70,9 +70,22 @@ const buildZGLootTable = async () => {
   buildTableFromJSON("zg-loot", parsedData);
 };
 
+const buildAQ40LootTable = async () => {
+  const response = await fetch(
+    "https://raw.githubusercontent.com/raptiq/SociallyUndead/master/aq_loot.json"
+  );
+
+  const data = await response.json();
+
+  const parsedData = parseLoot(data);
+
+  buildTableFromJSON("aq40-loot", parsedData);
+};
+
 const init = () => {
   buildBWLLootTable();
   buildZGLootTable();
+  buildAQ40LootTable();
 };
 
 init();
