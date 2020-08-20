@@ -488,7 +488,7 @@ core.lootDb = {
 	[22731]={["name"]="Cloak of the Devoured",["dkp"]="30",["role"]="Mage = Warlock",["note"]=""},
 	[22732]={["name"]="Mark of C'Thun",["dkp"]="120",["role"]="MS > OS",["note"]=""},
 	[21232]={["name"]="Imperial Qiraji Armaments",["dkp"]="120",["role"]="Warrior = Rogue > Enhance-Shaman",["note"]=""},
-	[21237]={["name"]="Imperial Qiraji Regalia",["dkp"]="5",["role"]="Mage = Warlock = HEALER > FERAL - DRUID",["note"]=""},
+	[21237]={["name"]="Imperial Qiraji Regalia",["dkp"]="5",["role"]="Feral-Druid = Mage = Warlock = HEALER",["note"]=""},
 	[21888]={["name"]="Gloves of the Immortal",["dkp"]="5",["role"]="MS > OS",["note"]=""},
 	[21856]={["name"]="Neretzek the Blood Drinker",["dkp"]="120",["role"]="MS > OS",["note"]=""},
 	[21836]={["name"]="Ritssyns Ring of Chaos",["dkp"]="60",["role"]="MS > OS",["note"]=""},
