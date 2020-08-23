@@ -1,20 +1,19 @@
 [
   {
     "id": "22222",
-    "name": "Plans: Thick Obisidian Breastplate",
-    "dkp": 30
+    "name": "Plans: Thick Obisidian Breastplate"
   },
   {
     "id": "21128",
     "name": "Staff of the Qiraji Prophets",
     "role": "Mage = Warlock",
-    "dkp": 70
+    "dkp": 30
   },
   {
     "id": "21698",
     "name": "Leggings of Immersion",
     "role": "Balance-Druid > Resto-Druid = Resto-Shaman",
-    "dkp": 30
+    "dkp": 70
   },
   {
     "id": "21699",
@@ -25,23 +24,23 @@
     "id": "21700",
     "name": "Pendant of the Qiraji Guardian",
     "role": "Feral-Druid",
-    "dkp": 70
+    "dkp": 30
   },
   {
     "id": "21701",
     "name": "Cloak of Concentrated Hatred",
     "role": "Feral-Druid = Enhance-Shaman = Rogue > Warrior",
-    "dkp": 5
+    "dkp": 70
   },
   {
     "id": "21702",
     "name": "Amulet of Foul Warding",
-    "dkp": 120
+    "dkp": 5
   },
   {
     "id": "21703",
     "name": "Hammer of Ji'zhi",
-    "dkp": 30
+    "dkp": 120
   },
   {
     "id": "21704",
@@ -52,31 +51,31 @@
     "id": "21705",
     "name": "Boots of the Fallen Prophet",
     "role": "Resto-Shaman",
-    "dkp": 45
+    "dkp": 30
   },
   {
     "id": "21706",
     "name": "Boots of the Unwavering Will",
     "role": "Tank-Warrior",
-    "dkp": 30
+    "dkp": 45
   },
   {
     "id": "21707",
     "name": "Ring of Swarming Thought",
     "role": "Mage = Warlock",
-    "dkp": 5
+    "dkp": 30
   },
   {
     "id": "21708",
     "name": "Beetle Scaled Wristguards",
     "role": "Feral-Druid",
-    "dkp": 100
+    "dkp": 5
   },
   {
     "id": "21814",
     "name": "Breastplate of Annihilation",
     "role": "Warrior",
-    "dkp": 60
+    "dkp": 100
   },
   {
     "id": "21688",
@@ -88,18 +87,18 @@
     "id": "21689",
     "name": "Gloves of Ebru",
     "role": "Balance-Druid > Resto-Druid = Resto-Shaman",
-    "dkp": 70
+    "dkp": 60
   },
   {
     "id": "21690",
     "name": "Angelista's Charm",
     "role": "Healer",
-    "dkp": 5
+    "dkp": 70
   },
   {
     "id": "21691",
     "name": "Ooze-ridden Gauntlets",
-    "dkp": 60
+    "dkp": 5
   },
   {
     "id": "21603",
@@ -117,18 +116,18 @@
     "id": "21681",
     "name": "Ring of the Devoured",
     "role": "Resto-Shaman > Resto-Druid = Priest",
-    "dkp": 30
+    "dkp": 60
   },
   {
     "id": "21685",
     "name": "Petrified Scarab",
-    "dkp": 60
+    "dkp": 30
   },
   {
     "id": "21682",
     "name": "Bile-Covered Gauntlets",
     "role": "Feral-Druid > NR Soakers",
-    "dkp": 30
+    "dkp": 60
   },
   {
     "id": "21683",
@@ -139,7 +138,7 @@
     "id": "21684",
     "name": "Mantle of the Desert's Fury",
     "role": "Resto-Shaman",
-    "dkp": 5
+    "dkp": 30
   },
   {
     "id": "21686",
@@ -151,12 +150,12 @@
     "id": "21687",
     "name": "Ukko's Ring of Darkness",
     "role": "Warlock",
-    "dkp": 30
+    "dkp": 5
   },
   {
     "id": "21692",
     "name": "Triad Girdle",
-    "dkp": 70
+    "dkp": 30
   },
   {
     "id": "21693",
@@ -168,41 +167,41 @@
     "id": "21694",
     "name": "Ternary Mantle",
     "role": "Heal-Priest > Resto-Druid = Resto-Shaman",
-    "dkp": 30
+    "dkp": 70
   },
   {
     "id": "21695",
     "name": "Angelista's Touch",
     "role": "Tank-Warrior",
-    "dkp": 5
+    "dkp": 30
   },
   {
     "id": "21696",
     "name": "Robes of the Triumvirate",
     "role": "Mage = Warlock",
-    "dkp": 30
+    "dkp": 5
   },
   {
     "id": "21697",
     "name": "Cape of the Trinity",
     "role": "Mage = Warlock",
-    "dkp": 5
+    "dkp": 30
   },
   {
     "id": "21648",
     "name": "Recomposed Boots",
-    "dkp": 120
+    "dkp": 5
   },
   {
     "id": "21666",
     "name": "Sartura's Might",
     "role": "Healer",
-    "dkp": 30
+    "dkp": 120
   },
   {
     "id": "21667",
     "name": "Legplates of Blazing Light",
-    "dkp": 70
+    "dkp": 30
   },
   {
     "id": "21668",
@@ -214,7 +213,7 @@
     "id": "21669",
     "name": "Creeping Vine Helm",
     "role": "Resto-Druid > Resto-Shaman",
-    "dkp": 30
+    "dkp": 70
   },
   {
     "id": "21670",
@@ -225,25 +224,25 @@
   {
     "id": "21671",
     "name": "Robes of the Battleguard",
-    "dkp": 70
+    "dkp": 30
   },
   {
     "id": "21672",
     "name": "Gloves of Enforcement",
     "role": "Rogue (sword) > Rogue (dagger w/ DS only) = Fury-Warrior = Enhance-Shaman = Feral-Druid",
-    "dkp": 120
+    "dkp": 70
   },
   {
     "id": "21673",
     "name": "Silithid Claw",
     "role": "Hunter > Warrior",
-    "dkp": 35
+    "dkp": 120
   },
   {
     "id": "21674",
     "name": "Gauntlets of Steadfast Determination",
     "role": "Tank-Warrior",
-    "dkp": 60
+    "dkp": 35
   },
   {
     "id": "21675",
@@ -255,59 +254,59 @@
     "id": "21676",
     "name": "Leggings of the Festering Swarm",
     "role": "Mage > Warlock",
-    "dkp": 30
+    "dkp": 60
   },
   {
     "id": "21678",
     "name": "Necklace of Purity",
-    "dkp": 5
+    "dkp": 30
   },
   {
     "id": "21627",
     "name": "Cloak of Untold Secrets",
     "role": "Warlock",
-    "dkp": 120
+    "dkp": 5
   },
   {
     "id": "21635",
     "name": "Barb of the Sand Reaver",
     "role": "Hunter",
-    "dkp": 45
+    "dkp": 120
   },
   {
     "id": "21639",
     "name": "Pauldrons of the Unrelenting",
     "role": "Tank-Warrior",
-    "dkp": 60
+    "dkp": 45
   },
   {
     "id": "21645",
     "name": "Hive Tunneler's Boots",
     "role": "Feral-Druid",
-    "dkp": 30
+    "dkp": 60
   },
   {
     "id": "21647",
     "name": "Fetish of the Sand Reaver",
     "role": "Fury-Warrior = Mage = Warlock",
-    "dkp": 120
+    "dkp": 30
   },
   {
     "id": "21650",
     "name": "Ancient Qiraji Ripper",
     "role": "Rogue (sword) = edgies Warrior",
-    "dkp": 70
+    "dkp": 120
   },
   {
     "id": "21651",
     "name": "Scaled Sand Reaver Leggings",
     "role": "Enhance-Shaman = Warrior",
-    "dkp": 5
+    "dkp": 70
   },
   {
     "id": "21652",
     "name": "Silithid Carapace Chestguard",
-    "dkp": 70
+    "dkp": 5
   },
   {
     "id": "21663",
@@ -325,7 +324,7 @@
     "id": "21665",
     "name": "Mantle of Wicked Revenge",
     "role": "Enhance-Shaman = Feral-Druid > Rogue",
-    "dkp": 5
+    "dkp": 70
   },
   {
     "id": "22396",
@@ -336,7 +335,7 @@
   {
     "id": "22402",
     "name": "Libram of Grace",
-    "dkp": 60
+    "dkp": 5
   },
   {
     "id": "20928",
@@ -348,47 +347,47 @@
     "id": "20932",
     "name": "Qiraji Bindings of Dominance",
     "role": "Warlock > Feral-Druid",
-    "dkp": 120
+    "dkp": 60
   },
   {
     "id": "21622",
     "name": "Sharpened Silithid Femur",
     "role": "Mage = Warlock",
-    "dkp": 30
+    "dkp": 120
   },
   {
     "id": "21623",
     "name": "Gauntlets of the Righteous Champion",
-    "dkp": 40
+    "dkp": 30
   },
   {
     "id": "21624",
     "name": "Gauntlets of Kalimdor",
     "role": "Enhance-Shaman",
-    "dkp": 60
+    "dkp": 40
   },
   {
     "id": "21625",
     "name": "Scarab Brooch",
     "role": "Resto-Shaman = Resto-Druid = Heal-Priest ",
-    "dkp": 5
+    "dkp": 60
   },
   {
     "id": "21626",
     "name": "Slime-coated Leggings",
-    "dkp": 60
+    "dkp": 5
   },
   {
     "id": "21677",
     "name": "Ring of the Qiraji Fury",
     "role": "Warrior > Enhance-Shaman = Hunter > Rogue",
-    "dkp": 5
+    "dkp": 60
   },
   {
     "id": "22399",
     "name": "Idol of Health",
     "role": "Resto-Druid",
-    "dkp": 60
+    "dkp": 5
   },
   {
     "id": "20928",
@@ -399,12 +398,12 @@
     "id": "20932",
     "name": "Qiraji Bindings of Dominance",
     "role": "Warlock",
-    "dkp": 120
+    "dkp": 60
   },
   {
     "id": "21616",
     "name": "Huhuran's Stinger",
-    "dkp": 60
+    "dkp": 120
   },
   {
     "id": "21617",
@@ -494,7 +493,7 @@
     "id": "21605",
     "name": "Gloves of the Hidden Temple",
     "role": "Feral-Druid",
-    "dkp": 30
+    "dkp": 60
   },
   {
     "id": "21606",
@@ -505,7 +504,7 @@
     "id": "21607",
     "name": "Grasp of the Fallen Emperor",
     "role": "Enhance-Shaman",
-    "dkp": 60
+    "dkp": 30
   },
   {
     "id": "21608",
@@ -517,13 +516,13 @@
     "id": "21609",
     "name": "Regenerating Belt of Vek'nilash",
     "role": "Resto-Druid = Resto-Shaman",
-    "dkp": 120
+    "dkp": 60
   },
   {
     "id": "21679",
     "name": "Kalimdor's Revenge",
     "role": "Warrior",
-    "dkp": 60
+    "dkp": 120
   },
   {
     "id": "20927",
@@ -534,42 +533,42 @@
     "id": "20931",
     "name": "Skin of the Great Sandworm",
     "role": "Feral-Druid > Resto-Shaman > Warlock",
-    "dkp": 90
+    "dkp": 60
   },
   {
     "id": "21610",
     "name": "Wormscale Blocker",
     "role": "Resto-Shaman",
-    "dkp": 60
+    "dkp": 90
   },
   {
     "id": "21611",
     "name": "Burrower Bracers",
     "role": "Balance-Druid > Warlock = Healer",
-    "dkp": 70
+    "dkp": 60
   },
   {
     "id": "21615",
     "name": "Don Rigoberto's Lost Hat",
     "role": "Healer",
-    "dkp": 60
+    "dkp": 70
   },
   {
     "id": "23557",
     "name": "Larvae of the Great Worm",
     "role": "Warrior",
-    "dkp": 5
+    "dkp": 60
   },
   {
     "id": "23558",
     "name": "The Burrower's Shell",
-    "dkp": 120
+    "dkp": 5
   },
   {
     "id": "23570",
     "name": "Jom Gabbar",
     "role": "Fury-Warrior = Rogue > Enhance-Shaman = Hunter",
-    "dkp": 60
+    "dkp": 120
   },
   {
     "id": "21221",
@@ -587,7 +586,7 @@
     "id": "20933",
     "name": "Husk of the Old God",
     "role": "Mage = Warlock",
-    "dkp": 120
+    "dkp": 60
   },
   {
     "id": "21126",
@@ -599,12 +598,12 @@
     "id": "21134",
     "name": "Dark Edge of Insanity",
     "role": "Enhance-Shaman > Warrior",
-    "dkp": 45
+    "dkp": 120
   },
   {
     "id": "21579",
     "name": "Vanquished Tentacle of C'Thun",
-    "dkp": 60
+    "dkp": 45
   },
   {
     "id": "21581",
@@ -621,7 +620,7 @@
   {
     "id": "21583",
     "name": "Cloak of Clarity",
-    "role": "HEALER",
+    "role": "Healer",
     "dkp": 60
   },
   {
@@ -640,13 +639,13 @@
     "id": "21596",
     "name": "Ring of the Godslayer",
     "role": "Hunter > Feral-Druid = Rogue",
-    "dkp": 120
+    "dkp": 60
   },
   {
     "id": "21839",
     "name": "Scepter of the False Prophet",
     "role": "Healer",
-    "dkp": 60
+    "dkp": 120
   },
   {
     "id": "22730",
@@ -658,12 +657,12 @@
     "id": "22731",
     "name": "Cloak of the Devoured",
     "role": "Mage = Warlock",
-    "dkp": 30
+    "dkp": 60
   },
   {
     "id": "22732",
     "name": "Mark of C'Thun",
-    "dkp": 120
+    "dkp": 30
   },
   {
     "id": "21232",
@@ -674,9 +673,9 @@
   {
     "id": "21237",
     "name": "Imperial Qiraji Regalia",
-    "role": "Feral-Druid = Mage = Warlock = HEALER"
+    "role": "Feral-Druid = Mage = Warlock = Healer",
+    "dkp": 120
   },
-
   {
     "id": "21888",
     "name": "Gloves of the Immortal",
@@ -702,12 +701,44 @@
     "name": "Garb of Royal Ascension",
     "dkp": 5
   },
-  { "id": "20874", "name": "Idol of Sun", "dkp": 60 },
-  { "id": "20875", "name": "Idol of Night", "dkp": 60 },
-  { "id": "20876", "name": "Idol of Death", "dkp": 60 },
-  { "id": "20877", "name": "Idol of the Sage", "dkp": 60 },
-  { "id": "20878", "name": "Idol of Rebirth", "dkp": 60 },
-  { "id": "20879", "name": "Idol of Life", "dkp": 60 },
-  { "id": "20881", "name": "Idol of Strife", "dkp": 60 },
-  { "id": "20882", "name": "Idol of War", "dkp": 60 }
+  {
+    "id": "20874",
+    "name": "Idol of Sun",
+    "dkp": 60
+  },
+  {
+    "id": "20875",
+    "name": "Idol of Night",
+    "dkp": 60
+  },
+  {
+    "id": "20876",
+    "name": "Idol of Death",
+    "dkp": 60
+  },
+  {
+    "id": "20877",
+    "name": "Idol of the Sage",
+    "dkp": 60
+  },
+  {
+    "id": "20878",
+    "name": "Idol of Rebirth",
+    "dkp": 60
+  },
+  {
+    "id": "20879",
+    "name": "Idol of Life",
+    "dkp": 60
+  },
+  {
+    "id": "20881",
+    "name": "Idol of Strife",
+    "dkp": 60
+  },
+  {
+    "id": "20882",
+    "name": "Idol of War",
+    "dkp": 60
+  }
 ]
