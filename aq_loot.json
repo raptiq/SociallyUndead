@@ -340,13 +340,13 @@
   {
     "id": "20928",
     "name": "Qiraji Bindings of Command",
-    "role": "Warrior",
+    "role": "Warrior > Rogue",
     "dkp": 60
   },
   {
     "id": "20932",
     "name": "Qiraji Bindings of Dominance",
-    "role": "Warlock > Feral-Druid",
+    "role": "Warlock = Resto-Shaman = Feral-Druid",
     "dkp": 60
   },
   {
@@ -390,17 +390,6 @@
     "dkp": 5
   },
   {
-    "id": "20928",
-    "name": "Qiraji Bindings of Command",
-    "dkp": 60
-  },
-  {
-    "id": "20932",
-    "name": "Qiraji Bindings of Dominance",
-    "role": "Warlock",
-    "dkp": 60
-  },
-  {
     "id": "21616",
     "name": "Huhuran's Stinger",
     "dkp": 120
@@ -438,13 +427,13 @@
   {
     "id": "20926",
     "name": "Vek'nilash Circlet",
-    "role": "Warlock",
+    "role": "Warlock > Warrior",
     "dkp": 60
   },
   {
     "id": "20930",
     "name": "Vek'lors Diadem",
-    "role": "Feral-Druid",
+    "role": "Feral-Druid = Resto-Shaman > Rogue",
     "dkp": 60
   },
   {
@@ -527,6 +516,7 @@
   {
     "id": "20927",
     "name": "Ouro's Intact Hide",
+    "role": "Warrior > Rogue",
     "dkp": 60
   },
   {
@@ -573,7 +563,7 @@
   {
     "id": "21221",
     "name": "Eye of C'Thun",
-    "role": "Mage = Warlock = Healer > Warrior = Rogue",
+    "role": "Mage = Warlock = Healer > Warrior = Rogue = Hunter",
     "dkp": 60
   },
   {
