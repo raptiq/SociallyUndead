@@ -218,7 +218,7 @@
   {
     "id": "21670",
     "name": "Badge of the Swarmguard",
-    "role": "Hunter > Fury-Warrior",
+    "role": "Fury-Warrior = Hunter",
     "dkp": 30
   },
   {
@@ -694,41 +694,41 @@
   {
     "id": "20874",
     "name": "Idol of Sun",
-    "dkp": 60
+    "dkp": 5
   },
   {
     "id": "20875",
     "name": "Idol of Night",
-    "dkp": 60
+    "dkp": 5
   },
   {
     "id": "20876",
     "name": "Idol of Death",
-    "dkp": 60
+    "dkp": 5
   },
   {
     "id": "20877",
     "name": "Idol of the Sage",
-    "dkp": 60
+    "dkp": 5
   },
   {
     "id": "20878",
     "name": "Idol of Rebirth",
-    "dkp": 60
+    "dkp": 5
   },
   {
     "id": "20879",
     "name": "Idol of Life",
-    "dkp": 60
+    "dkp": 5
   },
   {
     "id": "20881",
     "name": "Idol of Strife",
-    "dkp": 60
+    "dkp": 5
   },
   {
     "id": "20882",
     "name": "Idol of War",
-    "dkp": 60
+    "dkp": 5
   }
 ]
