@@ -114,7 +114,7 @@ core.lootDb = {
 	[19347]={["name"]="Claw of Chromaggus",["dkp"]="5",["role"]="Resto-Shaman > Warlock = Mage > Heal-Priest",["note"]=""},
 	[19352]={["name"]="Chromatically Tempered Sword",["dkp"]="5",["role"]="Non-Orc-Fury-Warrior = Rogue",["note"]=""},
 	[19360]={["name"]="Lok'amir",["dkp"]="5",["role"]="Shadow-Priest = Ele > Resto Sham = Heal-Druid > Heal-Priest",["note"]=""},
-	[19363]={["name"]="Crul'shorukh",["dkp"]="5",["role"]="Orc-Fury-Warrior > Warrior",["note"]=""},
+	[19363]={["name"]="Crul'shorukh",["dkp"]="5",["role"]="Fury-Warrior > Warrior",["note"]=""},
 	[19364]={["name"]="Ashkandi",["dkp"]="5",["role"]="Warrior",["note"]=""},
 	[19356]={["name"]="Staff of Shadow Flame",["dkp"]="5",["role"]="Mage = Warlock",["note"]=""},
 	[19375]={["name"]="Mish'undare",["dkp"]="5",["role"]="Mage = Warlock = Shadow-Priest = Ele-Shaman > Heal-Druid = Heal-Priest",["note"]=""},
