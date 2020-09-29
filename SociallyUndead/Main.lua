@@ -42,7 +42,8 @@ local function printHelp()
         "/su durability -> Displays durability for players in raid",
         "/su ready -> Displays pre-raid attendance check including location and durability",
         "/su buffs -> WIP - Will display all relevant buffs before pull",
-        "/su worldbuffs -> Displays all worldbuffs and total additional dkp"
+        "/su worldbuffs -> Displays all worldbuffs and total additional dkp",
+        "/su whisper -> Automatically whisper raid members that its their turn to loot for your current zone"
     }
 
     if core.isOfficer() then
@@ -72,6 +73,8 @@ local function sociallyundead(command)
         core.showBuffs()
     elseif core.startsWith(command, "worldbuffs") and isOfficer then
         core.showWorldBuffs()
+    elseif core.startsWith(command, "whisper") and isOfficer then
+        core.toggleLootWhisper()
     elseif core.startsWith(command, "check") then
         checkItem(string.sub(command, 7)) -- TODO: decouple this jank from command word length
     else

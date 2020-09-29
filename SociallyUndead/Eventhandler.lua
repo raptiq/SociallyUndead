@@ -10,6 +10,7 @@ local playerDurabilities = {}
 local itemTrackingTable = {}
 local similarItemIds = {}
 local addonMessagePrefix = "SU"
+local lootWhisper = { toggled = false, zone = nil }
 
 local events = {}
 local addonMessageHandlers = {}
@@ -159,7 +160,10 @@ function addonMessageHandlers:CAN_LOOT(sender, text)
                         11673 -- Ancient Core Hound
                     }
 
-                    if core.hasValue(skinningTargetIds, npcId) then
+                    if lootWhisper.toggled and lootWhisper.zone == GetRealZoneText() then
+                        core.sendWhisperMessage(sender, "Please loot " .. creatureName)
+
+                    elseif core.hasValue(skinningTargetIds, npcId) then
                         core.printColor(sender .. " can loot" .. creatureName)
 
                         if playerIsMasterLooter then
@@ -588,6 +592,21 @@ local function showBuffs()
 end
 
 core.showBuffs = showBuffs
+
+
+local function toggleLootWhisper()
+  lootWhisper.toggled = not lootWhisper.toggled
+  if lootWhisper.toggled then
+    lootWhisper.zone = GetRealZoneText()
+    core.printColor("Loot whispering enabled for zone: " .. lootWhisper.zone)
+  else
+    lootWhisper.zone = nil
+    core.printColor("Loot whispering disabled") 
+  end
+end
+
+core.toggleLootWhisper = toggleLootWhisper
+
 
 local valuedWorldBuffs = {
     "Songflower Serenade",
