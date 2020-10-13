@@ -446,7 +446,7 @@ core.lootDb = {
 	[21619]={["name"]="Gloves of the Messiah",["dkp"]="60",["role"]="Priest > Resto-Shaman > Resto-Druid",["note"]=""},
 	[21620]={["name"]="Ring of the Martyr",["dkp"]="60",["role"]="Healer",["note"]=""},
 	[21621]={["name"]="Cloak of the Golden Hive",["dkp"]="60",["role"]="Feral-Druid",["note"]=""},
-	[20926]={["name"]="Vek'nilash Circlet",["dkp"]="60",["role"]="Warlock = Mage > Warrior",["note"]=""},
+	[20926]={["name"]="Vek'nilash Circlet",["dkp"]="60",["role"]="Tank-Warrior > Warlock = Mage > Warrior",["note"]=""},
 	[20930]={["name"]="Vek'lors Diadem",["dkp"]="60",["role"]="Feral-Druid = Resto-Shaman > Rogue",["note"]=""},
 	[21597]={["name"]="Royal Scepter of Vek'lor",["dkp"]="60",["role"]="Mage = Warlock",["note"]=""},
 	[21598]={["name"]="Royal Qiraji Belt",["dkp"]="60",["role"]="Tank-Warrior",["note"]=""},
