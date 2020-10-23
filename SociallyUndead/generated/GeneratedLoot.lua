@@ -470,7 +470,7 @@ core.lootDb = {
 	[23558]={["name"]="The Burrower's Shell",["dkp"]="5",["role"]="MS > OS",["note"]=""},
 	[23570]={["name"]="Jom Gabbar",["dkp"]="120",["role"]="Fury-Warrior = Rogue = Enhance-Shaman = Hunter",["note"]=""},
 	[21221]={["name"]="Eye of C'Thun",["dkp"]="60",["role"]="Mage = Warlock = Healer > Warrior = Rogue = Hunter",["note"]=""},
-	[20929]={["name"]="Carapace of the Old God",["dkp"]="60",["role"]="Warrior > Resto-Shaman",["note"]=""},
+	[20929]={["name"]="Carapace of the Old God",["dkp"]="60",["role"]="Warrior = Rogue > Resto-Shaman",["note"]=""},
 	[20933]={["name"]="Husk of the Old God",["dkp"]="60",["role"]="Mage = Warlock",["note"]=""},
 	[21126]={["name"]="Death's Sting",["dkp"]="120",["role"]="Rogue > Warrior",["note"]=""},
 	[21134]={["name"]="Dark Edge of Insanity",["dkp"]="120",["role"]="Enhance-Shaman > Warrior",["note"]=""},
