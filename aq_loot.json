@@ -563,7 +563,7 @@
   {
     "id": "21221",
     "name": "Eye of C'Thun",
-    "role": "Mage = Warlock = Healer > Warrior = Rogue = Hunter",
+    "role": "Shadow-Priest = Mage = Warlock = Healer > Warrior = Rogue = Hunter",
     "dkp": 60
   },
   {
@@ -575,7 +575,7 @@
   {
     "id": "20933",
     "name": "Husk of the Old God",
-    "role": "Mage = Warlock",
+    "role": "Mage = Warlock = Shadow-Priest",
     "dkp": 60
   },
   {
@@ -616,7 +616,7 @@
   {
     "id": "21585",
     "name": "Dark Storm Gauntlets",
-    "role": "Mage = Warlock",
+    "role": "Mage = Warlock = Shadow-Priest",
     "dkp": 60
   },
   {
@@ -646,7 +646,7 @@
   {
     "id": "22731",
     "name": "Cloak of the Devoured",
-    "role": "Mage = Warlock",
+    "role": "Mage = Warlock = Shadow-Priest",
     "dkp": 60
   },
   {
