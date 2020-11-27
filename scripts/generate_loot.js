@@ -3,6 +3,7 @@ const BWL_LOOT = require("../bwl_loot.json");
 const MC_LOOT = require("../mc_loot.json");
 const ZG_LOOT = require("../zg_loot.json");
 const AQ40_LOOT = require("../aq_loot.json");
+const NAX_LOOT = require("../nax_loot.json");
 
 const getRole = (item) => {
   return item["role"] || (item["dkp"] === "NA" ? "" : "MS > OS");
@@ -36,6 +37,10 @@ file.on("open", () => {
   }
 
   for (let item of AQ40_LOOT) {
+    file.write(buildItemLua(item));
+  }
+
+  for (let item of NAX_LOOT) {
     file.write(buildItemLua(item));
   }
 

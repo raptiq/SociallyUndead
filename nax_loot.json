@@ -1,0 +1,723 @@
+[
+  {
+    "id": 23069,
+    "name": "Necro-Knight's Garb",
+    "dkp": 60
+  },
+  {
+    "id": 23226,
+    "name": "Ghoul Skin Tunic",
+    "dkp": 100,
+    "role": "Feral-Druid > Enhance-Shaman = DPS-Warrior > Rogue"
+  },
+  {
+    "id": 23663,
+    "name": "Girdle of Elemental Fury",
+    "dkp": 60
+  },
+  {
+    "id": 23666,
+    "name": "Belt of the Grand Crusader",
+    "dkp": 60
+  },
+  {
+    "id": 23668,
+    "name": "Leggings of the Grand Crusader",
+    "dkp": 60
+  },
+  {
+    "id": 23237,
+    "name": "Ring of the Eternal Flame",
+    "dkp": 60,
+    "role": "Mage > Warlock"
+  },
+  {
+    "id": 23238,
+    "name": "Stygian Buckler",
+    "dkp": 30
+  },
+  {
+    "id": 23044,
+    "name": "Harbinger of Doom",
+    "dkp": 120,
+    "role": "305+Warrior = Dagger-Rogue > Hunter"
+  },
+  {
+    "id": 23221,
+    "name": "Misplaced Servo Arm",
+    "dkp": 120,
+    "role": "DPS-Warrior = Rogue > Enhance-Shaman"
+  },
+  {
+    "id": 22369,
+    "name": "Desecrated Bindings (Priest, Mage, Warlock)",
+    "dkp": 5
+  },
+  {
+    "id": 22362,
+    "name": "Desecrated Wristguards (Paladin, Hunter, Druid)",
+    "dkp": 5
+  },
+  {
+    "id": 22355,
+    "name": "Desecrated Bracers (Warrior, Rogue)",
+    "dkp": 5,
+    "role": "Tank-Warrior > DPS-Warrior = Rogue"
+  },
+  {
+    "id": 22371,
+    "name": "Desecrated Gloves (Priest, Mage, Warlock)",
+    "dkp": 5
+  },
+  {
+    "id": 22364,
+    "name": "Desecrated Handguards (Paladin, Hunter, Druid)",
+    "dkp": 5
+  },
+  {
+    "id": 22357,
+    "name": "Desecrated Gauntlets (Warrior, Rogue)",
+    "dkp": 5,
+    "role": "Tank-Warrior > DPS-Warrior = Rogue"
+  },
+  {
+    "id": 22368,
+    "name": "Desecrated Shoulderpads (Priest, Mage, Warlock)",
+    "dkp": 5
+  },
+  {
+    "id": 22361,
+    "name": "Desecrated Spaulders (Paladin, Hunter, Druid)",
+    "dkp": 5
+  },
+  {
+    "id": 22354,
+    "name": "Desecrated Pauldrons (Warrior, Rogue)",
+    "dkp": 5,
+    "role": "Tank-Warrior > DPS-Warrior = Rogue"
+  },
+  {
+    "id": 22367,
+    "name": "Desecrated Circlet (Priest, Mage, Warlock)",
+    "dkp": 5,
+    "role": "Warlock = Mage = Priest"
+  },
+  {
+    "id": 22360,
+    "name": "Desecrated Headpiece (Paladin, Hunter, Druid)",
+    "dkp": 5,
+    "role": "Shaman = Resto-Druid = Hunter"
+  },
+  {
+    "id": 22353,
+    "name": "Desecrated Helmet (Warrior, Rogue)",
+    "dkp": 5,
+    "role": "Tank-Warrior > DPS-Warrior = Rogue"
+  },
+  {
+    "id": 22370,
+    "name": "Desecrated Belt (Priest, Mage, Warlock)",
+    "dkp": 5
+  },
+  {
+    "id": 22363,
+    "name": "Desecrated Girdle (Paladin, Hunter, Druid)",
+    "dkp": 5
+  },
+  {
+    "id": 22356,
+    "name": "Desecrated Waistguard (Warrior, Rogue)",
+    "dkp": 5,
+    "role": "Tank-Warrior > DPS-Warrior = Rogue"
+  },
+  {
+    "id": 22366,
+    "name": "Desecrated Leggings (Priest, Mage, Warlock)",
+    "dkp": 5
+  },
+  {
+    "id": 22359,
+    "name": "Desecrated Legguards (Paladin, Hunter, Druid)",
+    "dkp": 5
+  },
+  {
+    "id": 22352,
+    "name": "Desecrated Legplates (Warrior, Rogue)",
+    "dkp": 5,
+    "role": "Tank-Warrior > DPS-Warrior = Rogue"
+  },
+  {
+    "id": 22372,
+    "name": "Desecrated Sandals (Priest, Mage, Warlock)",
+    "dkp": 5
+  },
+  {
+    "id": 22365,
+    "name": "Desecrated Boots (Paladin, Hunter, Druid)",
+    "dkp": 5
+  },
+  {
+    "id": 22358,
+    "name": "Desecrated Sabatons (Warrior, Rogue)",
+    "dkp": 5,
+    "role": "Tank-Warrior > DPS-Warrior = Rogue"
+  },
+  {
+    "id": 22351,
+    "name": "Desecrated Robe (Priest, Mage, Warlock)",
+    "dkp": 5,
+    "role": "Warlock = Mage = Priest"
+  },
+  {
+    "id": 22350,
+    "name": "Desecrated Tunic (Paladin, Hunter, Druid)",
+    "dkp": 5
+  },
+  {
+    "id": 22349,
+    "name": "Desecrated Breastplate (Warrior, Rogue)",
+    "dkp": 5,
+    "role": "Tank-Warrior > DPS-Warrior = Rogue"
+  },
+  {
+    "id": 22935,
+    "name": "Touch of Frost",
+    "dkp": 60
+  },
+  {
+    "id": 22938,
+    "name": "Cryptfiend Silk Cloak",
+    "dkp": 60
+  },
+  {
+    "id": 22936,
+    "name": "Wristguards of Vengeance",
+    "dkp": 60
+  },
+  {
+    "id": 22939,
+    "name": "Band of Unanswered Prayers",
+    "dkp": 60
+  },
+  {
+    "id": 22937,
+    "name": "Gem of Nerubis",
+    "dkp": 60
+  },
+  {
+    "id": 22943,
+    "name": "Malice Stone Pendant",
+    "dkp": 60,
+    "role": "Shadow-Priest"
+  },
+  {
+    "id": 22941,
+    "name": "Polar Shoulder Pads",
+    "dkp": 5
+  },
+  {
+    "id": 22940,
+    "name": "Icebane Pauldrons",
+    "dkp": 5
+  },
+  {
+    "id": 22942,
+    "name": "The Widow's Embrace",
+    "dkp": 120
+  },
+  {
+    "id": 22806,
+    "name": "Widow's Remorse",
+    "dkp": 120,
+    "role": "305+War = Sword-Rogue"
+  },
+  {
+    "id": 22947,
+    "name": "Pendant of Forgotten Names",
+    "dkp": 30
+  },
+  {
+    "id": 23220,
+    "name": "Crystal Webbed Robe",
+    "dkp": 100,
+    "role": "Shadow-Priest > Warlock = Mage"
+  },
+  {
+    "id": 22954,
+    "name": "Kiss of the Spider",
+    "dkp": 100,
+    "role": "Feral-Druid = Enhance-Shaman = DPS-Warrior = Rogue"
+  },
+  {
+    "id": 22807,
+    "name": "Wraith Blade",
+    "dkp": 120,
+    "role": "Warlock = Mage"
+  },
+  {
+    "id": 22804,
+    "name": "Maexxna's Fang",
+    "dkp": 120
+  },
+  {
+    "id": 22960,
+    "name": "Cloak of Suturing",
+    "dkp": 60
+  },
+  {
+    "id": 22961,
+    "name": "Band of Reanimation",
+    "dkp": 60,
+    "role": "Hunter"
+  },
+  {
+    "id": 22820,
+    "name": "Wand of Fates",
+    "dkp": 95,
+    "role": "Warlock > Mage = Shadow-Priest"
+  },
+  {
+    "id": 22818,
+    "name": "The Plague Bearer",
+    "dkp": 5,
+    "role": "Tank-Warrior"
+  },
+  {
+    "id": 22815,
+    "name": "Severance",
+    "dkp": 120
+  },
+  {
+    "id": 22968,
+    "name": "Glacial Mantle",
+    "dkp": 5
+  },
+  {
+    "id": 22967,
+    "name": "Icy Scale Spaulders",
+    "dkp": 5
+  },
+  {
+    "id": 22810,
+    "name": "Toxin Injector",
+    "dkp": 70
+  },
+  {
+    "id": 22803,
+    "name": "Midnight Haze",
+    "dkp": 120,
+    "role": "Warlock = Mage = Shadow-Priest"
+  },
+  {
+    "id": 22988,
+    "name": "The End of Dreams",
+    "dkp": 120,
+    "role": "Shadow-Priest = Feral-Druid"
+  },
+  {
+    "id": 22983,
+    "name": "Rime Covered Mantle",
+    "dkp": 60,
+    "role": "Mage > Warlock"
+  },
+  {
+    "id": 22981,
+    "name": "Gluth's Missing Collar",
+    "dkp": 30
+  },
+  {
+    "id": 22994,
+    "name": "Digested Hand of Power",
+    "dkp": 45
+  },
+  {
+    "id": 23075,
+    "name": "Death's Bargain",
+    "dkp": 90
+  },
+  {
+    "id": 22813,
+    "name": "Claymore of Unholy Might",
+    "dkp": 120
+  },
+  {
+    "id": 23000,
+    "name": "Plated Abomination Ribcage",
+    "dkp": 100
+  },
+  {
+    "id": 23070,
+    "name": "Leggings of Polarity",
+    "dkp": 60,
+    "role": "Mage = Warlock"
+  },
+  {
+    "id": 23001,
+    "name": "Eye of Diminution",
+    "dkp": 60,
+    "role": "Mage > Warlock"
+  },
+  {
+    "id": 22808,
+    "name": "The Castigator",
+    "dkp": 120,
+    "role": "DPS-Warrior = Rogue"
+  },
+  {
+    "id": 22801,
+    "name": "Spire of Twilight",
+    "dkp": 120
+  },
+  {
+    "id": 23030,
+    "name": "Cloak of the Scourge",
+    "dkp": 60
+  },
+  {
+    "id": 23031,
+    "name": "Band of the Inevitable",
+    "dkp": 60,
+    "role": "Warlock > Mage = Shadow-Priest"
+  },
+  {
+    "id": 23028,
+    "name": "Hailstone Band",
+    "dkp": 5
+  },
+  {
+    "id": 23029,
+    "name": "Noth's Frigid Heart",
+    "dkp": 90
+  },
+  {
+    "id": 23006,
+    "name": "Libram of Light",
+    "dkp": 30
+  },
+  {
+    "id": 22816,
+    "name": "Hatchet of Sundered Bone",
+    "dkp": 120,
+    "role": "Orc-Warrior > Warrior"
+  },
+  {
+    "id": 23035,
+    "name": "Preceptor's Hat",
+    "dkp": 60,
+    "role": "Shadow-Priest"
+  },
+  {
+    "id": 23033,
+    "name": "Icy Scale Coif",
+    "dkp": 5
+  },
+  {
+    "id": 23019,
+    "name": "Icebane Helmet",
+    "dkp": 5
+  },
+  {
+    "id": 23036,
+    "name": "Necklace of Necropsy",
+    "dkp": 60
+  },
+  {
+    "id": 23068,
+    "name": "Legplates of Carnage",
+    "dkp": 60
+  },
+  {
+    "id": 23038,
+    "name": "Band of Unnatural Forces",
+    "dkp": 60,
+    "role": "Warrior = Rogue = Hunter = Enhance-Shaman"
+  },
+  {
+    "id": 23037,
+    "name": "Ring of Spiritual Fervor",
+    "dkp": 30
+  },
+  {
+    "id": 23042,
+    "name": "Loatheb's Reflection",
+    "dkp": 5
+  },
+  {
+    "id": 23039,
+    "name": "The Eye of Nerub",
+    "dkp": 120
+  },
+  {
+    "id": 22800,
+    "name": "Brimstone Staff",
+    "dkp": 120,
+    "role": "Warlock = Mage = Shadow-Priest"
+  },
+  {
+    "id": 23017,
+    "name": "Veil of Eclipse",
+    "dkp": 60,
+    "role": "Shadow-Priest"
+  },
+  {
+    "id": 23219,
+    "name": "Girdle of the Mentor",
+    "dkp": 60
+  },
+  {
+    "id": 23018,
+    "name": "Signet of the Fallen Defender",
+    "dkp": 30
+  },
+  {
+    "id": 23004,
+    "name": "Idol of Longevity",
+    "dkp": 30
+  },
+  {
+    "id": 23009,
+    "name": "Wand of the Whispering Dead",
+    "dkp": 60
+  },
+  {
+    "id": 23014,
+    "name": "Iblis, Blade of the Fallen Seraph",
+    "dkp": 120,
+    "role": "305+War = Sword-Rogue"
+  },
+  {
+    "id": 23032,
+    "name": "Glacial Headdress",
+    "dkp": 5
+  },
+  {
+    "id": 23020,
+    "name": "Polar Helmet",
+    "dkp": 5
+  },
+  {
+    "id": 23023,
+    "name": "Sadist's Collar",
+    "dkp": 60
+  },
+  {
+    "id": 23021,
+    "name": "The Soul Harvester's Bindings",
+    "dkp": 60
+  },
+  {
+    "id": 23073,
+    "name": "Boots of Displacement",
+    "dkp": 30
+  },
+  {
+    "id": 23071,
+    "name": "Leggings of Apocalypse",
+    "dkp": 90
+  },
+  {
+    "id": 23025,
+    "name": "Seal of the Damned",
+    "dkp": 60,
+    "role": "Warlock = Mage"
+  },
+  {
+    "id": 23027,
+    "name": "Warmth of Forgiveness",
+    "dkp": 45
+  },
+  {
+    "id": 22811,
+    "name": "Soulstring",
+    "dkp": 60
+  },
+  {
+    "id": 22809,
+    "name": "Maul of the Redeemed Crusader",
+    "dkp": 5
+  },
+  {
+    "id": 22691,
+    "name": "Corrupted Ashbringer",
+    "dkp": 120,
+    "role": "Guild Leader"
+  },
+  {
+    "id": 23548,
+    "name": "Might of the Scourge",
+    "dkp": 0,
+    "role": "MS > OS /roll"
+  },
+  {
+    "id": 23545,
+    "name": "Power of the Scourge",
+    "dkp": 0,
+    "role": "MS > OS /roll"
+  },
+  {
+    "id": 23050,
+    "name": "Cloak of the Necropolis",
+    "dkp": 60,
+    "role": "Warlock = Mage"
+  },
+  {
+    "id": 23045,
+    "name": "Shroud of Dominion",
+    "dkp": 60,
+    "role": "DPS-Warrior = Rogue = Hunter = Enhance-Shaman"
+  },
+  {
+    "id": 23040,
+    "name": "Glyph of Deflection",
+    "dkp": 30
+  },
+  {
+    "id": 23047,
+    "name": "Eye of the Dead",
+    "dkp": 60
+  },
+  {
+    "id": 23041,
+    "name": "Slayer's Crest",
+    "dkp": 100,
+    "role": "Warrior = Rogue = Enhance-Shaman = Hunter"
+  },
+  {
+    "id": 23046,
+    "name": "The Restrained Essence of Sapphiron",
+    "dkp": 100,
+    "role": "Warlock = Mage = Shadow-Priest"
+  },
+  {
+    "id": 23049,
+    "name": "Sapphiron's Left Eye",
+    "dkp": 60
+  },
+  {
+    "id": 23048,
+    "name": "Sappirons's Right Eye",
+    "dkp": 60
+  },
+  {
+    "id": 23043,
+    "name": "The Face of Death",
+    "dkp": 45,
+    "role": "Tank-Warrior > DPS-Warrior"
+  },
+  {
+    "id": 23242,
+    "name": "Claw of the Frost Wyrm",
+    "dkp": 120,
+    "role": "Hunter = Rogue"
+  },
+  {
+    "id": 22520,
+    "name": "The Phylactery of Kel'Thuzad",
+    "dkp": 60,
+    "role": "Warrior = Rogue = Hunter = Shadow-Priest = Warlock = Mage"
+  },
+  {
+    "id": 23062,
+    "name": "Frostfire Ring",
+    "dkp": 60
+  },
+  {
+    "id": 23059,
+    "name": "Ring of the Dreadnaught",
+    "dkp": 60
+  },
+  {
+    "id": 23060,
+    "name": "Bonescythe Ring",
+    "dkp": 60
+  },
+  {
+    "id": 23065,
+    "name": "Ring of the Earthshatterer",
+    "dkp": 60
+  },
+  {
+    "id": 23067,
+    "name": "Ring of the Cryptstalker",
+    "dkp": 60
+  },
+  {
+    "id": 23063,
+    "name": "Plagueheart Ring",
+    "dkp": 60
+  },
+  {
+    "id": 23061,
+    "name": "Ring of Faith",
+    "dkp": 60
+  },
+  {
+    "id": 23064,
+    "name": "Ring of the Dreamwalker",
+    "dkp": 60
+  },
+  {
+    "id": 23057,
+    "name": "Gem of Trapped Innocents",
+    "dkp": 60,
+    "role": "Warlock = Mage"
+  },
+  {
+    "id": 23053,
+    "name": "Stormrage's Talisman of Seething",
+    "dkp": 60,
+    "role": "DPS-Warrior = Rogue = Hunter"
+  },
+  {
+    "id": 22812,
+    "name": "Nerubian Slavemaker",
+    "dkp": 120,
+    "role": "Hunter > Warrior = Rogue"
+  },
+  {
+    "id": 22821,
+    "name": "Doomfinger",
+    "dkp": 60,
+    "role": "Mage > Warlock"
+  },
+  {
+    "id": 22819,
+    "name": "Shield of Condemnation",
+    "dkp": 60
+  },
+  {
+    "id": 22802,
+    "name": "Kingsfall",
+    "dkp": 120,
+    "role": "Dagger-Rogue = 305+Warrior > Hunter"
+  },
+  {
+    "id": 23056,
+    "name": "Hammer of the Twisting Nether",
+    "dkp": 120
+  },
+  {
+    "id": 23054,
+    "name": "Gressil, Dawn of Ruin",
+    "dkp": 120,
+    "role": "Sword-Rogue = 305+Warrior"
+  },
+  {
+    "id": 23577,
+    "name": "The Hungering Cold",
+    "dkp": 120,
+    "role": "Rogue = Warrior"
+  },
+  {
+    "id": 22798,
+    "name": "Might of Menethil",
+    "dkp": 120,
+    "role": "Enhance-Shaman = Warrior"
+  },
+  {
+    "id": 22799,
+    "name": "Soulseeker",
+    "dkp": 120,
+    "role": "Mage = Warlock"
+  }
+]
