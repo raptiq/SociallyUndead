@@ -229,7 +229,7 @@
     "id": 22806,
     "name": "Widow's Remorse",
     "dkp": 120,
-    "role": "305+War = Sword-Rogue"
+    "role": "305+Warrior = Sword-Rogue"
   },
   {
     "id": 22947,
@@ -483,7 +483,7 @@
     "id": 23014,
     "name": "Iblis, Blade of the Fallen Seraph",
     "dkp": 120,
-    "role": "305+War = Sword-Rogue"
+    "role": "305+Warrior = Sword-Rogue"
   },
   {
     "id": 23032,
