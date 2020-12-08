@@ -10,7 +10,7 @@ local playerDurabilities = {}
 local itemTrackingTable = {}
 local similarItemIds = {}
 local addonMessagePrefix = "SU"
-local lootWhisper = { toggled = false, zone = nil }
+local lootWhisper = {toggled = false, zone = nil}
 
 local events = {}
 local addonMessageHandlers = {}
@@ -124,13 +124,15 @@ function addonMessageHandlers:DISCOVER_ITEM(sender, message)
             if rank ~= 0 then
                 core.printColor(sender .. " inspected you for " .. itemLink)
             end
-            sendAddonWhisper("REPORT_INSPECTION", itemCount, sender)
+            sendAddonWhisper("REPORT_INSPECTION", itemCount .. messageDelimiter .. itemId, sender)
         end
     )
 end
 
-function addonMessageHandlers:REPORT_INSPECTION(sender, itemCount)
-    table.insert(itemTrackingTable, {player = sender, quantity = itemCount})
+function addonMessageHandlers:REPORT_INSPECTION(sender, text)
+    local itemCount, itemId = splitByDelimiter(text, messageDelimiter)
+
+    table.insert(itemTrackingTable, {player = sender, data = {id = tonumber(itemId), quantity = itemCount}})
 end
 
 function addonMessageHandlers:CAN_LOOT(sender, text)
@@ -162,7 +164,6 @@ function addonMessageHandlers:CAN_LOOT(sender, text)
 
                     if lootWhisper.toggled and lootWhisper.zone == GetRealZoneText() then
                         core.sendWhisperMessage(sender, "Please loot " .. creatureName)
-
                     elseif core.hasValue(skinningTargetIds, npcId) then
                         core.printColor(sender .. " can loot" .. creatureName)
 
@@ -508,7 +509,7 @@ local function showItemList(itemId, location)
                 local color = core.colorizePlayer(val.name)
 
                 if not playerData then
-                    playerData = {player = val.name, quantity = "?"}
+                    playerData = {player = val.name, data = {quantity = "?", id = itemId}}
                 end
 
                 table.insert(
@@ -516,7 +517,7 @@ local function showItemList(itemId, location)
                     {
                         cols = {
                             {value = val.name, color = color},
-                            {value = playerData.quantity}
+                            {value = playerData.data.quantity}
                         }
                     }
                 )
@@ -535,6 +536,58 @@ local function showItemList(itemId, location)
 end
 
 core.showItemList = showItemList
+
+local function showItemsList(itemIds, location)
+    if not IsInRaid() then
+        return
+    end
+
+    local headerColumns = {
+        {["name"] = "Player", ["width"] = 120, ["align"] = "CENTER"}
+    }
+
+    for _, itemId in ipairs(itemIds) do
+        sendAddonMessage("DISCOVER_ITEM", (location or "inventory") .. messageDelimiter .. itemId)
+        local itemName, itemLink = GetItemInfo(itemId)
+
+        table.insert(headerColumns, {["name"] = itemName or itemId, ["width"] = 96, ["align"] = "CENTER"})
+    end
+
+    core.callback(
+        1,
+        function()
+            local players = core.getRaidMembers()
+            local data = {}
+
+            for i, val in pairs(players) do
+                local color = core.colorizePlayer(val.name)
+                local playerColumns = {
+                    {value = val.name, color = color}
+                }
+
+                for _, itemId in ipairs(itemIds) do
+                    local found = false
+                    for i, itemReport in ipairs(itemTrackingTable) do
+                        if itemReport.player == val.name and itemReport.data.id == itemId then
+                            table.insert(playerColumns, {value = itemReport.data.quantity})
+                            found = true
+                        end
+                    end
+                    if not (found) then
+                        table.insert(playerColumns, {value = "?"})
+                    end
+                end
+
+                table.insert(data, {cols = playerColumns})
+            end
+
+            core.createPlayerFrame("Items List", headerColumns, data)
+            itemTrackingTable = {}
+        end
+    )
+end
+
+core.showItemsList = showItemsList
 
 local function getBuffs()
     local buffs = {}
@@ -593,20 +646,18 @@ end
 
 core.showBuffs = showBuffs
 
-
 local function toggleLootWhisper()
-  lootWhisper.toggled = not lootWhisper.toggled
-  if lootWhisper.toggled then
-    lootWhisper.zone = GetRealZoneText()
-    core.printColor("Loot whispering enabled for zone: " .. lootWhisper.zone)
-  else
-    lootWhisper.zone = nil
-    core.printColor("Loot whispering disabled") 
-  end
+    lootWhisper.toggled = not lootWhisper.toggled
+    if lootWhisper.toggled then
+        lootWhisper.zone = GetRealZoneText()
+        core.printColor("Loot whispering enabled for zone: " .. lootWhisper.zone)
+    else
+        lootWhisper.zone = nil
+        core.printColor("Loot whispering disabled")
+    end
 end
 
 core.toggleLootWhisper = toggleLootWhisper
-
 
 local valuedWorldBuffs = {
     "Songflower Serenade",

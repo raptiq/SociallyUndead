@@ -6,24 +6,37 @@ local hourglassItemId = 19183
 local onyCloakItemId = 15138
 local onyNeckItemId = 16309
 
+local itemMap = {
+    ["water"] = quintessenceItemId,
+    ["sand"] = hourglassItemId,
+    ["onyneck"] = onyNeckItemId,
+    ["onycloak"] = onyCloakItemId
+}
+
 core.addSimilarItemId(quintessenceItemId, eternalQuintessenceItemId)
 
-local function checkItem(command)
-    if command == "water" then
-        core.showItemList(quintessenceItemId)
-    elseif command == "sand" then
-        core.showItemList(hourglassItemId)
-    elseif command == "onycloak" then
-        core.showItemList(onyCloakItemId, "equipped")
-    elseif command == "onyneck" then
-        core.showItemList(onyNeckItemId)
-    else
-        local itemId = tonumber(command)
-        if itemId then
-            core.showItemList(itemId)
+local function checkHelper(itemString, location)
+    itemString = string.gsub(itemString, "^%s*(.-)%s*$", "%1")
+    local items = {}
+    local len = 0
+    for item in string.gmatch(itemString, "%S+") do
+        if itemMap[item] then
+            table.insert(items, itemMap[item])
         else
-            print("Invalid itemId " .. command)
+            local itemId = tonumber(item)
+            if itemId then
+                table.insert(items, itemId)
+            else
+                print("Invalid itemId " .. item)
+            end
         end
+        len = len + 1
+    end
+
+    if len == 1 then
+        core.showItemList(items[1], location)
+    else
+        core.showItemsList(items, location)
     end
 end
 
@@ -75,8 +88,12 @@ local function sociallyundead(command)
         core.showWorldBuffs()
     elseif core.startsWith(command, "whisper") and isOfficer then
         core.toggleLootWhisper()
+    elseif core.startsWith(command, "check equipped") then
+        local itemString = string.gsub(command, "check equipped", "")
+        checkHelper(itemString, "equipped")
     elseif core.startsWith(command, "check") then
-        checkItem(string.sub(command, 7)) -- TODO: decouple this jank from command word length
+        local itemString = string.gsub(command, "check", "")
+        checkHelper(itemString)
     else
         print("The command " .. command .. " was not recognized.")
         printHelp()
